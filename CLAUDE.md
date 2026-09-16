@@ -30,7 +30,7 @@ where alpha ranges over partial labelings containing a complementary pair and 1_
 | Tucker, S^2 (m=3, labels +-1,+-2) | F_2 | exactly 3 |
 | Tucker, S^2 | Q | exactly 5 (fails at 3 and 4) |
 | Tucker, S^3 (m=4, labels +-1..+-3) | F_2 | exactly 4 (fails at 3; tower gives 4) |
-| Tucker, S^n | F_2 | <= n+1 (tower); = n+1 for n = 2, 3 (computed); lower bound open for n >= 4 |
+| Tucker, S^n | F_2 | <= n+1 (tower); = n+1 for n = 2..6 (restriction gadgets, below); open for n >= 7 |
 | Ky Fan, S^2, labels +-1..+-3 | F_2 | exactly 3 |
 | Ky Fan, S^n, k >= n+1 | F_2 | exactly n+1 (theorem, below: tower + separating functional) |
 
@@ -42,7 +42,11 @@ as an identity on all labelings, where H^{(j)} is the hemisphere of the [j]-comp
 
 **Theorem (Ky Fan degree).** Over F_2, the degree is exactly n+1 for all n >= 1, k >= n+1. Upper bound: the tower. Lower bound: the functional E(f) = sum_{lambda(x_i) in S_i} f(lambda) over one top simplex sigma_0 = {x_1 < ... < x_{n+1}} with S_1 = {+1,+2}, S_i = {+i,-i} for i = 2..n+1, all other vertices fixed. Even |S_i| makes E vanish on every function of <= n vertices (including constants, so E(1) = 0); only +-sigma_0 contribute to E(A_+) (a chain other than +-sigma_0 cannot use exactly the reps of sigma_0, since consecutive chain elements cannot be flipped independently), and the collision at magnitude 2 leaves exactly one alternating tuple in the box, so E(A_+ + 1) = 1. Hence A_+ + 1 is not in the span of size-<= n indicators. Script: `kyfan_lower.py` (verified m = 3,4,5; the naive negation-closed box S_1 = {+1,-1} gives E(A_+) = 0, which is why the collision is needed).
 
-**Conjecture (open).** Tucker's F_2 degree on S^n is exactly n+1 for all n. Upper bound is the tower; lower bound is known only for n = 2, 3. The Ky Fan functional cannot be reused: it kills constants, and Tucker's certificate is for the constant 1. A Tucker lower bound requires a pseudo-solution with E[empty] = 1, a global object. (The other direction, deg KyFan >= deg Tucker by restricting labels to +-1..+-n, gives nothing new.)
+**Theorem (restriction lemma).** If rho is a non-violating partial labeling of the free vertices of S^n with unfixed set U, every degree-d certificate restricts (substitute rho) to a degree-<= d certificate of the residual CSP on U (domains D(u) = labels minus {-rho(w) : w fixed, adjacent to u}; pairwise non-complementary on edges). So a consistent degree-d residual dual proves the sphere degree is > d.
+
+**Theorem (computer-verified, 2026-09-16).** Tucker's F_2 degree on S^n is exactly n+1 for n = 2, 3, 4, 5, 6. Lower bounds for n = 4, 5, 6 via the restriction lemma with U = one top simplex through the pole e_{n+1} and rho = a valid equatorial labeling using magnitudes 1..n-1 except one antipodal pair of top simplices +-sigma labeled -+n, pulled back to the cap. The residual domains form a binary conflict tree (see results.md, "Chain gadgets"); its degree-n dual is consistent with a unique pseudo-solution of support 3^n. `kyfan/gadget.py` (`GADGETS`, `verify`), `tests/test_gadget.py`.
+
+**Conjecture (open for n >= 7).** Tucker's F_2 degree on S^n is exactly n+1 for all n. Upper bound is the tower. The lower bound now reduces to two clean statements: (i) the abstract tree gadget (pole + binary conflict tree on n leaves) has F_2 degree n+1 for all n; (ii) it is realizable on S^n by an explicit equatorial labeling. Both hold computationally through n = 6 (`analysis/gadget3.py` realizes them to order). The Ky Fan functional cannot be reused: it kills constants, and Tucker's certificate is for the constant 1. A Tucker lower bound requires a pseudo-solution with E[empty] = 1, a global object. (The other direction, deg KyFan >= deg Tucker by restricting labels to +-1..+-n, gives nothing new.)
 
 **Structural facts about the degree-2 pseudo-solution on S^2 (pseudo2b.py, pseudo2c.py):**
 - No pseudo-solution is invariant under the full symmetry group, nor under the label group (signed permutations of magnitudes), nor under the stabilizer of a hemisphere.
@@ -70,6 +74,10 @@ Package `kyfan/` (parametrized by m; `from kyfan import SignedComplex, label_set
 - `gf2solve/` — Rust crate (`cargo build --release`; the wrapper builds it on first use). Input/output format in `src/main.rs`.
 - `tower.py` — local lemma `g`, `local_lemma_violations`, telescoped identity `check_identity`.
 - `lower.py` — the Ky Fan separating functional (`box`, `E`, `check`).
+- `ball.py` — Tucker's ball form (`Ball`) and general restrictions (`Residual`), domain-aware SA dual.
+- `gadget.py` — restriction lemma + chain gadgets: `GADGETS[m]` (equatorial labelings for m = 4..7), `chain_U`, `verify(m)` (independent end-to-end check).
+- `abstract_gadget.py` — tree gadgets without the sphere: `degree(domains)`.
+- `analysis.py` — Task 2 helpers (orbit types, knockouts, descriptions). Exploratory drivers and their outputs live in `analysis/`.
 
 `tests/` are the settled table (see results.md for the test-to-number map); `./reproduce.sh` (fast, ~2 min) or `./reproduce.sh all` (~15 min).
 The original `scripts/` were reviewed in `review.md`, reproduced, and deleted after the tests passed (git history: commit 5a4dd50).
@@ -103,7 +111,7 @@ This is the object the conjecture's proof has to generalize from. Build the degr
 - Look for a sparse or structured solution (e.g. minimize support greedily, or impose support on "base labeling + corrections": pick a labeling L_0 with exactly one antipodal pair of complementary edges — pull back a valid equatorial labeling that uses label -1 exactly once, and put +1 on e_m — and search for a solution supported on labelings within small Hamming distance of L_0).
 Report whatever pattern is or isn't there. A pattern that persists from n=2 to n=3 is a conjecture to prove; its absence is evidence against the n+1 conjecture.
 
-### Task 3 — The ball version
+### Task 3 — The ball version  (DONE 2026-09-16: tight over F_2 for m = 3, 4; and the restriction idea gives S^4, S^5, S^6 — see results.md)
 Fix a valid labeling L_eq on the equator (m-1 complex, labels +-1..+-(m-1)) and consider only the cap {x_m = +1} (and its antipode). Constraints: no complementary edge inside the cap, and none between a cap vertex y and an equatorial vertex w <= pi(y) where pi zeroes the last coordinate. This is Tucker's ball form; it is UNSAT, and any degree-d sphere certificate restricts to a degree-<=d certificate here. Compute its F_2 degree for m = 3, 4 (fewer variables than the sphere). If it equals the sphere degree, the reduction is tight and the ball is the right object for a proof; note that with the pullback labeling every cap vertex except e_m is fine and e_m is adjacent to the entire cap.
 
 ### Task 4 — results.md

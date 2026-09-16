@@ -1,0 +1,13 @@
+/Users/jstav/Downloads/kyfan-tucker/analysis/gadget3.py:2: SyntaxWarning: invalid escape sequence '\ '
+  The fixed neighbours of lift(w_r) are N_r = (star(w_r) u down(w_r)) \ sigma, so the equatorial labeling must use on N_r
+m=6: target domains by rank: {5: [1, 2, -5], 4: [-2, 1, -5], 3: [-1, 3, -5], 2: [-3, -1, 4, -5], 1: [-4, -3, -1, -5]}, pole {5}
+allowed-set sizes: Counter({5: 50, 8: 25, 4: 14, 3: 10, 6: 8, 1: 5, 2: 4})  empty: 0
+seed 0: domains [[1, 2, -5], [1, -2, -5], [-1, 3, -5], [-1, -3, 4, -5], [-1, -3, -4, -5], [5]] -> degree-5 dual CONSISTENT (sphere degree >= 6) rank 1131/1131
+seed 1: domains [[1, 2, -5], [1, -2, -5], [-1, 3, -5], [-1, -3, 4, -5], [-1, -3, -4, -5], [5]] -> degree-5 dual CONSISTENT (sphere degree >= 6) rank 1131/1131
+seed 2: domains [[1, 2, -5], [1, -2, -5], [-1, 3, -5], [-1, -3, 4, -5], [-1, -3, -4, -5], [5]] -> degree-5 dual CONSISTENT (sphere degree >= 6) rank 1131/1131
+seed 3: domains [[1, 2, -5], [1, -2, -5], [-1, 3, -5], [-1, -3, 4, -5], [-1, -3, -4, -5], [5]] -> degree-5 dual CONSISTENT (sphere degree >= 6) rank 1131/1131
+seed 4: domains [[1, 2, -5], [1, -2, -5], [-1, 3, -5], [-1, -3, 4, -5], [-1, -3, -4, -5], [5]] -> degree-5 dual CONSISTENT (sphere degree >= 6) rank 1131/1131
+seed 5: domains [[1, 2, -5], [1, -2, -5], [-1, 3, -5], [-1, -3, 4, -5], [-1, -3, -4, -5], [5]] -> degree-5 dual CONSISTENT (sphere degree >= 6) rank 1131/1131
+
+histogram: {('target', 'consistent'): 6}  [4s]
+FOUND: L_eq = [-4, 4, -1, -4, -3, -3, -3, -3, 4, -3, 2, -3, -1, 2, -4, -2, -1, -4, -4, -1, -4, -4, -3, 1, -2, 2, -4, -2, 2, -4, -2, 1, -3, -2, 2, -3, -3, 2, -3, -2, 3, 2, 1, 3, 1, 3, 3, 3, 3, 4, 4, 3, 4, 1, 1, 3, 3, -2, 1, 1, -2, 1, 3, 1, 4, -2, -2, 2, 3, -2, 1, 3, 1, -2, 3, -2, 1, 4, -2, 1, 5, 3, 3, 4, 3, 2, 1, -2, 4, 4, -2, 2, 4, -2, 2, 3, 3, 3, 3, 1, 3, 3, -2, 2, 1, 3, 1, 5, 3, 3, 3, 3, 2, 2, 1, 2, 5, -2, 2, 5, 5]

@@ -86,3 +86,66 @@ def octahedron_pos_alt(l1, l2, l3):
         if posalt((s[0] * l1, s[1] * l2, s[2] * l3)):
             c += 1
     return c
+
+
+def random_valid_labeling(cx, labels, fixed=None, seed=0, node_budget=20000, restarts=50, allowed=None):
+    """A random valid labeling (no complementary edge) extending `fixed` (dict free index -> label), by randomized
+    backtracking with forward checking and smallest-domain-first, restarting after node_budget nodes. None if not found.
+    `allowed`: label list for the unfixed vertices (default: all of `labels`)."""
+    F = forbidden_pairs(cx, labels)
+    n = cx.n_free
+    nbr = defaultdict(dict)   # nbr[i][j] = set of (a on i, b on j) forbidden
+    for (i, j), S in F.items():
+        nbr[i][j] = S
+        nbr[j][i] = {(b, a) for a, b in S}
+    rng = random.Random(seed)
+    for _ in range(restarts):
+        dom = {i: list(allowed if allowed is not None else labels) for i in range(n)}
+        L = {}
+        ok = True
+        for i, l in (fixed or {}).items():
+            L[i] = l
+        # propagate fixed
+        for i, l in L.items():
+            for j, S in nbr[i].items():
+                if j not in L:
+                    dom[j] = [b for b in dom[j] if (l, b) not in S]
+                    if not dom[j]:
+                        ok = False
+        if not ok:
+            return None
+        nodes = [0]
+
+        def rec():
+            nodes[0] += 1
+            if nodes[0] > node_budget:
+                return False
+            free = [i for i in range(n) if i not in L]
+            if not free:
+                return True
+            i = min(free, key=lambda v: (len(dom[v]), rng.random()))
+            vals = dom[i][:]
+            rng.shuffle(vals)
+            for a in vals:
+                L[i] = a
+                saved = {}
+                good = True
+                for j, S in nbr[i].items():
+                    if j not in L:
+                        saved[j] = dom[j]
+                        dom[j] = [b for b in dom[j] if (a, b) not in S]
+                        if not dom[j]:
+                            good = False
+                            break
+                if good and rec():
+                    return True
+                for j, d in saved.items():
+                    dom[j] = d
+                del L[i]
+                if nodes[0] > node_budget:
+                    return False
+            return False
+
+        if rec():
+            return [L[i] for i in range(n)]
+    return None

@@ -1,0 +1,9 @@
+48 chains through e_4; scanning 3000 equatorial labelings
+  50 labelings: degree histogram {0: 2398, 2: 2}, gadgets found 0 [2s]
+  100 labelings: degree histogram {0: 4780, 2: 20}, gadgets found 0 [4s]
+  150 labelings: degree histogram {0: 7180, 2: 20}, gadgets found 0 [5s]
+  200 labelings: degree histogram {0: 9580, 2: 20}, gadgets found 0 [7s]
+  250 labelings: degree histogram {0: 11976, 2: 24}, gadgets found 0 [9s]
+  300 labelings: degree histogram {0: 14372, 2: 26, 3: 2}, gadgets found 0 [10s]
+degree histogram over (L_eq, chain): {0: 14372, 2: 26, 3: 2}
+4-variable gadgets with residual degree 4: 0

@@ -1,0 +1,16 @@
+2 gadgets with residual degree > 4 in the pickle; verifying #0
+(a) rho fixes 116 of 121 free vertices; U = [(-1, -1, -1, -1, 1), (-1, -1, -1, 0, 1), (-1, -1, 0, 0, 1), (-1, 0, 0, 0, 1), (0, 0, 0, 0, 1)]
+(a) complementary edges inside rho: 0
+(b) domains from the sphere: {(-1, -1, -1, -1, 1): [1, -2, -4], (-1, -1, -1, 0, 1): [1, 2, -4], (-1, -1, 0, 0, 1): [-1, 3, -4], (-1, 0, 0, 0, 1): [-1, -3, -4], (0, 0, 0, 0, 1): [4]}
+(b) claimed:                 {(-1, -1, -1, -1, 1): [1, -2, -4], (-1, -1, -1, 0, 1): [1, 2, -4], (-1, -1, 0, 0, 1): [-1, 3, -4], (-1, 0, 0, 0, 1): [-1, -3, -4], (0, 0, 0, 0, 1): [4]}
+(b) 20 residual edge constraints (all pairs of U comparable: False)
+(c) satisfying assignments of the residual: 0 (need 0)
+(c) subset ((-1, -1, -1, -1, 1), (-1, -1, -1, 0, 1), (-1, -1, 0, 0, 1), (-1, 0, 0, 0, 1)) satisfiable: True
+(c) subset ((-1, -1, -1, -1, 1), (-1, -1, -1, 0, 1), (-1, -1, 0, 0, 1), (0, 0, 0, 0, 1)) satisfiable: True
+(c) subset ((-1, -1, -1, -1, 1), (-1, -1, -1, 0, 1), (-1, 0, 0, 0, 1), (0, 0, 0, 0, 1)) satisfiable: True
+(c) subset ((-1, -1, -1, -1, 1), (-1, -1, 0, 0, 1), (-1, 0, 0, 0, 1), (0, 0, 0, 0, 1)) satisfiable: True
+(c) subset ((-1, -1, -1, 0, 1), (-1, -1, 0, 0, 1), (-1, 0, 0, 0, 1), (0, 0, 0, 0, 1)) satisfiable: True
+(d) degree-4 dual: 215 unknowns (all levels), 414 equations, rank 215, consistent = True
+(d) pseudo-solution verified on every equation; E[empty] = 1; support 81
+
+VERIFIED: no degree-4 F_2 certificate for the residual  =>  Tucker F_2 degree on S^4 >= 5.
