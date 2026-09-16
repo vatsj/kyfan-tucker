@@ -1,6 +1,6 @@
 # Brief for Claude Code: Nullstellensatz degree of Tucker / Ky Fan over F_2
 
-You are continuing a research computation. Everything you need is in this repository. `results.md` is the ledger of every settled number; `scripts/` are the computations that produced them. Read this file fully before running anything. Prior results are settled — do not re-derive them; extend them.
+You are continuing a research computation. Everything you need is in this repository. `results.md` is the ledger of every settled number (read it first — its top section says what has been done since this brief was written); `kyfan/` + `tests/` are the computations that produce them. Read this file fully before running anything. Prior results are settled — do not re-derive them; extend them.
 
 ## 1. The objects (precise definitions)
 
@@ -38,9 +38,9 @@ where alpha ranges over partial labelings containing a complementary pair and 1_
     g_n(l) = sum_i [l minus l_i is positively alternating] + [l positively alternating] + [l negatively alternating]   (mod 2).
 Then g_n = 0 on every tuple with no complementary pair (verified exhaustively for n <= 3, k <= 5; proof is a case analysis). Handshake on H and telescoping to A^{(0)} = 1 gives
     A^{(m)} + 1 = sum_{j=1..m} sum_{sigma in H^{(j)}} g_{j-1}(lambda|_sigma)
-as an identity on all labelings, where H^{(j)} is the hemisphere of the [j]-complex (padded with zeros). Right side has degree m = n+1. Verified numerically for m = 3,4,5 (tower.py). Tucker follows because A_+ = 0 syntactically when k <= n.
+as an identity on all labelings, where H^{(j)} is the hemisphere of the [j]-complex (padded with zeros). Right side has degree m = n+1. Verified numerically for m = 3,4,5 (`kyfan/tower.py`, `tests/test_tower.py`). Tucker follows because A_+ = 0 syntactically when k <= n.
 
-**Theorem (Ky Fan degree).** Over F_2, the degree is exactly n+1 for all n >= 1, k >= n+1. Upper bound: the tower. Lower bound: the functional E(f) = sum_{lambda(x_i) in S_i} f(lambda) over one top simplex sigma_0 = {x_1 < ... < x_{n+1}} with S_1 = {+1,+2}, S_i = {+i,-i} for i = 2..n+1, all other vertices fixed. Even |S_i| makes E vanish on every function of <= n vertices (including constants, so E(1) = 0); only +-sigma_0 contribute to E(A_+) (a chain other than +-sigma_0 cannot use exactly the reps of sigma_0, since consecutive chain elements cannot be flipped independently), and the collision at magnitude 2 leaves exactly one alternating tuple in the box, so E(A_+ + 1) = 1. Hence A_+ + 1 is not in the span of size-<= n indicators. Script: `kyfan_lower.py` (verified m = 3,4,5; the naive negation-closed box S_1 = {+1,-1} gives E(A_+) = 0, which is why the collision is needed).
+**Theorem (Ky Fan degree).** Over F_2, the degree is exactly n+1 for all n >= 1, k >= n+1. Upper bound: the tower. Lower bound: the functional E(f) = sum_{lambda(x_i) in S_i} f(lambda) over one top simplex sigma_0 = {x_1 < ... < x_{n+1}} with S_1 = {+1,+2}, S_i = {+i,-i} for i = 2..n+1, all other vertices fixed. Even |S_i| makes E vanish on every function of <= n vertices (including constants, so E(1) = 0); only +-sigma_0 contribute to E(A_+) (a chain other than +-sigma_0 cannot use exactly the reps of sigma_0, since consecutive chain elements cannot be flipped independently), and the collision at magnitude 2 leaves exactly one alternating tuple in the box, so E(A_+ + 1) = 1. Hence A_+ + 1 is not in the span of size-<= n indicators. Code: `kyfan/lower.py`, `tests/test_tower.py` (verified m = 3,4,5; the naive negation-closed box S_1 = {+1,-1} gives E(A_+) = 0, which is why the collision is needed).
 
 **Theorem (restriction lemma).** If rho is a non-violating partial labeling of the free vertices of S^n with unfixed set U, every degree-d certificate restricts (substitute rho) to a degree-<= d certificate of the residual CSP on U (domains D(u) = labels minus {-rho(w) : w fixed, adjacent to u}; pairwise non-complementary on edges). So a consistent degree-d residual dual proves the sphere degree is > d.
 
@@ -48,7 +48,7 @@ as an identity on all labelings, where H^{(j)} is the hemisphere of the [j]-comp
 
 **Conjecture (open for n >= 8).** Tucker's F_2 degree on S^n is exactly n+1 for all n. Upper bound is the tower. The lower bound now reduces to two clean statements: (i) the abstract tree gadget (pole + binary conflict tree on n leaves) has F_2 degree n+1 for all n; (ii) it is realizable on S^n by an explicit equatorial labeling. Both hold computationally through n = 7 (`analysis/gadget3.py` realizes them to order). The Ky Fan functional cannot be reused: it kills constants, and Tucker's certificate is for the constant 1. A Tucker lower bound requires a pseudo-solution with E[empty] = 1, a global object. (The other direction, deg KyFan >= deg Tucker by restricting labels to +-1..+-n, gives nothing new.)
 
-**Structural facts about the degree-2 pseudo-solution on S^2 (pseudo2b.py, pseudo2c.py):**
+**Structural facts about the degree-2 pseudo-solution on S^2 (`tests/test_pseudo2.py`):**
 - No pseudo-solution is invariant under the full symmetry group, nor under the label group (signed permutations of magnitudes), nor under the stabilizer of a hemisphere.
 - No pseudo-solution is supported only on distinct-magnitude pairs.
 - Necessary pair types (removing any one kills all solutions): edges with two different magnitudes, at every rank pair; and two unrelated rank-1 vertices (singletons e_i, e_j) with equal labels.
@@ -107,7 +107,7 @@ Validate on the m=3 systems (must reproduce: F_2 degree 2 no, 3 yes) and on the 
 ### Task 2 — Extract and analyze the degree-3 pseudo-solution on S^3  (DONE 2026-09-16: see results.md "Task 2", analysis/)
 This is the object the conjecture's proof has to generalize from. Build the degree-3 SA-dual for m=4, labels +-1..+-3: ~1.8M non-violating size-3 partial labelings before symmetry; average over the odd subgroup Z_3 x Z_3 (coordinate 3-cycle on coords 0,1,2; magnitude 3-cycle 1->2->3->1) to cut ~9x. Solve. Then:
 - Repeat the knockout analysis of pseudo2c.py at the level of full-group orbit *types* of size-3 partial labelings: which types are necessary?
-- Test the same restrictions as pseudo2b.py: label-symmetric (expect impossible), hemisphere-stabilizer (expect impossible), distinct-magnitudes-only (expect impossible).
+- Test the same restrictions as at n=2 (`tests/test_pseudo2.py`): label-symmetric (expect impossible), hemisphere-stabilizer (expect impossible), distinct-magnitudes-only (expect impossible).
 - Look for a sparse or structured solution (e.g. minimize support greedily, or impose support on "base labeling + corrections": pick a labeling L_0 with exactly one antipodal pair of complementary edges — pull back a valid equatorial labeling that uses label -1 exactly once, and put +1 on e_m — and search for a solution supported on labelings within small Hamming distance of L_0).
 Report whatever pattern is or isn't there. A pattern that persists from n=2 to n=3 is a conjecture to prove; its absence is evidence against the n+1 conjecture.
 

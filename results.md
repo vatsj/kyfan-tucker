@@ -1,10 +1,31 @@
 # Results log
 
 All degrees are Sherali–Adams level in the one-hot quotient (see CLAUDE.md §1).
-Every number below is an assertion in `tests/` (the tests *are* this table); `./reproduce.sh` runs the fast subset (~2 min),
-`./reproduce.sh all` everything (~15 min). Runtimes: M-series laptop, 10 cores, 16 GB, Python 3.13, numpy 2.5 (2026-09-16).
-The original `scripts/` (exec-chained, m=3 hard-coded) were reviewed in `review.md`, reproduced number-for-number, and then
-replaced by the package `kyfan/` (git history has them).
+Every number below is an assertion in `tests/` (the tests *are* this table); `./reproduce.sh` runs the fast subset (~3 min),
+`./reproduce.sh all` everything (~30 min). Runtimes: M-series laptop, 10 cores, 16 GB, Python 3.13, numpy 2.5 (2026-09-16).
+
+## Status (2026-09-16) — what has happened since CLAUDE.md was written
+
+Everything in CLAUDE.md §3a and §4 Tasks 1–4 is done, in one session; the brief is kept as the record of what was asked.
+- **Phase 0**: the original `scripts/` were reviewed (`review.md`), reproduced number-for-number, then replaced by the package `kyfan/`
+  and `tests/` (git history has the scripts at commit 5a4dd50). Two findings: `primal.py`'s "group preserves violating pairs: False"
+  was a broken check, not a bug; and the Ky Fan "exactly n+1" row lacked a lower bound — the author supplied the separating-functional
+  proof now in CLAUDE.md §2 (`kyfan/lower.py`).
+- **Task 1**: Rust sparse GF(2) solver (`gf2solve/`), 1.8M unknowns in 20 s. **Task 2**: structure of the degree-3 pseudo-solution on S^3.
+  **Task 3**: the ball is tight over F_2 at m=3,4.
+- **Main new result**: a *restriction lemma* plus explicit **chain gadgets** prove **Tucker's F_2 degree on S^n is exactly n+1 for n = 4, 5, 6, 7**
+  (previously known: n = 2, 3). The gadget is one top simplex through the pole; its domains form a binary conflict tree; the degree-n
+  pseudo-solution is unique with support 3^n. The conjecture remains open only for n ≥ 8 and reduces to two combinatorial statements
+  (section "Task 3 + restriction gadgets", last paragraph).
+
+Reading order for a new session: this Status; row 6 of the table; the section "Task 3 + restriction gadgets"; `kyfan/gadget.py`
+(the lemma and `verify`); then `analysis/README.md` for the exploratory drivers. To reproduce the headline in under a minute:
+`.venv/bin/python -m pytest tests/test_gadget.py -q` (S^3..S^6 gadgets, ~25 s; S^7 is `-m veryslow`, ~10 min). To make a new one:
+`PYTHONPATH=. .venv/bin/python analysis/gadget3.py 6 3 "(1;(2;x,x),(3;x,(4;x,x)))" "5,4,3,2,1"`.
+
+Layout: `kyfan/` package (see CLAUDE.md §3), `tests/` (fast by default; `slow` runs by default, `veryslow` needs `-m veryslow`),
+`gf2solve/` (Rust; built automatically on first use, needs `cargo`), `analysis/` (exploratory scripts + their `.out` outputs, indexed in `analysis/README.md`),
+`review.md` (Phase-0 review of the deleted scripts). Setup: `python3 -m venv .venv && .venv/bin/pip install -r requirements.txt`.
 
 ## Settled
 
@@ -15,9 +36,9 @@ replaced by the package `kyfan/` (git history has them).
 | 3 | Tucker, S^3 (m=4, labels ±1..±3) | F_2 | = 4 | d=3, via the dual: the Z_3×Z_3-invariant degree-3 SA-dual (1,834,800 non-violating size-3 partial labelings in 204,048 orbits; 111,233 rows) is consistent, rank 94,064 — an explicit invariant pseudo-solution (support 8,036 orbits), checked against all 987,265 unreduced consistency equations. Averaging is valid over F_2 since |Z_3×Z_3| = 9 is odd. The unrestricted dual (987,457 × 1,834,800) is also consistent, rank 827,876. Cross-check via the sampled primal (z9): inconsistent, 33,312 orbit-unknowns, rank 27,584. d=4: tower | `test_sparse.py::test_s3_degree3_pseudo_solution_via_dual` (30 s); `test_s3.py::test_s3_degree3_F2_no_certificate_z9` (veryslow, 7 min) | 30 s; 7 min |
 | 4 | Ky Fan, S^2, labels ±1..±3 | F_2 | = 3 | ≤: explicit certificate (13,176 violating unknowns; ~1,286 monomials) verified exactly (canonical basis: Σc_α1_α ≡ A_+ + 1). ≥: row 5 | `test_primal.py::test_kyfan_s2_F2_degree3_certificate_exact` | 60 s |
 | 5 | Ky Fan, S^n, k ≥ n+1 | F_2 | = n+1 | ≤: tower theorem — local lemma g_n = 0 on non-complementary tuples, exhaustive n≤3, k≤5; telescoped identity on random labelings m=3,4,5 (29 / 221 / 2,141 local-lemma instances). ≥: separating functional (CLAUDE.md §2): E(A_+)=1, E(1)=0, E(1_α)=0 on size-n α (exhaustive m=3, sampled m=4,5); the negation-closed box gives E(A_+)=0 | `test_tower.py` | 15 s |
-| 6 | Tucker, S^n | F_2 | = n+1 for n = 2..7 (and ≤ n+1 for all n) | upper: tower (row 5, A_+ ≡ 0 when k ≤ n). Lower, n = 4..7 (**new, 2026-09-16**): restriction lemma + chain gadget (below): a non-violating partial labeling ρ fixing all but the n+1 vertices of one top simplex through the pole, whose residual CSP has a consistent degree-n dual (unique pseudo-solution, support 3^n). Verified independently by `kyfan.gadget.verify` (sphere edge list, all-level dual, dense solver, solution re-checked) | `test_gadget.py` | m=4,5: <1 s; m=6: 5 s; m=7: 20 s |
+| 6 | Tucker, S^n | F_2 | = n+1 for n = 2..7 (and ≤ n+1 for all n) | upper: tower (row 5, A_+ ≡ 0 when k ≤ n). Lower, n = 4..7 (**new, 2026-09-16**): restriction lemma + chain gadget (below): a non-violating partial labeling ρ fixing all but the n+1 vertices of one top simplex through the pole, whose residual CSP has a consistent degree-n dual (unique pseudo-solution, support 3^n). Verified independently by `kyfan.gadget.verify` (sphere edge list, all-level dual, dense solver, solution re-checked) | `test_gadget.py` (m=8: veryslow) | m=4,5: <1 s; m=6: 5 s; m=7: 20 s; m=8: 10 min |
 
-## Task 3 + restriction gadgets — the ball, and the S^4, S^5, S^6 lower bounds
+## Task 3 + restriction gadgets — the ball, and the S^4, S^5, S^6, S^7 lower bounds
 
 **Ball (CLAUDE.md §4 Task 3; `kyfan/ball.py`).** Fix a valid equatorial labeling L_eq; variables = the cap {x_m = +1};
 constraints = no complementary cap edge, plus unary domain restrictions λ(y) ≠ −L_eq(w) for equatorial w ≤ π(y).
@@ -35,7 +56,7 @@ Hence: **a consistent degree-d residual dual ⇒ sphere degree > d.** (`kyfan/ga
 pair of top simplices ±σ labeled ∓n, pulled back to the cap; U = e_{n+1} ∪ lift(σ), a top simplex of S^n through the pole, n+1 variables.
 Then D(e) = {n}, every other domain contains −n, and the remaining labels form a **binary conflict tree**: root ±1 splits the chain into a +1 group and a −1 group,
 each group splits recursively on a fresh magnitude, a leaf's domain = its root-to-leaf sign path. Found by search at m=4,5 (`gadget2.py`: forbid one value on the star of σ's rank-1 vertex),
-then realized to order at m=6,7 by deriving per-vertex allowed label sets from the target domains (`gadget3.py`; success 6/6, 3/3 seeds, ~1 s and ~20 s per seed).
+then realized to order at m=6,7,8 by deriving per-vertex allowed label sets from the target domains (`gadget3.py`; success 6/6, 3/3, 2/2 seeds; ~1 s, ~20 s, ~12 min per seed — the m=8 time is the pure-Python edge enumeration of S^7).
 
 | m (S^{m−1}) | U domains (rank n..1, pole) | degree-n dual | conclusion |
 |---|---|---|---|
@@ -54,7 +75,7 @@ has degree n+1 with a unique degree-n pseudo-solution of support 3^n (`test_gadg
 Non-tree designs (e.g. {−1,3},{−1,−3,4},{−1,−4}) have lower degree.
 
 **What a proof for all n now needs.** (i) Abstract: the tree gadget has degree n+1 for every n (the unique pseudo-solution of support 3^n asks for an
-explicit formula — a product/tree-recursive E). (ii) Realizability: an explicit equatorial labeling of S^{n−1} whose neighbourhoods N_r = (star(w_r) ∪ down(w_r)) ∖ σ
+explicit formula — a product/tree-recursive E; `analysis/mu_structure.out` shows E is the marginal system of a global μ supported on 3^(n−1) full domain-assignments, unique for n=3, and that E vanishes on every partial labeling of size < n containing −n, so only the pure tree CSP on the leaves and its extension to full assignments matter). (ii) Realizability: an explicit equatorial labeling of S^{n−1} whose neighbourhoods N_r = (star(w_r) ∪ down(w_r)) ∖ σ
 avoid exactly −path_r; the sampler finds them instantly, so a closed-form construction is likely. Either half is a clean combinatorial statement.
 
 ## Task 1 — sparse GF(2) solver (`gf2solve/`, Rust; `linalg.gf2_sparse`, default in `dual.solve`)
