@@ -67,16 +67,22 @@ then realized to order at m=6,7,8 by deriving per-vertex allowed label sets from
 | 8 | {1,2,3,−7} {1,2,−3,−7} {1,−2,−7} {−1,4,5,−7} {−1,4,−5,−7} {−1,−4,6,−7} {−1,−4,−6,−7} · {7} | 30,423, rank 30,423 | **S^7 ≥ 8** (2/2 seeds, 12 min each) |
 
 In every case the residual is UNSAT with every proper subset satisfiable, and the degree-n pseudo-solution is **unique** with support exactly 3^n.
-The equatorial labelings are stored in `kyfan.gadget.GADGETS`.
+The equatorial labelings are stored in `kyfan.gadget.GADGETS`; a uniform *deterministic* alternative is `kyfan.gadget.realize(m)` (statement (ii), below).
 
 **Abstract tree gadgets (`kyfan/abstract_gadget.py`).** Forgetting the sphere: variables = pole {n} plus the leaves of any binary conflict tree on n leaves
 (magnitudes 1..n−1 on internal nodes, leaf domain = path ∪ {−n}), all pairs constrained. Every tree tried (n = 3,4,5, all shapes incl. caterpillars)
 has degree n+1 with a unique degree-n pseudo-solution of support 3^n (`test_gadget.py::test_abstract_tree_gadgets`, `analysis/abstract_trees.out`).
 Non-tree designs (e.g. {−1,3},{−1,−3,4},{−1,−4}) have lower degree.
 
-**What a proof for all n now needs.** (i) Abstract: the tree gadget has degree n+1 for every n (the unique pseudo-solution of support 3^n asks for an
-explicit formula — a product/tree-recursive E; `analysis/mu_structure.out` shows E is the marginal system of a global μ supported on 3^(n−1) full domain-assignments, unique for n=3, and that E vanishes on every partial labeling of size < n containing −n, so only the pure tree CSP on the leaves and its extension to full assignments matter). (ii) Realizability: an explicit equatorial labeling of S^{n−1} whose neighbourhoods N_r = (star(w_r) ∪ down(w_r)) ∖ σ
-avoid exactly −path_r; the sampler finds them instantly, so a closed-form construction is likely. Either half is a clean combinatorial statement.
+**Status of a proof for all n.** (i) **DONE** — the tree gadget has F_2 degree exactly n+1 for every binary conflict tree
+(`TREE_GADGET_THEOREM.md`): explicit pseudo-solution E (the block rule, `kyfan/tree_rule.py`), consistency via the extension
+Lemma (★). The closed form is checked against the solver for all tree shapes n ≤ 6 and against the sparse solver at n = 7
+(`test_rule_vs_solver.py`, `test_extension_lemma.py`). (ii) **Deterministic construction** — `kyfan/gadget.py:realize(m)`
+builds an explicit equatorial labeling realizing the caterpillar tree by a greedy forward-checking fill that takes **zero
+backtracks** for every tested m (so it is forced, not a search); the residual is a verified degree-n gadget for m ≤ 8
+(`test_realize.py`; `chain_domains` reduces the check to the pole-chain, no full sphere). What remains for all n: prove the
+greedy caterpillar construction never backtracks (equivalently, the explicit allowed-set CSP is satisfiable) — a clean
+combinatorial statement. This construction re-derives the S^4..S^7 lower bounds uniformly, independent of the searched `GADGETS`.
 
 ## Task 1 — sparse GF(2) solver (`gf2solve/`, Rust; `linalg.gf2_sparse`, default in `dual.solve`)
 
@@ -152,5 +158,5 @@ an h=1 solution at n=2 (2–7 free parameters), 0 of 12 admit h=2 at n=3. The ps
 
 ## Open
 
-- Tucker F_2 lower bound n+1 for n ≥ 8 (row 6): prove the tree gadget + realizability for all n.
+- Tucker F_2 lower bound n+1 for n ≥ 8 (row 6): statement (i) is proved (`TREE_GADGET_THEOREM.md`); what remains is statement (ii) — that the deterministic caterpillar construction (`realize`) never backtracks for all n.
 - Task 2 follow-ups: prove the AAB/simplex-ABC necessity pattern for general n (it is a statement about degree-n certificates of strengthened lemmas); explain why constant-magnitude configurations are dispensable at n=3 but not n=2.

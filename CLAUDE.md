@@ -46,7 +46,7 @@ as an identity on all labelings, where H^{(j)} is the hemisphere of the [j]-comp
 
 **Theorem (computer-verified, 2026-09-16).** Tucker's F_2 degree on S^n is exactly n+1 for n = 2, ..., 7. Lower bounds for n = 4..7 via the restriction lemma with U = one top simplex through the pole e_{n+1} and rho = a valid equatorial labeling using magnitudes 1..n-1 except one antipodal pair of top simplices +-sigma labeled -+n, pulled back to the cap. The residual domains form a binary conflict tree (see results.md, "Chain gadgets"); its degree-n dual is consistent with a unique pseudo-solution of support 3^n. `kyfan/gadget.py` (`GADGETS`, `verify`), `tests/test_gadget.py`.
 
-**Conjecture (open for n >= 8).** Tucker's F_2 degree on S^n is exactly n+1 for all n. Upper bound is the tower. The lower bound now reduces to two clean statements: (i) the abstract tree gadget (pole + binary conflict tree on n leaves) has F_2 degree n+1 for all n; (ii) it is realizable on S^n by an explicit equatorial labeling. Both hold computationally through n = 7 (`analysis/gadget3.py` realizes them to order). The Ky Fan functional cannot be reused: it kills constants, and Tucker's certificate is for the constant 1. A Tucker lower bound requires a pseudo-solution with E[empty] = 1, a global object. (The other direction, deg KyFan >= deg Tucker by restricting labels to +-1..+-n, gives nothing new.)
+**Conjecture (open for n >= 8).** Tucker's F_2 degree on S^n is exactly n+1 for all n. Upper bound is the tower. The lower bound reduces to two statements: (i) the abstract tree gadget (pole + binary conflict tree on n leaves) has F_2 degree n+1 for all n — **proved** (`TREE_GADGET_THEOREM.md`, `kyfan/tree_rule.py`, `tests/test_rule_vs_solver.py`, `tests/test_extension_lemma.py`); (ii) it is realizable on S^n by an explicit equatorial labeling — a **deterministic backtrack-free construction** (`kyfan/gadget.py:realize`, `tests/test_realize.py`) does this for all tested n (m ≤ 8), reducing (ii) to proving that construction never backtracks. The Ky Fan functional cannot be reused: it kills constants, and Tucker's certificate is for the constant 1. A Tucker lower bound requires a pseudo-solution with E[empty] = 1, a global object. (The other direction, deg KyFan >= deg Tucker by restricting labels to +-1..+-n, gives nothing new.)
 
 **Structural facts about the degree-2 pseudo-solution on S^2 (`tests/test_pseudo2.py`):**
 - No pseudo-solution is invariant under the full symmetry group, nor under the label group (signed permutations of magnitudes), nor under the stabilizer of a hemisphere.
@@ -75,8 +75,9 @@ Package `kyfan/` (parametrized by m; `from kyfan import SignedComplex, label_set
 - `tower.py` — local lemma `g`, `local_lemma_violations`, telescoped identity `check_identity`.
 - `lower.py` — the Ky Fan separating functional (`box`, `E`, `check`).
 - `ball.py` — Tucker's ball form (`Ball`) and general restrictions (`Residual`), domain-aware SA dual.
-- `gadget.py` — restriction lemma + chain gadgets: `GADGETS[m]` (equatorial labelings for m = 4..7), `chain_U`, `verify(m)` (independent end-to-end check).
-- `abstract_gadget.py` — tree gadgets without the sphere: `degree(domains)`.
+- `gadget.py` — restriction lemma + chain gadgets: `GADGETS[m]` (searched equatorial labelings, m = 4..8), `chain_U`, `verify(m)` (independent end-to-end check); statement (ii): `chain_domains` (fast, no full sphere), `caterpillar_tree`, `realize(m)` (deterministic construction), `check_realization`.
+- `abstract_gadget.py` — tree gadgets without the sphere: `build_dual`, `degree(domains)`.
+- `tree_rule.py` — statement (i): the explicit block-rule pseudo-solution `rule_E`, the block rule `rule_patterns`, and the solver ground truth `unique_E`.
 - `analysis.py` — Task 2 helpers (orbit types, knockouts, descriptions). Exploratory drivers and their outputs live in `analysis/`.
 
 `tests/` are the settled table (see results.md for the test-to-number map); `./reproduce.sh` (fast, ~2 min) or `./reproduce.sh all` (~15 min).

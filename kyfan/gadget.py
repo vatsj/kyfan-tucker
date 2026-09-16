@@ -10,9 +10,11 @@ simplices +-sigma labeled -+n, pulled back to the cap; U = the pole e_{n+1} plus
 `verify(m, Leq)` re-derives everything from the sphere's own edge list and solves the full-level dual densely.
 """
 import itertools
+import sys
 from collections import defaultdict
-from .complex import SignedComplex
-from .labels import label_set
+from .complex import SignedComplex, leq, neg
+from .labels import label_set, forbidden_pairs
+from .abstract_gadget import build_dual, unsat
 from . import linalg
 
 GADGETS = {   # m -> equatorial labeling (free vertices of SignedComplex(m-1)) whose chain gadget has residual degree m
@@ -104,3 +106,152 @@ def verify(m, Leq=None, U=None, d=None):
     return dict(U=U, domains={y: sorted(dom[y], key=lambda l: (abs(l), -l)) for y in U}, unsat=unsat,
                 proper_subsets_satisfiable=sub_sat, unknowns=len(col), equations=len(rows), rank=res.rank,
                 consistent=res.consistent, solution_verified=ok, support=int(res.solution.sum()) if ok else None)
+
+
+# ---------------------------------------------------------------------------------------------------------------
+# Statement (ii): realizability. A deterministic construction of an equatorial labeling whose pole-chain residual is
+# a prescribed binary conflict tree. chain_domains computes the residual domains directly from up/down-sets (no full
+# S^n edge list, so it scales), validated against residual() for m <= 8.
+# ---------------------------------------------------------------------------------------------------------------
+
+def caterpillar_tree(n):
+    """The caterpillar binary conflict tree on n leaves: (1; x, (2; x, (3; x, ... (n-1; x, x)))). Magnitudes 1..n-1."""
+    t = 'x'
+    for mag in range(n - 1, 0, -1):
+        t = (mag, 'x', t)
+    return t
+
+
+def _tree_leaf_paths(tree):
+    paths = []
+
+    def rec(t, path):
+        if t == 'x':
+            paths.append(path)
+            return
+        mag, l, r = t
+        rec(l, path + [(mag, +1)])
+        rec(r, path + [(mag, -1)])
+
+    rec(tree, [])
+    return paths
+
+
+def chain_domains(m, Leq):
+    """Residual domains D(y_r), r = 0..n (r=0 the pole), for the pole-chain U = e_m u lift(sigma), sigma the equatorial
+    top simplex w_r = -(e_1+...+e_r). Computed from equatorial down-sets and cap up-neighbours only. Returns a list of
+    n+1 sets over label_set(n); reproduces `residual()` on the stored GADGETS (checked for m <= 8)."""
+    n = m - 1
+    cxe = SignedComplex(m - 1)
+    labels = label_set(n)
+    w = {r: tuple(-1 if i < r else 0 for i in range(m - 1)) for r in range(n + 1)}
+    sigma_proj = {w[r] for r in range(1, n + 1)}
+    out = []
+    for r in range(n + 1):
+        wr = w[r]
+        forb = set()
+        for u in cxe.verts:
+            if leq(u, wr):                                  # equatorial down-neighbour (always fixed and present)
+                forb.add(-cxe.label(u, Leq))
+            elif leq(wr, u) and u not in sigma_proj:        # cap up-neighbour, fixed (not a U lift)
+                forb.add(-cxe.label(u, Leq))
+        out.append(set(labels) - forb)
+    return out
+
+
+def realize(m, tree=None, leaf_order=None):
+    """Deterministically construct an equatorial labeling of S^{m-1} realizing `tree` (default: caterpillar) on the
+    pole-chain, with leaf k (DFS order) assigned to chain rank `leaf_order[k]` (default: n, n-1, ..., 1).
+
+    sigma is fixed to -+n; every other free vertex gets an 'allowed' set forcing the target domains, then the CSP is
+    solved by greedy forward-checking (MRV, smallest label first). Returns (Leq, backtracks) or (None, reason).
+    Empirically backtracks == 0 for all tested m, i.e. the construction is forced."""
+    n = m - 1
+    tree = caterpillar_tree(n) if tree is None else tree
+    leaf_order = list(range(n, 0, -1)) if leaf_order is None else leaf_order
+    cxe = SignedComplex(m - 1)
+    small = label_set(n - 1)
+    paths = _tree_leaf_paths(tree)
+    assert len(paths) == n and len(leaf_order) == n
+    target = {leaf_order[k]: {s * mag for mag, s in paths[k]} for k in range(n)}   # rank -> pick-label set
+    sigma = cxe.top[0]
+    w = {r: sigma[r - 1] for r in range(1, n + 1)}
+    fixed = {}
+    for v in sigma:
+        i, s = cxe.rep(v)
+        fixed[i] = -s * n
+    def in_N(v, r):
+        return (leq(w[r], v) or leq(v, w[r])) and v not in sigma
+    allowed = {}
+    for i, v in enumerate(cxe.free):
+        if i in fixed:
+            continue
+        al = set(small)
+        for r in range(1, n + 1):
+            if in_N(v, r):
+                al -= {-l for l in target[r]}
+            if in_N(neg(v), r):
+                al -= set(target[r])
+        allowed[i] = sorted(al, key=lambda l: (abs(l), l))
+        if not allowed[i]:
+            return None, f"empty allowed set at free vertex {i}"
+    F = forbidden_pairs(cxe, label_set(n))
+    N = cxe.n_free
+    nbr = defaultdict(dict)
+    for (i, j), S in F.items():
+        nbr[i][j] = S
+        nbr[j][i] = {(b, a) for a, b in S}
+    dom = {i: list(allowed.get(i, [])) for i in range(N)}
+    L = dict(fixed)
+    for i, l in L.items():
+        for j, S in nbr[i].items():
+            if j not in L:
+                dom[j] = [b for b in dom[j] if (l, b) not in S]
+    backtracks = [0]
+    sys.setrecursionlimit(max(sys.getrecursionlimit(), 100000))
+
+    def rec():
+        free = [i for i in range(N) if i not in L]
+        if not free:
+            return True
+        i = min(free, key=lambda v: len(dom[v]))
+        first = True
+        for a in dom[i]:
+            if not first:
+                backtracks[0] += 1
+            first = False
+            L[i] = a
+            saved = {}
+            good = True
+            for j, S in nbr[i].items():
+                if j not in L:
+                    saved[j] = dom[j]
+                    dom[j] = [b for b in dom[j] if (a, b) not in S]
+                    if not dom[j]:
+                        good = False
+                        break
+            if good and rec():
+                return True
+            for j, d in saved.items():
+                dom[j] = d
+            del L[i]
+        return False
+
+    if not rec():
+        return None, "CSP infeasible"
+    return [L[i] for i in range(N)], backtracks[0]
+
+
+def check_realization(m, Leq, method="sparse"):
+    """Fast end-to-end check that Leq's pole-chain residual is a degree-n gadget (=> Tucker F_2 degree on S^{m-1} = m):
+    UNSAT, and the degree-n dual is consistent with a unique pseudo-solution. Uses chain_domains (no full sphere)."""
+    n = m - 1
+    doms = chain_domains(m, Leq)
+    doms_list = list(doms)
+    rows, col = build_dual(doms_list, label_set(n), n)
+    if method == "sparse":
+        res = linalg.gf2_sparse(rows, len(col))
+    else:
+        res = linalg.gf2_dense(rows, len(col))
+    return dict(unsat=unsat(doms_list), unknowns=len(col), rank=res.rank, consistent=res.consistent,
+                unique=res.consistent and res.rank == len(col))

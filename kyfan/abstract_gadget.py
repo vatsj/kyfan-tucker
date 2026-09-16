@@ -7,15 +7,19 @@ from . import linalg
 
 
 def build_dual(doms, labels, d):
+    """Degree-d SA dual (all levels) of the CSP with per-variable domains `doms[i]` and pairwise no-complementary
+    constraints. Iterates only in-domain labels, so it stays fast even when `labels` is large."""
     n = len(doms)
-    def viol(alpha):
-        return any(l not in doms[i] for i, l in alpha) or any(a == -b for (_, a), (_, b) in itertools.combinations(alpha, 2))
+    doms = [sorted(D, key=lambda l: (abs(l), l)) for D in doms]
+
+    def comp(alpha):    # complementary pair inside a (necessarily in-domain) partial assignment
+        return any(a == -b for (_, a), (_, b) in itertools.combinations(alpha, 2))
     col = {}
     for size in range(d + 1):
         for S in itertools.combinations(range(n), size):
-            for ls in itertools.product(labels, repeat=size):
+            for ls in itertools.product(*(doms[i] for i in S)):
                 alpha = tuple(zip(S, ls))
-                if not viol(alpha):
+                if not comp(alpha):
                     col[alpha] = len(col)
     rows = []
     for alpha, c in col.items():
@@ -26,7 +30,7 @@ def build_dual(doms, labels, d):
             if v in used:
                 continue
             f = defaultdict(int); f[c] += 1
-            for l in labels:
+            for l in doms[v]:
                 beta = tuple(sorted(alpha + ((v, l),)))
                 if beta in col:
                     f[col[beta]] -= 1
