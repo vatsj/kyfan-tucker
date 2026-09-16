@@ -15,7 +15,7 @@ replaced by the package `kyfan/` (git history has them).
 | 3 | Tucker, S^3 (m=4, labels ±1..±3) | F_2 | = 4 | d=3, via the dual: the Z_3×Z_3-invariant degree-3 SA-dual (1,834,800 non-violating size-3 partial labelings in 204,048 orbits; 111,233 rows) is consistent, rank 94,064 — an explicit invariant pseudo-solution (support 8,036 orbits), checked against all 987,265 unreduced consistency equations. Averaging is valid over F_2 since |Z_3×Z_3| = 9 is odd. The unrestricted dual (987,457 × 1,834,800) is also consistent, rank 827,876. Cross-check via the sampled primal (z9): inconsistent, 33,312 orbit-unknowns, rank 27,584. d=4: tower | `test_sparse.py::test_s3_degree3_pseudo_solution_via_dual` (30 s); `test_s3.py::test_s3_degree3_F2_no_certificate_z9` (veryslow, 7 min) | 30 s; 7 min |
 | 4 | Ky Fan, S^2, labels ±1..±3 | F_2 | = 3 | ≤: explicit certificate (13,176 violating unknowns; ~1,286 monomials) verified exactly (canonical basis: Σc_α1_α ≡ A_+ + 1). ≥: row 5 | `test_primal.py::test_kyfan_s2_F2_degree3_certificate_exact` | 60 s |
 | 5 | Ky Fan, S^n, k ≥ n+1 | F_2 | = n+1 | ≤: tower theorem — local lemma g_n = 0 on non-complementary tuples, exhaustive n≤3, k≤5; telescoped identity on random labelings m=3,4,5 (29 / 221 / 2,141 local-lemma instances). ≥: separating functional (CLAUDE.md §2): E(A_+)=1, E(1)=0, E(1_α)=0 on size-n α (exhaustive m=3, sampled m=4,5); the negation-closed box gives E(A_+)=0 | `test_tower.py` | 15 s |
-| 6 | Tucker, S^n | F_2 | = n+1 for n = 2..6 (and ≤ n+1 for all n) | upper: tower (row 5, A_+ ≡ 0 when k ≤ n). Lower, n = 4,5,6 (**new, 2026-09-16**): restriction lemma + chain gadget (below): a non-violating partial labeling ρ fixing all but the n+1 vertices of one top simplex through the pole, whose residual CSP has a consistent degree-n dual (unique pseudo-solution, support 3^n). Verified independently by `kyfan.gadget.verify` (sphere edge list, all-level dual, dense solver, solution re-checked) | `test_gadget.py` | m=4,5: <1 s; m=6: 5 s; m=7: 20 s |
+| 6 | Tucker, S^n | F_2 | = n+1 for n = 2..7 (and ≤ n+1 for all n) | upper: tower (row 5, A_+ ≡ 0 when k ≤ n). Lower, n = 4..7 (**new, 2026-09-16**): restriction lemma + chain gadget (below): a non-violating partial labeling ρ fixing all but the n+1 vertices of one top simplex through the pole, whose residual CSP has a consistent degree-n dual (unique pseudo-solution, support 3^n). Verified independently by `kyfan.gadget.verify` (sphere edge list, all-level dual, dense solver, solution re-checked) | `test_gadget.py` | m=4,5: <1 s; m=6: 5 s; m=7: 20 s |
 
 ## Task 3 + restriction gadgets — the ball, and the S^4, S^5, S^6 lower bounds
 
@@ -43,6 +43,7 @@ then realized to order at m=6,7 by deriving per-vertex allowed label sets from t
 | 5 | {1,−2,−4} {1,2,−4} {−1,3,−4} {−1,−3,−4} · {4} | 215, rank 215, support 81 | **S^4 ≥ 5** |
 | 6 | {1,2,−5} {1,−2,−5} {−1,3,−5} {−1,−3,4,−5} {−1,−3,−4,−5} · {5} | 1,131, rank 1,131, support 243 | **S^5 ≥ 6** |
 | 7 | {1,2,−6} {1,−2,−6} {−1,3,4,−6} {−1,3,−4,−6} {−1,−3,5,−6} {−1,−3,−5,−6} · {6} | 5,915, rank 5,915, support 729 | **S^6 ≥ 7** |
+| 8 | {1,2,3,−7} {1,2,−3,−7} {1,−2,−7} {−1,4,5,−7} {−1,4,−5,−7} {−1,−4,6,−7} {−1,−4,−6,−7} · {7} | 30,423, rank 30,423 | **S^7 ≥ 8** (2/2 seeds, 12 min each) |
 
 In every case the residual is UNSAT with every proper subset satisfiable, and the degree-n pseudo-solution is **unique** with support exactly 3^n.
 The equatorial labelings are stored in `kyfan.gadget.GADGETS`.
@@ -130,5 +131,5 @@ an h=1 solution at n=2 (2–7 free parameters), 0 of 12 admit h=2 at n=3. The ps
 
 ## Open
 
-- Tucker F_2 lower bound n+1 for n ≥ 7 (row 6): prove the tree gadget + realizability for all n.
+- Tucker F_2 lower bound n+1 for n ≥ 8 (row 6): prove the tree gadget + realizability for all n.
 - Task 2 follow-ups: prove the AAB/simplex-ABC necessity pattern for general n (it is a statement about degree-n certificates of strengthened lemmas); explain why constant-magnitude configurations are dispensable at n=3 but not n=2.

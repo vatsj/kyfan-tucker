@@ -49,3 +49,10 @@ def test_abstract_tree_gadgets():
         d, info = degree(doms)
         assert d == n + 1
         assert info[-2][2] == info[-2][1] and info[-2][4] == 3 ** n     # unique, support 3^n
+
+
+@pytest.mark.veryslow
+def test_chain_gadget_lower_bound_m8():
+    """S^7 >= 8 (~10 min: the S^7 edge enumeration is pure Python)."""
+    r = verify(8)
+    assert r["unsat"] and r["consistent"] and r["solution_verified"] and r["rank"] == r["unknowns"] == 30423

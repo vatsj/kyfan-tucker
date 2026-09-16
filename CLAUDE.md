@@ -30,7 +30,7 @@ where alpha ranges over partial labelings containing a complementary pair and 1_
 | Tucker, S^2 (m=3, labels +-1,+-2) | F_2 | exactly 3 |
 | Tucker, S^2 | Q | exactly 5 (fails at 3 and 4) |
 | Tucker, S^3 (m=4, labels +-1..+-3) | F_2 | exactly 4 (fails at 3; tower gives 4) |
-| Tucker, S^n | F_2 | <= n+1 (tower); = n+1 for n = 2..6 (restriction gadgets, below); open for n >= 7 |
+| Tucker, S^n | F_2 | <= n+1 (tower); = n+1 for n = 2..7 (restriction gadgets, below); open for n >= 8 |
 | Ky Fan, S^2, labels +-1..+-3 | F_2 | exactly 3 |
 | Ky Fan, S^n, k >= n+1 | F_2 | exactly n+1 (theorem, below: tower + separating functional) |
 
@@ -44,9 +44,9 @@ as an identity on all labelings, where H^{(j)} is the hemisphere of the [j]-comp
 
 **Theorem (restriction lemma).** If rho is a non-violating partial labeling of the free vertices of S^n with unfixed set U, every degree-d certificate restricts (substitute rho) to a degree-<= d certificate of the residual CSP on U (domains D(u) = labels minus {-rho(w) : w fixed, adjacent to u}; pairwise non-complementary on edges). So a consistent degree-d residual dual proves the sphere degree is > d.
 
-**Theorem (computer-verified, 2026-09-16).** Tucker's F_2 degree on S^n is exactly n+1 for n = 2, 3, 4, 5, 6. Lower bounds for n = 4, 5, 6 via the restriction lemma with U = one top simplex through the pole e_{n+1} and rho = a valid equatorial labeling using magnitudes 1..n-1 except one antipodal pair of top simplices +-sigma labeled -+n, pulled back to the cap. The residual domains form a binary conflict tree (see results.md, "Chain gadgets"); its degree-n dual is consistent with a unique pseudo-solution of support 3^n. `kyfan/gadget.py` (`GADGETS`, `verify`), `tests/test_gadget.py`.
+**Theorem (computer-verified, 2026-09-16).** Tucker's F_2 degree on S^n is exactly n+1 for n = 2, ..., 7. Lower bounds for n = 4..7 via the restriction lemma with U = one top simplex through the pole e_{n+1} and rho = a valid equatorial labeling using magnitudes 1..n-1 except one antipodal pair of top simplices +-sigma labeled -+n, pulled back to the cap. The residual domains form a binary conflict tree (see results.md, "Chain gadgets"); its degree-n dual is consistent with a unique pseudo-solution of support 3^n. `kyfan/gadget.py` (`GADGETS`, `verify`), `tests/test_gadget.py`.
 
-**Conjecture (open for n >= 7).** Tucker's F_2 degree on S^n is exactly n+1 for all n. Upper bound is the tower. The lower bound now reduces to two clean statements: (i) the abstract tree gadget (pole + binary conflict tree on n leaves) has F_2 degree n+1 for all n; (ii) it is realizable on S^n by an explicit equatorial labeling. Both hold computationally through n = 6 (`analysis/gadget3.py` realizes them to order). The Ky Fan functional cannot be reused: it kills constants, and Tucker's certificate is for the constant 1. A Tucker lower bound requires a pseudo-solution with E[empty] = 1, a global object. (The other direction, deg KyFan >= deg Tucker by restricting labels to +-1..+-n, gives nothing new.)
+**Conjecture (open for n >= 8).** Tucker's F_2 degree on S^n is exactly n+1 for all n. Upper bound is the tower. The lower bound now reduces to two clean statements: (i) the abstract tree gadget (pole + binary conflict tree on n leaves) has F_2 degree n+1 for all n; (ii) it is realizable on S^n by an explicit equatorial labeling. Both hold computationally through n = 7 (`analysis/gadget3.py` realizes them to order). The Ky Fan functional cannot be reused: it kills constants, and Tucker's certificate is for the constant 1. A Tucker lower bound requires a pseudo-solution with E[empty] = 1, a global object. (The other direction, deg KyFan >= deg Tucker by restricting labels to +-1..+-n, gives nothing new.)
 
 **Structural facts about the degree-2 pseudo-solution on S^2 (pseudo2b.py, pseudo2c.py):**
 - No pseudo-solution is invariant under the full symmetry group, nor under the label group (signed permutations of magnitudes), nor under the stabilizer of a hemisphere.
