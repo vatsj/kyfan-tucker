@@ -181,3 +181,81 @@ def real_lstsq_residual(A, b):
     """Relative residual of least squares over R: < 1e-9 counts as a certificate, > 1e-3 as none (CLAUDE.md §2)."""
     x, *_ = np.linalg.lstsq(A.astype(float), b.astype(float), rcond=None)
     return float(np.linalg.norm(A @ x - b) / np.sqrt(len(b)))
+
+
+# ---------------------------------------------------------------------------------------------------------------
+# Sparse GF(2) elimination via the Rust binary in gf2solve/ (Task 1). Markowitz-style pivoting on index-list rows.
+# ---------------------------------------------------------------------------------------------------------------
+import os
+import subprocess
+import tempfile
+
+_GF2SOLVE = os.path.join(os.path.dirname(os.path.dirname(os.path.abspath(__file__))), "gf2solve")
+
+
+def gf2solve_binary(build=True):
+    exe = os.path.join(_GF2SOLVE, "target", "release", "gf2solve")
+    if not os.path.exists(exe) and build:
+        subprocess.run(["cargo", "build", "--release", "--manifest-path", os.path.join(_GF2SOLVE, "Cargo.toml")],
+                       check=True, capture_output=True)
+    if not os.path.exists(exe):
+        raise RuntimeError("gf2solve binary not found; run `cargo build --release` in gf2solve/")
+    return exe
+
+
+def write_gf2_system(path, rows, ncols):
+    """rows: list of (dict col->coeff, rhs) or (iterable of cols, rhs). Coefficients are reduced mod 2."""
+    indptr = [0]
+    indices = []
+    rhs = []
+    for f, b in rows:
+        cols = [c for c, x in f.items() if x % 2] if isinstance(f, dict) else list(f)
+        indices.extend(cols)
+        indptr.append(len(indices))
+        rhs.append(b & 1)
+    with open(path, "wb") as fh:
+        fh.write(np.array([len(rows), ncols, len(indices)], dtype="<u8").tobytes())
+        fh.write(np.array(indptr, dtype="<i8").tobytes())
+        fh.write(np.array(indices, dtype="<u4").tobytes())
+        fh.write(np.array(rhs, dtype="u1").tobytes())
+
+
+def gf2_sparse(rows, ncols, want_solution=False, want_null=False, stop_early=False, verbose=False):
+    """Solve over F_2 with the sparse Rust solver. Returns GF2Result (solution as np.uint8 array if requested);
+    with want_null the result also carries `.null_basis`: list of (free column, support list)."""
+    exe = gf2solve_binary()
+    with tempfile.TemporaryDirectory() as td:
+        inp, outp = os.path.join(td, "sys.bin"), os.path.join(td, "out.txt")
+        write_gf2_system(inp, rows, ncols)
+        args = [exe, inp, outp, "--pivots"]
+        if want_solution:
+            args.append("--solution")
+        if want_null:
+            args.append("--nullspace")
+        if stop_early:
+            args.append("--stop-early")
+        if not verbose:
+            args.append("--quiet")
+        subprocess.run(args, check=True)
+        with open(outp) as fh:
+            lines = fh.read().splitlines()
+    kv = {}
+    null = []
+    for line in lines:
+        if line.startswith("null "):
+            head, body = line.split(":", 1)
+            null.append((int(head.split()[1]), [int(t) for t in body.split()]))
+        else:
+            k, _, v = line.partition(" ")
+            kv[k] = v
+    consistent = kv["consistent"] == "1"
+    rank = int(kv["rank"])
+    pivots = [int(t) for t in kv.get("pivots", "").split()]
+    sol = None
+    if want_solution and consistent:
+        sol = np.zeros(ncols, dtype=np.uint8)
+        for t in kv.get("solution", "").split():
+            sol[int(t)] = 1
+    res = GF2Result(consistent, rank, pivots, ncols, sol)
+    res.null_basis = null if want_null else None
+    return res

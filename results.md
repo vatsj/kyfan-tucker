@@ -12,10 +12,26 @@ replaced by the package `kyfan/` (git history has them).
 |---|---|---|---|---|---|---|
 | 1 | Tucker, S^2 (m=3, labels ±1,±2) | F_2 | = 3 | dual: 1,104 unknowns, consistent at d=2 (rank 507, 597 free); 12,688 unknowns, inconsistent at d=3 (rank 8,400). Explicit certificate (5,616 violating size-3 unknowns; ~458 monomials) verified exactly: canonical one-hot basis expansion, and exhaustively on all 4^13 labelings | `test_nsdeg.py`; `test_primal.py::test_tucker_s2_F2_degree3_certificate_exact`, `…_exhaustive` (slow) | 2 s; 10 s, 30 s |
 | 2 | Tucker, S^2 | Q | = 5 | dual consistent at d=3 over F_p (p=1000003, rank 8,401); full-group orbit primal (valid over Q/F_p, |G|=384): inconsistent at d=3 (55 orbits) and d=4 (657 orbits) — one-way sound; at d=5: 924,480 violating unknowns in 5,482 orbits, float rank 1,976, relative residual 3e-15, max error 1e-14 on fresh labelings, and an exact F_p certificate | `test_nsdeg.py`; `test_primal.py::test_tucker_s2_Fp_symmetric_degree3_4_none`; `…::test_tucker_s2_Q_degree5_symmetric_certificate` (veryslow) | 5 s; 5 s; 5 min |
-| 3 | Tucker, S^3 (m=4, labels ±1..±3) | F_2 | = 4 | d=3: Z_3×Z_3-averaged (odd order, valid over F_2) unrestricted sampled primal inconsistent: 33,312 orbit-unknowns, 38,308 rows, rank 27,584; d=4: tower | `test_s3.py::test_s3_degree3_F2_no_certificate_z9` (veryslow) | 7 min |
+| 3 | Tucker, S^3 (m=4, labels ±1..±3) | F_2 | = 4 | d=3, via the dual: the Z_3×Z_3-invariant degree-3 SA-dual (1,834,800 non-violating size-3 partial labelings in 204,048 orbits; 111,233 rows) is consistent, rank 94,064 — an explicit invariant pseudo-solution (support 8,036 orbits), checked against all 987,265 unreduced consistency equations. Averaging is valid over F_2 since |Z_3×Z_3| = 9 is odd. The unrestricted dual (987,457 × 1,834,800) is also consistent, rank 827,876. Cross-check via the sampled primal (z9): inconsistent, 33,312 orbit-unknowns, rank 27,584. d=4: tower | `test_sparse.py::test_s3_degree3_pseudo_solution_via_dual` (30 s); `test_s3.py::test_s3_degree3_F2_no_certificate_z9` (veryslow, 7 min) | 30 s; 7 min |
 | 4 | Ky Fan, S^2, labels ±1..±3 | F_2 | = 3 | ≤: explicit certificate (13,176 violating unknowns; ~1,286 monomials) verified exactly (canonical basis: Σc_α1_α ≡ A_+ + 1). ≥: row 5 | `test_primal.py::test_kyfan_s2_F2_degree3_certificate_exact` | 60 s |
 | 5 | Ky Fan, S^n, k ≥ n+1 | F_2 | = n+1 | ≤: tower theorem — local lemma g_n = 0 on non-complementary tuples, exhaustive n≤3, k≤5; telescoped identity on random labelings m=3,4,5 (29 / 221 / 2,141 local-lemma instances). ≥: separating functional (CLAUDE.md §2): E(A_+)=1, E(1)=0, E(1_α)=0 on size-n α (exhaustive m=3, sampled m=4,5); the negation-closed box gives E(A_+)=0 | `test_tower.py` | 15 s |
 | 6 | Tucker, S^n | F_2 | ≤ n+1; = n+1 for n=2,3 | upper: tower (row 5, A_+ ≡ 0 when k ≤ n); lower: rows 1, 3. Open for n ≥ 4 — the Ky Fan functional kills constants and cannot be reused (a Tucker lower bound needs E[∅]=1) | — | — |
+
+## Task 1 — sparse GF(2) solver (`gf2solve/`, Rust; `linalg.gf2_sparse`, default in `dual.solve`)
+
+Sparse Gaussian elimination with Markowitz-style pivoting (min-count column, shortest row in it; rows as sorted index
+lists, lazy column index, min-heap with stale entries). Validated against the dense solver on the m=3 systems
+(507; 8400, inconsistent), on random systems, and by checking returned solutions / null-space vectors row by row
+(`test_sparse.py`). Timings (this laptop):
+
+| system | rows × cols | nnz | rank | consistent | time |
+|---|---|---|---|---|---|
+| S^2 d=3 dual | 11,041 × 12,688 | 65,640 | 8,400 | no | 0.05 s (dense: 0.95 s) |
+| S^3 d=3 dual, Z_3×Z_3-invariant | 111,233 × 204,048 | 1.13 M | 94,064 | yes | 0.8 s |
+| S^3 d=3 dual, unrestricted | 987,457 × 1,834,800 | 10.06 M | 827,876 | yes | 21 s (longest row 750) |
+
+Not attempted: the z9 *primal* (38k × 33k, ~25% dense) is the wrong shape for a sparse solver; its statement is now
+covered by the dual above. Sage/M4RI and block Wiedemann were unnecessary.
 
 ## Structural facts (degree-2 pseudo-solution on S^2) — `test_pseudo2.py`, 5 s
 

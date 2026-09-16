@@ -32,7 +32,7 @@ def unknowns(cx, labels, d, V, gens=None, support=None):
     return col, members
 
 
-def sa_dual_system(cx, labels, d, V=None, gens=None, support=None, col=None):
+def sa_dual_system(cx, labels, d, V=None, gens=None, support=None, col=None, reduce_rows=True):
     """Build the degree-d dual. Returns (rows, ncols, col) with rows = list of (dict id -> int coeff, rhs)."""
     n = cx.n_free
     V = violating_pairs(cx, labels) if V is None else V
@@ -45,7 +45,7 @@ def sa_dual_system(cx, labels, d, V=None, gens=None, support=None, col=None):
         return col.get(a)
 
     betas = (b for b in partial_labelings(n, labels, d - 1) if not is_violating(b, V))
-    if gens:  # rows for beta and g.beta coincide on the orbit quotient: keep one representative per orbit
+    if gens and reduce_rows:  # rows for beta and g.beta coincide on the orbit quotient: keep one representative per orbit
         _, members = orbits(betas, gens, lambda g, b: act(cx, g, b))
         betas = (mem[0] for mem in members)
     rows = []
@@ -76,10 +76,13 @@ def sa_dual_system(cx, labels, d, V=None, gens=None, support=None, col=None):
     return rows, ncols, col
 
 
-def solve(rows, ncols, field="F2", want_solution=False):
-    """field: 'F2' or an odd prime p. Returns an object with .consistent, .rank (and .solution over F_2)."""
+def solve(rows, ncols, field="F2", want_solution=False, method="sparse", **kw):
+    """field: 'F2' or an odd prime p. Returns an object with .consistent, .rank (and .solution over F_2).
+    method: 'sparse' (Rust gf2solve, default) or 'dense' (numpy bit-packed) for F_2."""
     if field == "F2":
-        return linalg.gf2_dense(rows, ncols, want_solution=want_solution)
+        if method == "dense":
+            return linalg.gf2_dense(rows, ncols, want_solution=want_solution)
+        return linalg.gf2_sparse(rows, ncols, want_solution=want_solution, **kw)
     consistent, rank = linalg.fp_sparse(rows, ncols, p=int(field))
     return linalg.GF2Result(consistent, rank, [], ncols, None)
 

@@ -2,3 +2,4 @@ __pycache__/
 *.npy
 *.pkl
 *.log
+gf2solve/target/

@@ -66,7 +66,8 @@ Package `kyfan/` (parametrized by m; `from kyfan import SignedComplex, label_set
 - `group.py` — elements (pi, eps, lpi, leps), `act`, `compose`, `generated_group`, `assert_odd_order`; generators for the full group, hemisphere stabilizer, label group, and `z3z3_generators` (the only F_2-valid averaging); `orbits`.
 - `dual.py` — `sa_dual_system(cx, labels, d, gens=, support=)`: unknowns = non-violating size-d partial labelings (orbit-quotiented / support-restricted), consistency rows at level d-1 only, plus E[empty]=1; `solve(rows, ncols, 'F2' | p)`.
 - `primal.py` — random-point primal (`sampled_primal`, `FastRows` for large vectorized systems), `verify_random`, `verify_exhaustive_F2`, `verify_exact_F2` (canonical one-hot basis), `kyfan_target_monomials`.
-- `linalg.py` — dense bit-packed GF(2) Gauss-Jordan (`gf2_dense`, `gf2_dense_packed`; fine to ~40k unknowns, the bottleneck — Task 1 replaces it), sparse mod-p elimination, python-int bitset solver, dense mod-p, real lstsq residual.
+- `linalg.py` — `gf2_sparse` (wrapper for the Rust solver in `gf2solve/`, Task 1: 1.8M unknowns in ~20 s; returns rank, consistency, particular solution, optional null-space basis), dense bit-packed GF(2) Gauss-Jordan (`gf2_dense`, `gf2_dense_packed`; for dense primal systems), sparse mod-p elimination, python-int bitset solver, dense mod-p, real lstsq residual.
+- `gf2solve/` — Rust crate (`cargo build --release`; the wrapper builds it on first use). Input/output format in `src/main.rs`.
 - `tower.py` — local lemma `g`, `local_lemma_violations`, telescoped identity `check_identity`.
 - `lower.py` — the Ky Fan separating functional (`box`, `E`, `check`).
 
@@ -88,7 +89,7 @@ Do this first, and do not start Task 1 until every check passes.
 
 ## 4. Tasks, in priority order
 
-### Task 1 — A real sparse GF(2) solver
+### Task 1 — A real sparse GF(2) solver  (DONE 2026-09-16: `gf2solve/`, see results.md)
 The bottleneck everywhere is linear algebra over F_2 at 10^5–10^6 unknowns. The SA-dual system is sparse (~2*(2k) nonzeros per consistency equation). Options, try in this order:
 1. Sparse Gaussian elimination with Markowitz pivoting, written in Rust or C++ (bitset rows are wrong here — use sorted index lists or hash sets; fill-in is the enemy, so pivot on low-degree columns/rows first).
 2. SageMath if installed (`matrix(GF(2), ..., sparse=True)`), or M4RI/M4RIE bindings for anything that fits dense in memory (dense is fine up to ~100k x 100k on 32 GB).
