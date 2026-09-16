@@ -3,6 +3,7 @@ The fixed neighbours of lift(w_r) are N_r = (star(w_r) u down(w_r)) \ sigma, so 
 only labels l with -l not in D_r (and cover them). usage: gadget3.py m ntries tree leaf_order
 tree e.g. "(1;(2;x,x),(3;x,(4;x,x)))", leaf_order = permutation of ranks for the leaves in left-to-right order, e.g. "5,4,3,2,1"."""
 import sys, time, random, itertools, ast
+sys.setrecursionlimit(100000)
 from collections import Counter, defaultdict
 from kyfan import SignedComplex, label_set
 from kyfan.labels import forbidden_pairs, complementary_edges

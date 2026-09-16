@@ -2,25 +2,4 @@
   The fixed neighbours of lift(w_r) are N_r = (star(w_r) u down(w_r)) \ sigma, so the equatorial labeling must use on N_r
 m=8: target domains by rank: {7: [1, 2, 3, -7], 6: [-3, 1, 2, -7], 5: [-2, 1, -7], 4: [-1, 4, 5, -7], 3: [-5, -1, 4, -7], 2: [-4, -1, 6, -7], 1: [-6, -4, -1, -7]}, pole {7}
 allowed-set sizes: Counter({9: 486, 12: 301, 8: 162, 6: 62, 5: 30, 4: 12, 3: 12, 7: 8, 1: 7, 2: 6})  empty: 0
-Traceback (most recent call last):
-  File "/Users/jstav/Downloads/kyfan-tucker/analysis/gadget3.py", line 80, in <module>
-    L = sample(seed)
-  File "/Users/jstav/Downloads/kyfan-tucker/analysis/gadget3.py", line 76, in sample
-    if rec(): return [L[i] for i in range(N)]
-       ~~~^^
-  File "/Users/jstav/Downloads/kyfan-tucker/analysis/gadget3.py", line 71, in rec
-    if good and rec(): return True
-                ~~~^^
-  File "/Users/jstav/Downloads/kyfan-tucker/analysis/gadget3.py", line 71, in rec
-    if good and rec(): return True
-                ~~~^^
-  File "/Users/jstav/Downloads/kyfan-tucker/analysis/gadget3.py", line 71, in rec
-    if good and rec(): return True
-                ~~~^^
-  [Previous line repeated 993 more times]
-  File "/Users/jstav/Downloads/kyfan-tucker/analysis/gadget3.py", line 64, in rec
-    vals = dom[i][:]; rng.shuffle(vals)
-                      ~~~~~~~~~~~^^^^^^
-  File "/opt/homebrew/Cellar/python@3.13/3.13.7/Frameworks/Python.framework/Versions/3.13/lib/python3.13/random.py", line 360, in shuffle
-    j = randbelow(i + 1)
-RecursionError: maximum recursion depth exceeded
+seed 0: domains [[1, 2, 3, -7], [1, 2, -3, -7], [1, -2, -7], [-1, 4, 5, -7], [-1, 4, -5, -7], [-1, -4, 6, -7], [-1, -4, -6, -7], [7]] -> degree-7 dual CONSISTENT (sphere degree >= 8) rank 30423/30423
