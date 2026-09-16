@@ -1,0 +1,15 @@
+m=3 seed 0: L_eq=[2, -2, -2, 1]  L_0 complementary edges=2
+   h=0: unknowns       77 -> NO solution  [0s]
+   h=1: unknowns      475 -> NO solution  [0s]
+m=3 seed 1: L_eq=[-2, 1, -2, -2]  L_0 complementary edges=2
+   h=0: unknowns       77 -> NO solution  [0s]
+   h=1: unknowns      475 -> NO solution  [0s]
+m=3 seed 2: L_eq=[1, -2, -2, -2]  L_0 complementary edges=2
+   h=0: unknowns       77 -> NO solution  [0s]
+   h=1: unknowns      475 -> NO solution  [0s]
+m=3 seed 3: L_eq=[2, 1, 2, 2]  L_0 complementary edges=2
+   h=0: unknowns       77 -> NO solution  [0s]
+   h=1: unknowns      475 -> NO solution  [0s]
+m=3 seed 5: L_eq=[2, -2, 1, 2]  L_0 complementary edges=2
+   h=0: unknowns       77 -> NO solution  [0s]
+   h=1: unknowns      475 -> NO solution  [0s]

@@ -1,0 +1,9 @@
+S^2 degree 2: 4 classes
+single-class knockouts:
+  remove ('N', 0, (1, 1))         (   112 orbit-cols): NO solution
+  remove ('N', 0, (1, 2))         (   112 orbit-cols): solution, 211 free
+  remove ('S', 1, (1, 1))         (    48 orbit-cols): NO solution
+  remove ('S', 1, (1, 2))         (    96 orbit-cols): NO solution
+necessary classes: [('N', 0, (1, 1)), ('S', 1, (1, 1)), ('S', 1, (1, 2))]
+greedy (largest first) minimal sufficient class family: [('N', 0, (1, 1)), ('S', 1, (1, 1)), ('S', 1, (1, 2))]
+greedy (smallest first) minimal sufficient class family: [('N', 0, (1, 1)), ('S', 1, (1, 1)), ('S', 1, (1, 2))]

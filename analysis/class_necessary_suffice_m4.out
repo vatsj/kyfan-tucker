@@ -1,0 +1,8 @@
+7 necessary classes alone: NO solution
+  + ('N', 0, (1, 1, 1)) : NO solution
+  + ('N', 0, (1, 1, 2)) : solution, 115823 free
+  + ('N', 0, (1, 2, 2)) : solution, 115823 free
+  + ('N', 0, (1, 2, 3)) : NO solution
+  + ('N', 2, (1, 1, 1)) : NO solution
+  + ('N', 1, (1, 1, 1)) : NO solution
+  + ('S', 3, (1, 1, 1)) : NO solution

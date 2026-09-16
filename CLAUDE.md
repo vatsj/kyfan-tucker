@@ -96,7 +96,7 @@ The bottleneck everywhere is linear algebra over F_2 at 10^5–10^6 unknowns. Th
 3. Block Wiedemann only if 1–2 fail; probably unnecessary.
 Validate on the m=3 systems (must reproduce: F_2 degree 2 no, 3 yes) and on the z9 system (must reproduce: inconsistent).
 
-### Task 2 — Extract and analyze the degree-3 pseudo-solution on S^3
+### Task 2 — Extract and analyze the degree-3 pseudo-solution on S^3  (DONE 2026-09-16: see results.md "Task 2", analysis/)
 This is the object the conjecture's proof has to generalize from. Build the degree-3 SA-dual for m=4, labels +-1..+-3: ~1.8M non-violating size-3 partial labelings before symmetry; average over the odd subgroup Z_3 x Z_3 (coordinate 3-cycle on coords 0,1,2; magnitude 3-cycle 1->2->3->1) to cut ~9x. Solve. Then:
 - Repeat the knockout analysis of pseudo2c.py at the level of full-group orbit *types* of size-3 partial labelings: which types are necessary?
 - Test the same restrictions as pseudo2b.py: label-symmetric (expect impossible), hemisphere-stabilizer (expect impossible), distinct-magnitudes-only (expect impossible).

@@ -1,0 +1,8 @@
+unrestricted (Z3xZ3-averaged, exact)                         unknowns= 204048 rows= 111233 -> solution, rank 94064, 109984 free  [17s]
+support: all three magnitudes distinct (Z3xZ3, exact)        unknowns=  52768 rows=  78097 -> NO solution  [7s]
+label group order 48
+label-group invariant (signed perms of magnitudes)           unknowns=  85248 rows=  77997 -> NO solution  [20s]
+hemisphere stabilizer order 2304
+hemisphere-stabilizer invariant                              unknowns=   2597 rows=   4386 -> NO solution  [37s]
+label-group invariant + distinct magnitudes                  unknowns=   9880 rows=  28861 -> NO solution  [7s]
+hemisphere-stabilizer invariant + distinct magnitudes        unknowns=    360 rows=   1802 -> NO solution  [12s]

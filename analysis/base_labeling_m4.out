@@ -1,0 +1,16 @@
+m=4 seed 0: L_eq=[-2, 2, -3, -3, 2, 2, 1, 2, -3, -3, -3, -3, -2]  L_0 complementary edges=2
+   h=0: unknowns     9842 -> NO solution  [5s]
+   h=1: unknowns   141259 -> NO solution  [6s]
+   h=2: unknowns   766299 -> NO solution  [13s]
+m=4 seed 1: L_eq=[-3, -2, 1, -2, 3, -2, -3, -2, -2, -3, 3, 3, -2]  L_0 complementary edges=2
+   h=0: unknowns     9842 -> NO solution  [5s]
+   h=1: unknowns   141148 -> NO solution  [6s]
+   h=2: unknowns   766410 -> NO solution  [13s]
+m=4 seed 2: L_eq=[1, 2, 2, 3, -2, -2, -3, 3, -2, -2, 3, 3, 3]  L_0 complementary edges=2
+   h=0: unknowns     9842 -> NO solution  [5s]
+   h=1: unknowns   141263 -> NO solution  [6s]
+   h=2: unknowns   766295 -> NO solution  [14s]
+m=4 seed 3: L_eq=[2, 3, -2, 1, 3, 2, -3, 3, 2, 2, 3, 3, 3]  L_0 complementary edges=2
+   h=0: unknowns     9842 -> NO solution  [5s]
+   h=1: unknowns   141311 -> NO solution  [6s]
+   h=2: unknowns   766247 -> NO solution  [14s]

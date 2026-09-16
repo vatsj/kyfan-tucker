@@ -1,0 +1,23 @@
+S^3 degree 3, invariant classes (simplex?, #edges, magnitude pattern):
+  remove ('N', 0, 'AAA')      (  9872 orbit-cols): solution, 109984 free
+  remove ('N', 0, 'AAB')      ( 59136 orbit-cols): solution, 121201 free
+  remove ('N', 0, 'ABC')      ( 19744 orbit-cols): solution, 111055 free
+  remove ('N', 1, 'AAA')      (  5248 orbit-cols): solution, 109984 free
+  remove ('N', 1, 'AAB')      ( 52480 orbit-cols): NO solution
+  remove ('N', 1, 'ABC')      ( 20992 orbit-cols): solution, 111048 free
+  remove ('N', 2, 'AAA')      (  1248 orbit-cols): solution, 109984 free
+  remove ('N', 2, 'AAB')      ( 19968 orbit-cols): NO solution
+  remove ('N', 2, 'ABC')      (  9984 orbit-cols): solution, 110360 free
+  remove ('S', 3, 'AAA')      (   256 orbit-cols): solution, 109984 free
+  remove ('S', 3, 'AAB')      (  3072 orbit-cols): NO solution
+  remove ('S', 3, 'ABC')      (  2048 orbit-cols): NO solution
+necessary: [('N', 1, 'AAB'), ('N', 2, 'AAB'), ('S', 3, 'AAB'), ('S', 3, 'ABC')]
+necessary classes alone: NO solution
+  necessary + ('N', 0, 'AAA')     : NO solution
+  necessary + ('N', 0, 'AAB')     : solution, 115823 free
+  necessary + ('N', 0, 'ABC')     : NO solution
+  necessary + ('N', 1, 'AAA')     : NO solution
+  necessary + ('N', 1, 'ABC')     : NO solution
+  necessary + ('N', 2, 'AAA')     : NO solution
+  necessary + ('N', 2, 'ABC')     : NO solution
+  necessary + ('S', 3, 'AAA')     : NO solution

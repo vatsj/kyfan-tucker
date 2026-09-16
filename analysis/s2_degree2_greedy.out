@@ -1,0 +1,39 @@
+S^2 degree 2, greedy (largest first): minimal sufficient family of 11 of 20 types:
+   type  1 size   96  ranks=(1, 2) edges=E simplex mags=(1, 2) 
+   type  2 size   24  ranks=(1, 1) edges=- nonsimplex mags=(1, 1) 01:eq
+   type  4 size   48  ranks=(1, 3) edges=E simplex mags=(1, 1) 01:eq
+   type  5 size   96  ranks=(1, 3) edges=E simplex mags=(1, 2) 
+   type  7 size   48  ranks=(1, 2) edges=- nonsimplex mags=(1, 2) 
+   type  8 size   24  ranks=(2, 2) edges=- nonsimplex mags=(1, 1) 01:eq
+   type 11 size   96  ranks=(2, 3) edges=- nonsimplex mags=(1, 2) 
+   type 12 size   48  ranks=(2, 2) edges=- nonsimplex mags=(1, 1) 01:eq
+   type 13 size   48  ranks=(2, 2) edges=- nonsimplex mags=(1, 1) 01:ne
+   type 16 size   96  ranks=(2, 3) edges=E simplex mags=(1, 2) 
+   type 18 size   24  ranks=(3, 3) edges=- nonsimplex mags=(1, 1) 01:ne
+S^2 degree 2, greedy (smallest first): minimal sufficient family of 14 of 20 types:
+   type  0 size   48  ranks=(1, 2) edges=E simplex mags=(1, 1) 01:eq
+   type  1 size   96  ranks=(1, 2) edges=E simplex mags=(1, 2) 
+   type  2 size   24  ranks=(1, 1) edges=- nonsimplex mags=(1, 1) 01:eq
+   type  5 size   96  ranks=(1, 3) edges=E simplex mags=(1, 2) 
+   type  6 size   48  ranks=(1, 2) edges=- nonsimplex mags=(1, 1) 01:eq
+   type  7 size   48  ranks=(1, 2) edges=- nonsimplex mags=(1, 2) 
+   type  9 size   24  ranks=(2, 2) edges=- nonsimplex mags=(1, 2) 
+   type 10 size   96  ranks=(2, 3) edges=- nonsimplex mags=(1, 1) 01:eq
+   type 11 size   96  ranks=(2, 3) edges=- nonsimplex mags=(1, 2) 
+   type 13 size   48  ranks=(2, 2) edges=- nonsimplex mags=(1, 1) 01:ne
+   type 14 size   96  ranks=(2, 2) edges=- nonsimplex mags=(1, 2) 
+   type 15 size   48  ranks=(2, 3) edges=E simplex mags=(1, 1) 01:eq
+   type 16 size   96  ranks=(2, 3) edges=E simplex mags=(1, 2) 
+   type 18 size   24  ranks=(3, 3) edges=- nonsimplex mags=(1, 1) 01:ne
+S^2 degree 2, greedy (index order): minimal sufficient family of 11 of 20 types:
+   type  1 size   96  ranks=(1, 2) edges=E simplex mags=(1, 2) 
+   type  2 size   24  ranks=(1, 1) edges=- nonsimplex mags=(1, 1) 01:eq
+   type  5 size   96  ranks=(1, 3) edges=E simplex mags=(1, 2) 
+   type  7 size   48  ranks=(1, 2) edges=- nonsimplex mags=(1, 2) 
+   type  8 size   24  ranks=(2, 2) edges=- nonsimplex mags=(1, 1) 01:eq
+   type 10 size   96  ranks=(2, 3) edges=- nonsimplex mags=(1, 1) 01:eq
+   type 13 size   48  ranks=(2, 2) edges=- nonsimplex mags=(1, 1) 01:ne
+   type 14 size   96  ranks=(2, 2) edges=- nonsimplex mags=(1, 2) 
+   type 15 size   48  ranks=(2, 3) edges=E simplex mags=(1, 1) 01:eq
+   type 16 size   96  ranks=(2, 3) edges=E simplex mags=(1, 2) 
+   type 18 size   24  ranks=(3, 3) edges=- nonsimplex mags=(1, 1) 01:ne

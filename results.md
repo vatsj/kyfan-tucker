@@ -33,6 +33,44 @@ lists, lazy column index, min-heap with stale entries). Validated against the de
 Not attempted: the z9 *primal* (38k × 33k, ~25% dense) is the wrong shape for a sparse solver; its statement is now
 covered by the dual above. Sage/M4RI and block Wiedemann were unnecessary.
 
+## Task 2 — the degree-3 pseudo-solution on S^3 (labels ±1..±3), with the n=2 comparison
+
+All exact: support restrictions and knockouts are full-group-invariant sets, so solving the Z_3×Z_3-invariant system
+(odd order) decides existence of *any* pseudo-solution with that support. Scripts in `analysis/` (outputs `*.out` alongside).
+
+**Object.** 1,834,800 non-violating size-3 partial labelings in 808 full-group orbit types and 204,048 Z_3×Z_3 orbits;
+invariant system 111,233 × 204,048, rank 94,064, 109,984 free parameters (`test_sparse.py`). Unrestricted: rank 827,876, 1,006,924 free.
+
+**Type-level knockout** (`s3_degree3_types.py`, 16 min): exactly 4 of 808 types are necessary — the 2-simplices (chains) of
+rank patterns (1,2,3), (1,2,4), (1,3,4), (2,3,4) with all-distinct magnitudes. (n=2: distinct-magnitude edges at the 3 rank pairs, plus "two unrelated rank-1 vertices, equal labels".)
+
+**Marginal knockout** (`s3_degree3_marginals.py`, 3 min): forcing E = 0 on a full-group type of size-2 partial labelings —
+necessary: the distinct-magnitude edges at all 6 rank pairs; the n=2 type "unrelated rank-1 pair, equal labels" is *not* necessary as a marginal at n=3. Size-1: all 4 rank types (trivially).
+
+**Class-level knockout / minimal families** (`class_knockout.py`, invariant classes = (simplex?, #edge pairs, magnitude pattern AAA/AAB/ABC)):
+
+| | n=2, degree 2 (4 classes) | n=3, degree 3 (12 classes) |
+|---|---|---|
+| necessary | unrelated-AA, edge-AA, edge-AB | AAB with 1 edge, AAB with 2 edges, simplex-AAB, simplex-ABC |
+| minimal sufficient family | = the necessary classes (99 free params) | necessary + unrelated-AAB (115,823 free); no other class substitutes |
+| dispensable (each alone) | unrelated-AB | all AAA (constant magnitude) classes, all non-simplex ABC classes |
+
+Persisting pattern: a degree-n pseudo-solution must be supported on (i) the (n−1)-simplices with all-distinct magnitudes
+and (ii) "exactly two equal magnitudes" configurations in every geometry (with and without edges), and it can drop
+all-distinct non-simplices entirely. (At n=2 "exactly two equal" = AA.)
+
+**Restrictions** (`s3_degree3_restrictions.py`; all NO, as at n=2): distinct magnitudes only (52,768 unknowns, exact);
+label-group invariant (85,248 orbits); hemisphere-stabilizer invariant (2,597); both with distinct magnitudes (9,880; 360).
+Also NO at both n=2,3 (`simplex_support.py`, `magnitude_support.py`): simplices only; no simplices; contains an edge; pairwise unrelated only;
+unrelated pairs → distinct magnitudes; edge pairs → distinct magnitudes. "Unrelated pairs → equal magnitude" works at n=2 (99 free) but NOT at n=3.
+
+**Base labeling + corrections** (`base_labeling.py`): L_0 = pullback of a valid equatorial labeling with a single ±1 pair,
++1 on e_m (exactly one antipodal pair of complementary edges); support = partial labelings disagreeing with L_0 in ≤ h positions.
+NO solution for every h < d, for 5 different L_0 at n=2 and 4 at n=3 (h=2 system: 766k unknowns, 13 s). Random L_0: ~12% admit
+an h=1 solution at n=2 (2–7 free parameters), 0 of 12 admit h=2 at n=3. The pseudo-solution is not "a labeling plus local corrections".
+
+**Greedy type-level family** (`s3_degree3_greedy.py`, 20 min): 379 of 808 types (509k partial labelings), order-dependent; no sparse type structure.
+
 ## Structural facts (degree-2 pseudo-solution on S^2) — `test_pseudo2.py`, 5 s
 
 | fact |
@@ -54,5 +92,5 @@ covered by the dual above. Sage/M4RI and block Wiedemann were unnecessary.
 ## Open
 
 - Tucker F_2 lower bound n+1 for n ≥ 4 (row 6).
-- Structure of the degree-3 pseudo-solution on S^3 (Task 2).
+- Task 2 follow-ups: prove the AAB/simplex-ABC necessity pattern for general n (it is a statement about degree-n certificates of strengthened lemmas); explain why constant-magnitude configurations are dispensable at n=3 but not n=2.
 - Ball-version degrees (Task 3).

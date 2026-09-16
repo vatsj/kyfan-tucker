@@ -1,0 +1,8 @@
+S^2 degree 2, support = simplices only                : unknowns     144 -> NO solution  [0s]
+S^2 degree 2, support = no simplices                  : unknowns     224 -> NO solution  [0s]
+S^2 degree 2, support = contains an edge              : unknowns     144 -> NO solution  [0s]
+S^2 degree 2, support = no edges (pairwise unrelated) : unknowns     224 -> NO solution  [0s]
+S^3 degree 3, support = simplices only                : unknowns    5376 -> NO solution  [49s]
+S^3 degree 3, support = no simplices                  : unknowns  198672 -> NO solution  [109s]
+S^3 degree 3, support = contains an edge              : unknowns  115296 -> NO solution  [60s]
+S^3 degree 3, support = no edges (pairwise unrelated) : unknowns   88752 -> NO solution  [71s]

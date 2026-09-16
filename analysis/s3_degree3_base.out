@@ -1,0 +1,5 @@
+equatorial labeling: [1, 2, 2, 2, -2, -2, -2, -2, -2, -2, 3, 3, 3]  complementary edges: 0
+L_0 complementary edges on S^3: 2 (expect 2 = one antipodal pair)
+h=0: unknowns     9842 rows    28824 -> NO solution  [5s]
+h=1: unknowns   141525 rows   298972 -> NO solution  [6s]
+h=2: unknowns   766033 rows   975074 -> NO solution  [13s]

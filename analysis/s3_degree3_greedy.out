@@ -1,0 +1,1189 @@
+[  0/808] type 117 size   9216: REMOVED  (rank 94048)  [1s]
+[  1/808] type 135 size   9216: REMOVED  (rank 94021)  [3s]
+[  2/808] type 303 size   9216: REMOVED  (rank 93988)  [4s]
+[  3/808] type 311 size   9216: REMOVED  (rank 93940)  [6s]
+[  4/808] type 329 size   9216: REMOVED  (rank 93892)  [7s]
+[  5/808] type 351 size   9216: REMOVED  (rank 93844)  [9s]
+[  6/808] type 387 size   9216: REMOVED  (rank 93796)  [11s]
+[  7/808] type 424 size   9216: REMOVED  (rank 93748)  [12s]
+[  8/808] type 442 size   9216: REMOVED  (rank 93685)  [14s]
+[  9/808] type 450 size   9216: REMOVED  (rank 93621)  [15s]
+[ 10/808] type 464 size   9216: REMOVED  (rank 93557)  [17s]
+[ 11/808] type 537 size   9216: REMOVED  (rank 93493)  [19s]
+[ 12/808] type 600 size   9216: REMOVED  (rank 93429)  [21s]
+[ 13/808] type 653 size   9216: REMOVED  (rank 93373)  [23s]
+[ 14/808] type 677 size   9216: REMOVED  (rank 93321)  [25s]
+[ 15/808] type 720 size   9216: REMOVED  (rank 93257)  [26s]
+[ 16/808] type  15 size   4608: REMOVED  (rank 93233)  [28s]
+[ 17/808] type  23 size   4608: REMOVED  (rank 93201)  [30s]
+[ 18/808] type  28 size   4608: kept     (rank 93161)  [32s]
+[ 19/808] type  44 size   4608: REMOVED  (rank 93169)  [34s]
+[ 20/808] type  52 size   4608: REMOVED  (rank 93143)  [35s]
+[ 21/808] type  57 size   4608: kept     (rank 93099)  [37s]
+[ 22/808] type  63 size   4608: REMOVED  (rank 93111)  [39s]
+[ 23/808] type 113 size   4608: REMOVED  (rank 93064)  [41s]
+[ 24/808] type 114 size   4608: REMOVED  (rank 92718)  [42s]
+[ 25/808] type 115 size   4608: kept     (rank 92520)  [44s]
+[ 26/808] type 116 size   4608: kept     (rank 92517)  [45s]
+[ 27/808] type 120 size   4608: REMOVED  (rank 92718)  [47s]
+[ 28/808] type 121 size   4608: kept     (rank 92646)  [49s]
+[ 29/808] type 122 size   4608: REMOVED  (rank 92675)  [50s]
+[ 30/808] type 124 size   4608: REMOVED  (rank 92579)  [52s]
+[ 31/808] type 127 size   4608: REMOVED  (rank 92336)  [54s]
+[ 32/808] type 130 size   4608: REMOVED  (rank 92308)  [55s]
+[ 33/808] type 131 size   4608: REMOVED  (rank 92260)  [56s]
+[ 34/808] type 132 size   4608: REMOVED  (rank 91884)  [58s]
+[ 35/808] type 133 size   4608: kept     (rank 91692)  [59s]
+[ 36/808] type 134 size   4608: kept     (rank 91692)  [60s]
+[ 37/808] type 137 size   4608: REMOVED  (rank 91788)  [62s]
+[ 38/808] type 140 size   4608: REMOVED  (rank 91612)  [63s]
+[ 39/808] type 146 size   4608: REMOVED  (rank 91580)  [64s]
+[ 40/808] type 154 size   4608: REMOVED  (rank 91548)  [66s]
+[ 41/808] type 159 size   4608: kept     (rank 91508)  [67s]
+[ 42/808] type 165 size   4608: REMOVED  (rank 91548)  [68s]
+[ 43/808] type 167 size   4608: kept     (rank 91460)  [70s]
+[ 44/808] type 168 size   4608: REMOVED  (rank 91468)  [71s]
+[ 45/808] type 176 size   4608: REMOVED  (rank 91420)  [72s]
+[ 46/808] type 185 size   4608: REMOVED  (rank 91388)  [74s]
+[ 47/808] type 214 size   4608: REMOVED  (rank 91356)  [75s]
+[ 48/808] type 263 size   4608: REMOVED  (rank 91324)  [76s]
+[ 49/808] type 271 size   4608: REMOVED  (rank 91292)  [78s]
+[ 50/808] type 288 size   4608: REMOVED  (rank 91292)  [79s]
+[ 51/808] type 289 size   4608: REMOVED  (rank 91240)  [80s]
+[ 52/808] type 292 size   4608: REMOVED  (rank 90980)  [82s]
+[ 53/808] type 295 size   4608: REMOVED  (rank 90980)  [83s]
+[ 54/808] type 298 size   4608: REMOVED  (rank 90916)  [85s]
+[ 55/808] type 299 size   4608: REMOVED  (rank 90796)  [86s]
+[ 56/808] type 300 size   4608: REMOVED  (rank 90284)  [87s]
+[ 57/808] type 301 size   4608: REMOVED  (rank 90092)  [89s]
+[ 58/808] type 302 size   4608: REMOVED  (rank 89580)  [90s]
+[ 59/808] type 305 size   4608: REMOVED  (rank 89580)  [92s]
+[ 60/808] type 307 size   4608: REMOVED  (rank 89436)  [93s]
+[ 61/808] type 308 size   4608: REMOVED  (rank 88924)  [94s]
+[ 62/808] type 309 size   4608: kept     (rank 88707)  [96s]
+[ 63/808] type 310 size   4608: kept     (rank 88707)  [97s]
+[ 64/808] type 314 size   4608: REMOVED  (rank 88924)  [99s]
+[ 65/808] type 315 size   4608: REMOVED  (rank 88844)  [100s]
+[ 66/808] type 318 size   4608: REMOVED  (rank 88564)  [102s]
+[ 67/808] type 321 size   4608: REMOVED  (rank 88564)  [103s]
+[ 68/808] type 324 size   4608: REMOVED  (rank 88500)  [105s]
+[ 69/808] type 325 size   4608: REMOVED  (rank 88372)  [106s]
+[ 70/808] type 326 size   4608: REMOVED  (rank 87860)  [107s]
+[ 71/808] type 327 size   4608: REMOVED  (rank 87604)  [109s]
+[ 72/808] type 328 size   4608: REMOVED  (rank 87092)  [110s]
+[ 73/808] type 331 size   4608: REMOVED  (rank 87092)  [112s]
+[ 74/808] type 332 size   4608: kept     (rank 86949)  [113s]
+[ 75/808] type 334 size   4608: REMOVED  (rank 87000)  [115s]
+[ 76/808] type 337 size   4608: REMOVED  (rank 86952)  [116s]
+[ 77/808] type 343 size   4608: REMOVED  (rank 86952)  [117s]
+[ 78/808] type 346 size   4608: REMOVED  (rank 86904)  [119s]
+[ 79/808] type 347 size   4608: REMOVED  (rank 86840)  [120s]
+[ 80/808] type 348 size   4608: REMOVED  (rank 86328)  [122s]
+[ 81/808] type 349 size   4608: REMOVED  (rank 86104)  [123s]
+[ 82/808] type 350 size   4608: REMOVED  (rank 85592)  [125s]
+[ 83/808] type 353 size   4608: REMOVED  (rank 85592)  [126s]
+[ 84/808] type 355 size   4608: kept     (rank 85453)  [128s]
+[ 85/808] type 356 size   4608: REMOVED  (rank 85512)  [129s]
+[ 86/808] type 377 size   4608: REMOVED  (rank 85512)  [130s]
+[ 87/808] type 378 size   4608: REMOVED  (rank 85416)  [132s]
+[ 88/808] type 379 size   4608: REMOVED  (rank 85128)  [133s]
+[ 89/808] type 381 size   4608: REMOVED  (rank 85128)  [135s]
+[ 90/808] type 383 size   4608: REMOVED  (rank 84936)  [136s]
+[ 91/808] type 384 size   4608: REMOVED  (rank 84456)  [137s]
+[ 92/808] type 385 size   4608: kept     (rank 84223)  [139s]
+[ 93/808] type 386 size   4608: kept     (rank 84223)  [140s]
+[ 94/808] type 393 size   4608: REMOVED  (rank 84456)  [142s]
+[ 95/808] type 394 size   4608: REMOVED  (rank 84360)  [143s]
+[ 96/808] type 395 size   4608: REMOVED  (rank 84072)  [145s]
+[ 97/808] type 398 size   4608: REMOVED  (rank 84072)  [146s]
+[ 98/808] type 400 size   4608: REMOVED  (rank 83976)  [148s]
+[ 99/808] type 403 size   4608: REMOVED  (rank 83696)  [149s]
+[100/808] type 409 size   4608: REMOVED  (rank 83696)  [150s]
+[101/808] type 410 size   4608: REMOVED  (rank 83600)  [152s]
+[102/808] type 411 size   4608: REMOVED  (rank 83312)  [153s]
+[103/808] type 415 size   4608: kept     (rank 83219)  [155s]
+[104/808] type 416 size   4608: REMOVED  (rank 83280)  [156s]
+[105/808] type 418 size   4608: REMOVED  (rank 83280)  [157s]
+[106/808] type 420 size   4608: REMOVED  (rank 83088)  [159s]
+[107/808] type 421 size   4608: kept     (rank 82871)  [160s]
+[108/808] type 422 size   4608: kept     (rank 82871)  [162s]
+[109/808] type 423 size   4608: REMOVED  (rank 82576)  [163s]
+[110/808] type 437 size   4608: REMOVED  (rank 82512)  [165s]
+[111/808] type 438 size   4608: REMOVED  (rank 82384)  [166s]
+[112/808] type 439 size   4608: REMOVED  (rank 81872)  [168s]
+[113/808] type 440 size   4608: kept     (rank 81657)  [169s]
+[114/808] type 441 size   4608: kept     (rank 81657)  [171s]
+[115/808] type 445 size   4608: REMOVED  (rank 81808)  [172s]
+[116/808] type 446 size   4608: REMOVED  (rank 81680)  [174s]
+[117/808] type 447 size   4608: REMOVED  (rank 81168)  [176s]
+[118/808] type 448 size   4608: kept     (rank 80953)  [177s]
+[119/808] type 449 size   4608: kept     (rank 80953)  [178s]
+[120/808] type 456 size   4608: REMOVED  (rank 81136)  [179s]
+[121/808] type 459 size   4608: REMOVED  (rank 81072)  [181s]
+[122/808] type 460 size   4608: REMOVED  (rank 80944)  [182s]
+[123/808] type 461 size   4608: REMOVED  (rank 80432)  [183s]
+[124/808] type 462 size   4608: kept     (rank 80213)  [185s]
+[125/808] type 463 size   4608: kept     (rank 80213)  [186s]
+[126/808] type 472 size   4608: REMOVED  (rank 80400)  [187s]
+[127/808] type 477 size   4608: kept     (rank 80364)  [189s]
+[128/808] type 490 size   4608: REMOVED  (rank 80368)  [190s]
+[129/808] type 498 size   4608: REMOVED  (rank 80342)  [191s]
+[130/808] type 514 size   4608: REMOVED  (rank 80310)  [193s]
+[131/808] type 523 size   4608: REMOVED  (rank 80262)  [194s]
+[132/808] type 529 size   4608: REMOVED  (rank 80262)  [195s]
+[133/808] type 532 size   4608: REMOVED  (rank 80198)  [197s]
+[134/808] type 533 size   4608: REMOVED  (rank 80070)  [198s]
+[135/808] type 534 size   4608: REMOVED  (rank 79558)  [199s]
+[136/808] type 535 size   4608: REMOVED  (rank 79302)  [201s]
+[137/808] type 536 size   4608: REMOVED  (rank 78790)  [202s]
+[138/808] type 539 size   4608: REMOVED  (rank 78790)  [203s]
+[139/808] type 541 size   4608: kept     (rank 78660)  [205s]
+[140/808] type 542 size   4608: REMOVED  (rank 78686)  [206s]
+[141/808] type 552 size   4608: REMOVED  (rank 78654)  [207s]
+[142/808] type 576 size   4608: REMOVED  (rank 78622)  [209s]
+[143/808] type 587 size   4608: REMOVED  (rank 78622)  [210s]
+[144/808] type 589 size   4608: REMOVED  (rank 78526)  [211s]
+[145/808] type 592 size   4608: REMOVED  (rank 78294)  [213s]
+[146/808] type 594 size   4608: REMOVED  (rank 78294)  [214s]
+[147/808] type 596 size   4608: REMOVED  (rank 78102)  [215s]
+[148/808] type 597 size   4608: REMOVED  (rank 77590)  [217s]
+[149/808] type 598 size   4608: kept     (rank 77377)  [218s]
+[150/808] type 599 size   4608: kept     (rank 77377)  [219s]
+[151/808] type 603 size   4608: REMOVED  (rank 77590)  [220s]
+[152/808] type 605 size   4608: REMOVED  (rank 77494)  [222s]
+[153/808] type 608 size   4608: REMOVED  (rank 77206)  [223s]
+[154/808] type 634 size   4608: REMOVED  (rank 77206)  [225s]
+[155/808] type 635 size   4608: REMOVED  (rank 77110)  [226s]
+[156/808] type 636 size   4608: REMOVED  (rank 76822)  [228s]
+[157/808] type 641 size   4608: REMOVED  (rank 76774)  [229s]
+[158/808] type 645 size   4608: REMOVED  (rank 76774)  [231s]
+[159/808] type 648 size   4608: REMOVED  (rank 76710)  [232s]
+[160/808] type 649 size   4608: REMOVED  (rank 76582)  [233s]
+[161/808] type 650 size   4608: REMOVED  (rank 76070)  [234s]
+[162/808] type 651 size   4608: REMOVED  (rank 75814)  [236s]
+[163/808] type 652 size   4608: REMOVED  (rank 75302)  [237s]
+[164/808] type 661 size   4608: REMOVED  (rank 75270)  [238s]
+[165/808] type 671 size   4608: REMOVED  (rank 75270)  [240s]
+[166/808] type 673 size   4608: kept     (rank 75099)  [241s]
+[167/808] type 674 size   4608: kept     (rank 75095)  [243s]
+[168/808] type 675 size   4608: kept     (rank 75201)  [244s]
+[169/808] type 676 size   4608: kept     (rank 75099)  [245s]
+[170/808] type 680 size   4608: REMOVED  (rank 75270)  [247s]
+[171/808] type 682 size   4608: REMOVED  (rank 75174)  [248s]
+[172/808] type 685 size   4608: REMOVED  (rank 74928)  [249s]
+[173/808] type 688 size   4608: REMOVED  (rank 74928)  [251s]
+[174/808] type 690 size   4608: REMOVED  (rank 74832)  [252s]
+[175/808] type 693 size   4608: REMOVED  (rank 74544)  [253s]
+[176/808] type 701 size   4608: REMOVED  (rank 74512)  [255s]
+[177/808] type 709 size   4608: REMOVED  (rank 74480)  [256s]
+[178/808] type 712 size   4608: REMOVED  (rank 74480)  [257s]
+[179/808] type 715 size   4608: REMOVED  (rank 74416)  [259s]
+[180/808] type 716 size   4608: REMOVED  (rank 74288)  [260s]
+[181/808] type 717 size   4608: REMOVED  (rank 73776)  [261s]
+[182/808] type 718 size   4608: REMOVED  (rank 73520)  [263s]
+[183/808] type 719 size   4608: REMOVED  (rank 73008)  [264s]
+[184/808] type 736 size   4608: REMOVED  (rank 72976)  [265s]
+[185/808] type 739 size   4608: REMOVED  (rank 72976)  [267s]
+[186/808] type 741 size   4608: REMOVED  (rank 72880)  [268s]
+[187/808] type 744 size   4608: REMOVED  (rank 72592)  [270s]
+[188/808] type 747 size   4608: REMOVED  (rank 72592)  [271s]
+[189/808] type 749 size   4608: REMOVED  (rank 72496)  [272s]
+[190/808] type 752 size   4608: REMOVED  (rank 72216)  [274s]
+[191/808] type 763 size   4608: REMOVED  (rank 72216)  [275s]
+[192/808] type 765 size   4608: REMOVED  (rank 72120)  [276s]
+[193/808] type 768 size   4608: REMOVED  (rank 71832)  [278s]
+[194/808] type 774 size   4608: REMOVED  (rank 71832)  [279s]
+[195/808] type 775 size   4608: REMOVED  (rank 71736)  [280s]
+[196/808] type 776 size   4608: REMOVED  (rank 71448)  [282s]
+[197/808] type  11 size   2304: REMOVED  (rank 71376)  [283s]
+[198/808] type  12 size   2304: REMOVED  (rank 71120)  [284s]
+[199/808] type  13 size   2304: kept     (rank 71055)  [285s]
+[200/808] type  14 size   2304: kept     (rank 71052)  [287s]
+[201/808] type  18 size   2304: REMOVED  (rank 71088)  [288s]
+[202/808] type  19 size   2304: REMOVED  (rank 71024)  [289s]
+[203/808] type  20 size   2304: REMOVED  (rank 70768)  [290s]
+[204/808] type  21 size   2304: kept     (rank 70693)  [291s]
+[205/808] type  22 size   2304: kept     (rank 70693)  [292s]
+[206/808] type  25 size   2304: REMOVED  (rank 70768)  [294s]
+[207/808] type  26 size   2304: REMOVED  (rank 70668)  [295s]
+[208/808] type  27 size   2304: kept     (rank 70525)  [296s]
+[209/808] type  30 size   2304: REMOVED  (rank 70620)  [297s]
+[210/808] type  33 size   2304: REMOVED  (rank 70476)  [298s]
+[211/808] type  36 size   2304: REMOVED  (rank 70476)  [299s]
+[212/808] type  37 size   2304: kept     (rank 70421)  [301s]
+[213/808] type  38 size   2304: REMOVED  (rank 70440)  [302s]
+[214/808] type  40 size   2304: REMOVED  (rank 70344)  [303s]
+[215/808] type  41 size   2304: REMOVED  (rank 70088)  [304s]
+[216/808] type  42 size   2304: kept     (rank 70005)  [305s]
+[217/808] type  43 size   2304: kept     (rank 70004)  [306s]
+[218/808] type  47 size   2304: REMOVED  (rank 70056)  [307s]
+[219/808] type  48 size   2304: REMOVED  (rank 69992)  [308s]
+[220/808] type  49 size   2304: REMOVED  (rank 69736)  [309s]
+[221/808] type  50 size   2304: kept     (rank 69655)  [310s]
+[222/808] type  51 size   2304: kept     (rank 69655)  [312s]
+[223/808] type  54 size   2304: REMOVED  (rank 69736)  [313s]
+[224/808] type  55 size   2304: REMOVED  (rank 69632)  [314s]
+[225/808] type  56 size   2304: kept     (rank 69485)  [315s]
+[226/808] type  59 size   2304: REMOVED  (rank 69536)  [316s]
+[227/808] type  60 size   2304: REMOVED  (rank 69280)  [317s]
+[228/808] type  61 size   2304: kept     (rank 69211)  [318s]
+[229/808] type  62 size   2304: kept     (rank 69211)  [319s]
+[230/808] type  66 size   2304: REMOVED  (rank 69280)  [320s]
+[231/808] type  67 size   2304: kept     (rank 69209)  [321s]
+[232/808] type  68 size   2304: REMOVED  (rank 69216)  [322s]
+[233/808] type  72 size   2304: kept     (rank 69169)  [323s]
+[234/808] type  73 size   2304: REMOVED  (rank 69200)  [324s]
+[235/808] type  80 size   2304: kept     (rank 69153)  [325s]
+[236/808] type  81 size   2304: REMOVED  (rank 69184)  [326s]
+[237/808] type  83 size   2304: REMOVED  (rank 69184)  [327s]
+[238/808] type  84 size   2304: kept     (rank 69113)  [328s]
+[239/808] type  86 size   2304: REMOVED  (rank 69132)  [329s]
+[240/808] type  96 size   2304: REMOVED  (rank 69116)  [330s]
+[241/808] type 103 size   2304: REMOVED  (rank 69068)  [331s]
+[242/808] type 106 size   2304: REMOVED  (rank 68924)  [332s]
+[243/808] type 109 size   2304: REMOVED  (rank 68924)  [333s]
+[244/808] type 110 size   2304: kept     (rank 68861)  [334s]
+[245/808] type 111 size   2304: REMOVED  (rank 68860)  [335s]
+[246/808] type 119 size   2304: REMOVED  (rank 68604)  [336s]
+[247/808] type 125 size   2304: kept     (rank 68505)  [337s]
+[248/808] type 126 size   2304: kept     (rank 68500)  [338s]
+[249/808] type 138 size   2304: kept     (rank 68499)  [339s]
+[250/808] type 139 size   2304: kept     (rank 68504)  [340s]
+[251/808] type 142 size   2304: REMOVED  (rank 68508)  [341s]
+[252/808] type 143 size   2304: REMOVED  (rank 68252)  [342s]
+[253/808] type 144 size   2304: kept     (rank 68195)  [344s]
+[254/808] type 145 size   2304: kept     (rank 68195)  [345s]
+[255/808] type 149 size   2304: REMOVED  (rank 68220)  [346s]
+[256/808] type 150 size   2304: REMOVED  (rank 68156)  [347s]
+[257/808] type 151 size   2304: REMOVED  (rank 67900)  [348s]
+[258/808] type 152 size   2304: kept     (rank 67821)  [348s]
+[259/808] type 153 size   2304: kept     (rank 67821)  [350s]
+[260/808] type 156 size   2304: REMOVED  (rank 67900)  [351s]
+[261/808] type 157 size   2304: REMOVED  (rank 67784)  [352s]
+[262/808] type 158 size   2304: kept     (rank 67641)  [353s]
+[263/808] type 166 size   2304: REMOVED  (rank 67528)  [354s]
+[264/808] type 170 size   2304: REMOVED  (rank 67528)  [354s]
+[265/808] type 171 size   2304: REMOVED  (rank 67480)  [355s]
+[266/808] type 172 size   2304: REMOVED  (rank 67374)  [356s]
+[267/808] type 173 size   2304: REMOVED  (rank 67180)  [357s]
+[268/808] type 179 size   2304: REMOVED  (rank 67036)  [358s]
+[269/808] type 181 size   2304: kept     (rank 67004)  [359s]
+[270/808] type 182 size   2304: kept     (rank 66955)  [360s]
+[271/808] type 183 size   2304: kept     (rank 66954)  [361s]
+[272/808] type 184 size   2304: kept     (rank 66954)  [362s]
+[273/808] type 187 size   2304: REMOVED  (rank 67036)  [363s]
+[274/808] type 188 size   2304: kept     (rank 66973)  [364s]
+[275/808] type 190 size   2304: REMOVED  (rank 66972)  [365s]
+[276/808] type 203 size   2304: REMOVED  (rank 66924)  [366s]
+[277/808] type 206 size   2304: REMOVED  (rank 66780)  [366s]
+[278/808] type 209 size   2304: REMOVED  (rank 66748)  [367s]
+[279/808] type 210 size   2304: REMOVED  (rank 66684)  [368s]
+[280/808] type 211 size   2304: REMOVED  (rank 66428)  [369s]
+[281/808] type 212 size   2304: kept     (rank 66335)  [370s]
+[282/808] type 213 size   2304: kept     (rank 66335)  [371s]
+[283/808] type 216 size   2304: REMOVED  (rank 66380)  [372s]
+[284/808] type 219 size   2304: REMOVED  (rank 66236)  [373s]
+[285/808] type 222 size   2304: REMOVED  (rank 66212)  [374s]
+[286/808] type 227 size   2304: REMOVED  (rank 66212)  [374s]
+[287/808] type 228 size   2304: kept     (rank 66159)  [375s]
+[288/808] type 230 size   2304: REMOVED  (rank 66160)  [376s]
+[289/808] type 236 size   2304: REMOVED  (rank 66160)  [377s]
+[290/808] type 237 size   2304: REMOVED  (rank 66112)  [378s]
+[291/808] type 238 size   2304: REMOVED  (rank 65972)  [379s]
+[292/808] type 240 size   2304: REMOVED  (rank 65972)  [380s]
+[293/808] type 241 size   2304: kept     (rank 65907)  [380s]
+[294/808] type 243 size   2304: REMOVED  (rank 65908)  [381s]
+[295/808] type 249 size   2304: REMOVED  (rank 65908)  [382s]
+[296/808] type 250 size   2304: REMOVED  (rank 65860)  [383s]
+[297/808] type 251 size   2304: REMOVED  (rank 65716)  [384s]
+[298/808] type 257 size   2304: REMOVED  (rank 65716)  [385s]
+[299/808] type 259 size   2304: kept     (rank 65639)  [386s]
+[300/808] type 260 size   2304: kept     (rank 65650)  [387s]
+[301/808] type 261 size   2304: kept     (rank 65691)  [388s]
+[302/808] type 262 size   2304: kept     (rank 65639)  [388s]
+[303/808] type 265 size   2304: REMOVED  (rank 65716)  [389s]
+[304/808] type 267 size   2304: REMOVED  (rank 65620)  [390s]
+[305/808] type 268 size   2304: REMOVED  (rank 65364)  [391s]
+[306/808] type 269 size   2304: kept     (rank 65278)  [392s]
+[307/808] type 270 size   2304: kept     (rank 65278)  [392s]
+[308/808] type 274 size   2304: REMOVED  (rank 65364)  [393s]
+[309/808] type 276 size   2304: REMOVED  (rank 65316)  [394s]
+[310/808] type 279 size   2304: REMOVED  (rank 65172)  [395s]
+[311/808] type 282 size   2304: REMOVED  (rank 65148)  [396s]
+[312/808] type 290 size   2304: REMOVED  (rank 65020)  [397s]
+[313/808] type 291 size   2304: REMOVED  (rank 64764)  [397s]
+[314/808] type 316 size   2304: REMOVED  (rank 64636)  [398s]
+[315/808] type 317 size   2304: REMOVED  (rank 64380)  [399s]
+[316/808] type 333 size   2304: REMOVED  (rank 64124)  [400s]
+[317/808] type 340 size   2304: REMOVED  (rank 63980)  [401s]
+[318/808] type 354 size   2304: REMOVED  (rank 63724)  [401s]
+[319/808] type 360 size   2304: kept     (rank 63679)  [402s]
+[320/808] type 361 size   2304: REMOVED  (rank 63708)  [403s]
+[321/808] type 373 size   2304: REMOVED  (rank 63580)  [404s]
+[322/808] type 376 size   2304: REMOVED  (rank 63324)  [405s]
+[323/808] type 389 size   2304: REMOVED  (rank 63196)  [405s]
+[324/808] type 392 size   2304: REMOVED  (rank 62940)  [406s]
+[325/808] type 401 size   2304: REMOVED  (rank 62812)  [407s]
+[326/808] type 402 size   2304: REMOVED  (rank 62556)  [408s]
+[327/808] type 406 size   2304: REMOVED  (rank 62428)  [409s]
+[328/808] type 408 size   2304: REMOVED  (rank 62172)  [410s]
+[329/808] type 412 size   2304: kept     (rank 62079)  [410s]
+[330/808] type 414 size   2304: kept     (rank 62138)  [411s]
+[331/808] type 426 size   2304: REMOVED  (rank 62160)  [412s]
+[332/808] type 428 size   2304: REMOVED  (rank 62068)  [413s]
+[333/808] type 452 size   2304: REMOVED  (rank 61972)  [414s]
+[334/808] type 453 size   2304: REMOVED  (rank 61716)  [414s]
+[335/808] type 454 size   2304: kept     (rank 61663)  [415s]
+[336/808] type 455 size   2304: kept     (rank 61663)  [416s]
+[337/808] type 467 size   2304: REMOVED  (rank 61684)  [417s]
+[338/808] type 468 size   2304: REMOVED  (rank 61620)  [418s]
+[339/808] type 469 size   2304: REMOVED  (rank 61364)  [419s]
+[340/808] type 470 size   2304: kept     (rank 61287)  [419s]
+[341/808] type 471 size   2304: kept     (rank 61287)  [420s]
+[342/808] type 474 size   2304: REMOVED  (rank 61364)  [421s]
+[343/808] type 475 size   2304: kept     (rank 61245)  [422s]
+[344/808] type 476 size   2304: kept     (rank 61258)  [422s]
+[345/808] type 479 size   2304: REMOVED  (rank 61316)  [423s]
+[346/808] type 482 size   2304: REMOVED  (rank 61172)  [424s]
+[347/808] type 484 size   2304: REMOVED  (rank 61172)  [425s]
+[348/808] type 486 size   2304: kept     (rank 61095)  [426s]
+[349/808] type 487 size   2304: kept     (rank 61107)  [427s]
+[350/808] type 488 size   2304: kept     (rank 61149)  [427s]
+[351/808] type 489 size   2304: kept     (rank 61095)  [428s]
+[352/808] type 492 size   2304: REMOVED  (rank 61172)  [429s]
+[353/808] type 494 size   2304: REMOVED  (rank 61076)  [430s]
+[354/808] type 495 size   2304: REMOVED  (rank 60820)  [431s]
+[355/808] type 496 size   2304: kept     (rank 60729)  [432s]
+[356/808] type 497 size   2304: kept     (rank 60729)  [432s]
+[357/808] type 500 size   2304: REMOVED  (rank 60820)  [433s]
+[358/808] type 501 size   2304: kept     (rank 60755)  [434s]
+[359/808] type 503 size   2304: kept     (rank 60771)  [435s]
+[360/808] type 506 size   2304: REMOVED  (rank 60820)  [436s]
+[361/808] type 509 size   2304: REMOVED  (rank 60788)  [436s]
+[362/808] type 510 size   2304: REMOVED  (rank 60724)  [437s]
+[363/808] type 511 size   2304: REMOVED  (rank 60468)  [438s]
+[364/808] type 512 size   2304: REMOVED  (rank 60340)  [439s]
+[365/808] type 513 size   2304: REMOVED  (rank 60084)  [439s]
+[366/808] type 517 size   2304: REMOVED  (rank 60060)  [440s]
+[367/808] type 526 size   2304: REMOVED  (rank 59916)  [441s]
+[368/808] type 540 size   2304: REMOVED  (rank 59660)  [442s]
+[369/808] type 544 size   2304: REMOVED  (rank 59636)  [443s]
+[370/808] type 547 size   2304: kept     (rank 59583)  [444s]
+[371/808] type 549 size   2304: kept     (rank 59613)  [444s]
+[372/808] type 550 size   2304: kept     (rank 59559)  [445s]
+[373/808] type 551 size   2304: kept     (rank 59559)  [446s]
+[374/808] type 555 size   2304: REMOVED  (rank 59636)  [447s]
+[375/808] type 557 size   2304: REMOVED  (rank 59588)  [448s]
+[376/808] type 560 size   2304: REMOVED  (rank 59444)  [448s]
+[377/808] type 563 size   2304: REMOVED  (rank 59444)  [449s]
+[378/808] type 565 size   2304: REMOVED  (rank 59396)  [450s]
+[379/808] type 568 size   2304: REMOVED  (rank 59252)  [451s]
+[380/808] type 570 size   2304: REMOVED  (rank 59252)  [452s]
+[381/808] type 572 size   2304: REMOVED  (rank 59156)  [453s]
+[382/808] type 573 size   2304: REMOVED  (rank 58900)  [453s]
+[383/808] type 574 size   2304: kept     (rank 58819)  [454s]
+[384/808] type 575 size   2304: kept     (rank 58819)  [455s]
+[385/808] type 579 size   2304: REMOVED  (rank 58900)  [456s]
+[386/808] type 581 size   2304: REMOVED  (rank 58852)  [456s]
+[387/808] type 584 size   2304: REMOVED  (rank 58708)  [457s]
+[388/808] type 590 size   2304: REMOVED  (rank 58580)  [458s]
+[389/808] type 591 size   2304: REMOVED  (rank 58324)  [459s]
+[390/808] type 606 size   2304: REMOVED  (rank 58196)  [460s]
+[391/808] type 607 size   2304: REMOVED  (rank 57940)  [461s]
+[392/808] type 620 size   2304: REMOVED  (rank 57892)  [461s]
+[393/808] type 623 size   2304: REMOVED  (rank 57748)  [462s]
+[394/808] type 630 size   2304: REMOVED  (rank 57620)  [463s]
+[395/808] type 633 size   2304: REMOVED  (rank 57364)  [464s]
+[396/808] type 642 size   2304: REMOVED  (rank 57220)  [465s]
+[397/808] type 655 size   2304: REMOVED  (rank 57220)  [465s]
+[398/808] type 657 size   2304: REMOVED  (rank 57124)  [466s]
+[399/808] type 658 size   2304: kept     (rank 57039)  [467s]
+[400/808] type 659 size   2304: kept     (rank 57039)  [468s]
+[401/808] type 660 size   2304: REMOVED  (rank 56868)  [469s]
+[402/808] type 667 size   2304: REMOVED  (rank 56868)  [469s]
+[403/808] type 668 size   2304: REMOVED  (rank 56820)  [470s]
+[404/808] type 669 size   2304: REMOVED  (rank 56676)  [471s]
+[405/808] type 683 size   2304: REMOVED  (rank 56548)  [472s]
+[406/808] type 684 size   2304: REMOVED  (rank 56292)  [472s]
+[407/808] type 691 size   2304: REMOVED  (rank 56164)  [473s]
+[408/808] type 692 size   2304: REMOVED  (rank 55908)  [474s]
+[409/808] type 695 size   2304: REMOVED  (rank 55908)  [475s]
+[410/808] type 697 size   2304: REMOVED  (rank 55812)  [476s]
+[411/808] type 698 size   2304: REMOVED  (rank 55556)  [476s]
+[412/808] type 699 size   2304: kept     (rank 55471)  [477s]
+[413/808] type 700 size   2304: kept     (rank 55471)  [478s]
+[414/808] type 703 size   2304: REMOVED  (rank 55556)  [479s]
+[415/808] type 705 size   2304: kept     (rank 55479)  [480s]
+[416/808] type 706 size   2304: kept     (rank 55491)  [480s]
+[417/808] type 707 size   2304: kept     (rank 55533)  [481s]
+[418/808] type 708 size   2304: kept     (rank 55479)  [482s]
+[419/808] type 723 size   2304: REMOVED  (rank 55556)  [483s]
+[420/808] type 725 size   2304: REMOVED  (rank 55508)  [484s]
+[421/808] type 728 size   2304: REMOVED  (rank 55364)  [484s]
+[422/808] type 730 size   2304: REMOVED  (rank 55364)  [485s]
+[423/808] type 732 size   2304: REMOVED  (rank 55268)  [486s]
+[424/808] type 733 size   2304: REMOVED  (rank 55012)  [487s]
+[425/808] type 734 size   2304: kept     (rank 54927)  [488s]
+[426/808] type 735 size   2304: kept     (rank 54927)  [488s]
+[427/808] type 742 size   2304: REMOVED  (rank 54884)  [489s]
+[428/808] type 743 size   2304: REMOVED  (rank 54628)  [490s]
+[429/808] type 750 size   2304: REMOVED  (rank 54500)  [491s]
+[430/808] type 751 size   2304: REMOVED  (rank 54244)  [491s]
+[431/808] type 755 size   2304: REMOVED  (rank 54244)  [492s]
+[432/808] type 757 size   2304: REMOVED  (rank 54196)  [493s]
+[433/808] type 760 size   2304: REMOVED  (rank 54052)  [494s]
+[434/808] type 766 size   2304: REMOVED  (rank 53924)  [495s]
+[435/808] type 767 size   2304: REMOVED  (rank 53668)  [495s]
+[436/808] type 770 size   2304: REMOVED  (rank 53540)  [496s]
+[437/808] type 773 size   2304: REMOVED  (rank 53284)  [497s]
+[438/808] type 779 size   2304: REMOVED  (rank 53284)  [498s]
+[439/808] type 780 size   2304: REMOVED  (rank 53180)  [499s]
+[440/808] type 783 size   2304: REMOVED  (rank 53168)  [499s]
+[441/808] type 785 size   2304: REMOVED  (rank 53076)  [500s]
+[442/808] type 790 size   2304: kept     (rank 53033)  [501s]
+[443/808] type 791 size   2304: REMOVED  (rank 53060)  [502s]
+[444/808] type 799 size   2304: REMOVED  (rank 53060)  [502s]
+[445/808] type 801 size   2304: REMOVED  (rank 53012)  [503s]
+[446/808] type 804 size   2304: REMOVED  (rank 52868)  [504s]
+[447/808] type 196 size   1536: REMOVED  (rank 52856)  [505s]
+[448/808] type 429 size   1536: REMOVED  (rank 52704)  [506s]
+[449/808] type 781 size   1536: REMOVED  (rank 52552)  [507s]
+[450/808] type 786 size   1536: REMOVED  (rank 52400)  [507s]
+[451/808] type  31 size   1152: kept     (rank 52355)  [508s]
+[452/808] type  32 size   1152: kept     (rank 52355)  [509s]
+[453/808] type  35 size   1152: REMOVED  (rank 52272)  [510s]
+[454/808] type  65 size   1152: REMOVED  (rank 52144)  [510s]
+[455/808] type  70 size   1152: kept     (rank 52129)  [511s]
+[456/808] type  71 size   1152: kept     (rank 52097)  [512s]
+[457/808] type  78 size   1152: kept     (rank 52125)  [513s]
+[458/808] type  79 size   1152: kept     (rank 52095)  [514s]
+[459/808] type  85 size   1152: REMOVED  (rank 52016)  [514s]
+[460/808] type  89 size   1152: REMOVED  (rank 52004)  [515s]
+[461/808] type  92 size   1152: kept     (rank 51971)  [516s]
+[462/808] type  93 size   1152: kept     (rank 51980)  [517s]
+[463/808] type  94 size   1152: kept     (rank 51993)  [517s]
+[464/808] type  95 size   1152: kept     (rank 51971)  [518s]
+[465/808] type  98 size   1152: REMOVED  (rank 51980)  [519s]
+[466/808] type 101 size   1152: REMOVED  (rank 51908)  [519s]
+[467/808] type 104 size   1152: kept     (rank 51870)  [520s]
+[468/808] type 105 size   1152: kept     (rank 51869)  [521s]
+[469/808] type 108 size   1152: REMOVED  (rank 51780)  [522s]
+[470/808] type 112 size   1152: kept     (rank 51654)  [522s]
+[471/808] type 118 size   1152: kept     (rank 51666)  [523s]
+[472/808] type 128 size   1152: kept     (rank 51666)  [524s]
+[473/808] type 129 size   1152: kept     (rank 51666)  [525s]
+[474/808] type 161 size   1152: REMOVED  (rank 51768)  [525s]
+[475/808] type 164 size   1152: kept     (rank 51654)  [526s]
+[476/808] type 169 size   1152: kept     (rank 51698)  [527s]
+[477/808] type 177 size   1152: REMOVED  (rank 51704)  [528s]
+[478/808] type 178 size   1152: REMOVED  (rank 51576)  [528s]
+[479/808] type 189 size   1152: REMOVED  (rank 51448)  [529s]
+[480/808] type 204 size   1152: kept     (rank 51402)  [530s]
+[481/808] type 205 size   1152: kept     (rank 51401)  [531s]
+[482/808] type 217 size   1152: kept     (rank 51395)  [531s]
+[483/808] type 218 size   1152: kept     (rank 51396)  [532s]
+[484/808] type 225 size   1152: REMOVED  (rank 51376)  [533s]
+[485/808] type 229 size   1152: REMOVED  (rank 51248)  [533s]
+[486/808] type 233 size   1152: REMOVED  (rank 51184)  [534s]
+[487/808] type 235 size   1152: REMOVED  (rank 51056)  [535s]
+[488/808] type 242 size   1152: REMOVED  (rank 50928)  [536s]
+[489/808] type 246 size   1152: REMOVED  (rank 50864)  [536s]
+[490/808] type 248 size   1152: REMOVED  (rank 50736)  [537s]
+[491/808] type 254 size   1152: REMOVED  (rank 50724)  [538s]
+[492/808] type 277 size   1152: REMOVED  (rank 50660)  [539s]
+[493/808] type 278 size   1152: REMOVED  (rank 50532)  [539s]
+[494/808] type 285 size   1152: REMOVED  (rank 50460)  [540s]
+[495/808] type 286 size   1152: kept     (rank 50433)  [541s]
+[496/808] type 287 size   1152: kept     (rank 50433)  [542s]
+[497/808] type 293 size   1152: REMOVED  (rank 50451)  [542s]
+[498/808] type 294 size   1152: kept     (rank 50341)  [543s]
+[499/808] type 296 size   1152: kept     (rank 50341)  [544s]
+[500/808] type 297 size   1152: kept     (rank 50334)  [544s]
+[501/808] type 304 size   1152: kept     (rank 50341)  [545s]
+[502/808] type 306 size   1152: kept     (rank 50341)  [546s]
+[503/808] type 312 size   1152: kept     (rank 50377)  [547s]
+[504/808] type 313 size   1152: kept     (rank 50377)  [547s]
+[505/808] type 319 size   1152: kept     (rank 50410)  [548s]
+[506/808] type 320 size   1152: kept     (rank 50407)  [549s]
+[507/808] type 322 size   1152: kept     (rank 50407)  [550s]
+[508/808] type 323 size   1152: kept     (rank 50410)  [550s]
+[509/808] type 330 size   1152: kept     (rank 50341)  [551s]
+[510/808] type 338 size   1152: REMOVED  (rank 50387)  [552s]
+[511/808] type 339 size   1152: REMOVED  (rank 50259)  [553s]
+[512/808] type 341 size   1152: REMOVED  (rank 50214)  [553s]
+[513/808] type 342 size   1152: kept     (rank 50101)  [554s]
+[514/808] type 344 size   1152: kept     (rank 50096)  [555s]
+[515/808] type 345 size   1152: kept     (rank 50101)  [555s]
+[516/808] type 352 size   1152: kept     (rank 50101)  [556s]
+[517/808] type 357 size   1152: kept     (rank 50174)  [557s]
+[518/808] type 359 size   1152: kept     (rank 50197)  [558s]
+[519/808] type 364 size   1152: REMOVED  (rank 50214)  [559s]
+[520/808] type 365 size   1152: REMOVED  (rank 50162)  [559s]
+[521/808] type 368 size   1152: REMOVED  (rank 50156)  [560s]
+[522/808] type 370 size   1152: REMOVED  (rank 50110)  [561s]
+[523/808] type 372 size   1152: kept     (rank 50040)  [562s]
+[524/808] type 380 size   1152: kept     (rank 49992)  [562s]
+[525/808] type 382 size   1152: kept     (rank 49992)  [563s]
+[526/808] type 388 size   1152: kept     (rank 50024)  [564s]
+[527/808] type 397 size   1152: kept     (rank 50027)  [565s]
+[528/808] type 407 size   1152: kept     (rank 50024)  [565s]
+[529/808] type 417 size   1152: kept     (rank 49992)  [566s]
+[530/808] type 419 size   1152: kept     (rank 49992)  [567s]
+[531/808] type 431 size   1152: REMOVED  (rank 50086)  [568s]
+[532/808] type 434 size   1152: REMOVED  (rank 50014)  [568s]
+[533/808] type 435 size   1152: kept     (rank 49910)  [569s]
+[534/808] type 436 size   1152: kept     (rank 49910)  [570s]
+[535/808] type 443 size   1152: kept     (rank 49901)  [570s]
+[536/808] type 444 size   1152: kept     (rank 49901)  [571s]
+[537/808] type 457 size   1152: kept     (rank 49901)  [572s]
+[538/808] type 458 size   1152: kept     (rank 49901)  [573s]
+[539/808] type 480 size   1152: kept     (rank 49981)  [573s]
+[540/808] type 481 size   1152: kept     (rank 49981)  [574s]
+[541/808] type 502 size   1152: kept     (rank 49973)  [575s]
+[542/808] type 520 size   1152: REMOVED  (rank 49942)  [576s]
+[543/808] type 524 size   1152: REMOVED  (rank 49878)  [576s]
+[544/808] type 525 size   1152: REMOVED  (rank 49750)  [577s]
+[545/808] type 527 size   1152: kept     (rank 49735)  [578s]
+[546/808] type 528 size   1152: kept     (rank 49735)  [579s]
+[547/808] type 530 size   1152: kept     (rank 49735)  [580s]
+[548/808] type 531 size   1152: kept     (rank 49735)  [580s]
+[549/808] type 538 size   1152: kept     (rank 49646)  [581s]
+[550/808] type 545 size   1152: REMOVED  (rank 49694)  [582s]
+[551/808] type 546 size   1152: REMOVED  (rank 49582)  [582s]
+[552/808] type 558 size   1152: REMOVED  (rank 49518)  [583s]
+[553/808] type 559 size   1152: REMOVED  (rank 49390)  [584s]
+[554/808] type 566 size   1152: REMOVED  (rank 49326)  [584s]
+[555/808] type 567 size   1152: REMOVED  (rank 49198)  [585s]
+[556/808] type 582 size   1152: REMOVED  (rank 49134)  [586s]
+[557/808] type 583 size   1152: REMOVED  (rank 49006)  [587s]
+[558/808] type 586 size   1152: kept     (rank 48924)  [588s]
+[559/808] type 593 size   1152: kept     (rank 48893)  [588s]
+[560/808] type 595 size   1152: kept     (rank 48893)  [589s]
+[561/808] type 601 size   1152: kept     (rank 48922)  [590s]
+[562/808] type 610 size   1152: kept     (rank 48985)  [590s]
+[563/808] type 613 size   1152: REMOVED  (rank 48998)  [591s]
+[564/808] type 615 size   1152: REMOVED  (rank 48974)  [592s]
+[565/808] type 618 size   1152: REMOVED  (rank 48902)  [593s]
+[566/808] type 621 size   1152: kept     (rank 48862)  [593s]
+[567/808] type 622 size   1152: kept     (rank 48859)  [594s]
+[568/808] type 625 size   1152: REMOVED  (rank 48896)  [595s]
+[569/808] type 627 size   1152: REMOVED  (rank 48850)  [596s]
+[570/808] type 629 size   1152: kept     (rank 48783)  [596s]
+[571/808] type 638 size   1152: REMOVED  (rank 48786)  [597s]
+[572/808] type 640 size   1152: REMOVED  (rank 48658)  [598s]
+[573/808] type 643 size   1152: kept     (rank 48618)  [599s]
+[574/808] type 644 size   1152: kept     (rank 48618)  [599s]
+[575/808] type 646 size   1152: kept     (rank 48618)  [600s]
+[576/808] type 647 size   1152: kept     (rank 48618)  [601s]
+[577/808] type 664 size   1152: REMOVED  (rank 48594)  [601s]
+[578/808] type 666 size   1152: REMOVED  (rank 48466)  [602s]
+[579/808] type 670 size   1152: kept     (rank 48375)  [603s]
+[580/808] type 672 size   1152: kept     (rank 48407)  [604s]
+[581/808] type 678 size   1152: kept     (rank 48405)  [605s]
+[582/808] type 687 size   1152: kept     (rank 48411)  [605s]
+[583/808] type 710 size   1152: kept     (rank 48435)  [606s]
+[584/808] type 711 size   1152: kept     (rank 48432)  [607s]
+[585/808] type 713 size   1152: kept     (rank 48435)  [608s]
+[586/808] type 714 size   1152: kept     (rank 48432)  [608s]
+[587/808] type 726 size   1152: REMOVED  (rank 48402)  [609s]
+[588/808] type 727 size   1152: REMOVED  (rank 48274)  [610s]
+[589/808] type 738 size   1152: kept     (rank 48215)  [611s]
+[590/808] type 746 size   1152: kept     (rank 48206)  [611s]
+[591/808] type 758 size   1152: REMOVED  (rank 48210)  [612s]
+[592/808] type 759 size   1152: REMOVED  (rank 48082)  [613s]
+[593/808] type 762 size   1152: kept     (rank 48009)  [613s]
+[594/808] type 769 size   1152: kept     (rank 48009)  [614s]
+[595/808] type 787 size   1152: kept     (rank 48049)  [615s]
+[596/808] type 789 size   1152: kept     (rank 48067)  [615s]
+[597/808] type 802 size   1152: REMOVED  (rank 48018)  [616s]
+[598/808] type 803 size   1152: REMOVED  (rank 47890)  [617s]
+[599/808] type 806 size   1152: REMOVED  (rank 47866)  [618s]
+[600/808] type 192 size    768: kept     (rank 47842)  [619s]
+[601/808] type 193 size    768: kept     (rank 47849)  [619s]
+[602/808] type 194 size    768: kept     (rank 47857)  [620s]
+[603/808] type 195 size    768: kept     (rank 47842)  [621s]
+[604/808] type 198 size    768: REMOVED  (rank 47848)  [621s]
+[605/808] type 201 size    768: REMOVED  (rank 47794)  [622s]
+[606/808] type 366 size    768: REMOVED  (rank 47718)  [623s]
+[607/808] type 371 size    768: REMOVED  (rank 47642)  [623s]
+[608/808] type 628 size    768: REMOVED  (rank 47566)  [624s]
+[609/808] type 793 size    768: REMOVED  (rank 47548)  [625s]
+[610/808] type 796 size    768: REMOVED  (rank 47494)  [626s]
+[611/808] type   1 size    576: kept     (rank 47483)  [626s]
+[612/808] type   4 size    576: REMOVED  (rank 47490)  [627s]
+[613/808] type   6 size    576: REMOVED  (rank 47478)  [628s]
+[614/808] type   9 size    576: REMOVED  (rank 47442)  [628s]
+[615/808] type  10 size    576: kept     (rank 47380)  [629s]
+[616/808] type  16 size    576: kept     (rank 47392)  [630s]
+[617/808] type  17 size    576: kept     (rank 47392)  [630s]
+[618/808] type  24 size    576: kept     (rank 47380)  [631s]
+[619/808] type  34 size    576: kept     (rank 47382)  [632s]
+[620/808] type  39 size    576: kept     (rank 47380)  [632s]
+[621/808] type  45 size    576: kept     (rank 47388)  [633s]
+[622/808] type  46 size    576: kept     (rank 47388)  [634s]
+[623/808] type  53 size    576: kept     (rank 47380)  [634s]
+[624/808] type  58 size    576: kept     (rank 47380)  [635s]
+[625/808] type  64 size    576: kept     (rank 47392)  [636s]
+[626/808] type  75 size    576: REMOVED  (rank 47430)  [637s]
+[627/808] type  82 size    576: kept     (rank 47370)  [637s]
+[628/808] type  88 size    576: REMOVED  (rank 47402)  [638s]
+[629/808] type  90 size    576: REMOVED  (rank 47350)  [639s]
+[630/808] type  99 size    576: kept     (rank 47339)  [639s]
+[631/808] type 100 size    576: kept     (rank 47339)  [640s]
+[632/808] type 107 size    576: kept     (rank 47300)  [641s]
+[633/808] type 123 size    576: kept     (rank 47288)  [641s]
+[634/808] type 136 size    576: kept     (rank 47288)  [642s]
+[635/808] type 141 size    576: kept     (rank 47288)  [643s]
+[636/808] type 147 size    576: kept     (rank 47296)  [644s]
+[637/808] type 148 size    576: kept     (rank 47296)  [644s]
+[638/808] type 155 size    576: kept     (rank 47288)  [645s]
+[639/808] type 162 size    576: REMOVED  (rank 47322)  [646s]
+[640/808] type 163 size    576: REMOVED  (rank 47266)  [646s]
+[641/808] type 174 size    576: kept     (rank 47236)  [647s]
+[642/808] type 175 size    576: kept     (rank 47236)  [648s]
+[643/808] type 180 size    576: kept     (rank 47234)  [648s]
+[644/808] type 186 size    576: kept     (rank 47216)  [649s]
+[645/808] type 207 size    576: kept     (rank 47212)  [650s]
+[646/808] type 208 size    576: kept     (rank 47212)  [650s]
+[647/808] type 223 size    576: REMOVED  (rank 47234)  [651s]
+[648/808] type 224 size    576: REMOVED  (rank 47170)  [652s]
+[649/808] type 226 size    576: kept     (rank 47112)  [653s]
+[650/808] type 234 size    576: kept     (rank 47131)  [653s]
+[651/808] type 239 size    576: kept     (rank 47112)  [654s]
+[652/808] type 247 size    576: kept     (rank 47131)  [655s]
+[653/808] type 253 size    576: REMOVED  (rank 47142)  [656s]
+[654/808] type 255 size    576: REMOVED  (rank 47086)  [656s]
+[655/808] type 256 size    576: kept     (rank 47037)  [657s]
+[656/808] type 258 size    576: kept     (rank 47059)  [657s]
+[657/808] type 264 size    576: kept     (rank 47037)  [658s]
+[658/808] type 266 size    576: kept     (rank 47037)  [659s]
+[659/808] type 272 size    576: kept     (rank 47048)  [660s]
+[660/808] type 283 size    576: REMOVED  (rank 47054)  [660s]
+[661/808] type 284 size    576: REMOVED  (rank 46990)  [661s]
+[662/808] type 335 size    576: kept     (rank 46968)  [662s]
+[663/808] type 336 size    576: kept     (rank 46965)  [662s]
+[664/808] type 374 size    576: kept     (rank 46976)  [663s]
+[665/808] type 375 size    576: kept     (rank 46976)  [664s]
+[666/808] type 390 size    576: kept     (rank 46960)  [664s]
+[667/808] type 391 size    576: kept     (rank 46963)  [665s]
+[668/808] type 396 size    576: kept     (rank 46967)  [666s]
+[669/808] type 399 size    576: kept     (rank 46967)  [666s]
+[670/808] type 404 size    576: kept     (rank 46960)  [667s]
+[671/808] type 405 size    576: kept     (rank 46963)  [668s]
+[672/808] type 413 size    576: kept     (rank 46958)  [669s]
+[673/808] type 425 size    576: kept     (rank 46948)  [669s]
+[674/808] type 432 size    576: kept     (rank 46980)  [670s]
+[675/808] type 433 size    576: kept     (rank 46980)  [671s]
+[676/808] type 451 size    576: kept     (rank 46930)  [671s]
+[677/808] type 465 size    576: kept     (rank 46934)  [672s]
+[678/808] type 466 size    576: kept     (rank 46934)  [673s]
+[679/808] type 473 size    576: kept     (rank 46930)  [673s]
+[680/808] type 483 size    576: kept     (rank 46950)  [674s]
+[681/808] type 485 size    576: kept     (rank 46965)  [675s]
+[682/808] type 491 size    576: kept     (rank 46950)  [675s]
+[683/808] type 493 size    576: kept     (rank 46950)  [676s]
+[684/808] type 499 size    576: kept     (rank 46950)  [677s]
+[685/808] type 504 size    576: REMOVED  (rank 46990)  [677s]
+[686/808] type 505 size    576: kept     (rank 46950)  [678s]
+[687/808] type 507 size    576: kept     (rank 46941)  [679s]
+[688/808] type 508 size    576: kept     (rank 46953)  [679s]
+[689/808] type 518 size    576: REMOVED  (rank 46958)  [680s]
+[690/808] type 519 size    576: REMOVED  (rank 46894)  [681s]
+[691/808] type 521 size    576: kept     (rank 46867)  [681s]
+[692/808] type 522 size    576: kept     (rank 46867)  [682s]
+[693/808] type 543 size    576: kept     (rank 46866)  [683s]
+[694/808] type 548 size    576: kept     (rank 46862)  [683s]
+[695/808] type 553 size    576: kept     (rank 46871)  [684s]
+[696/808] type 562 size    576: kept     (rank 46871)  [685s]
+[697/808] type 569 size    576: kept     (rank 46845)  [686s]
+[698/808] type 571 size    576: kept     (rank 46845)  [686s]
+[699/808] type 577 size    576: kept     (rank 46859)  [687s]
+[700/808] type 585 size    576: kept     (rank 46873)  [688s]
+[701/808] type 588 size    576: kept     (rank 46873)  [688s]
+[702/808] type 602 size    576: kept     (rank 46864)  [689s]
+[703/808] type 604 size    576: kept     (rank 46864)  [690s]
+[704/808] type 611 size    576: kept     (rank 46882)  [690s]
+[705/808] type 612 size    576: kept     (rank 46889)  [691s]
+[706/808] type 616 size    576: kept     (rank 46881)  [692s]
+[707/808] type 617 size    576: kept     (rank 46882)  [693s]
+[708/808] type 631 size    576: kept     (rank 46883)  [693s]
+[709/808] type 632 size    576: kept     (rank 46883)  [694s]
+[710/808] type 637 size    576: kept     (rank 46859)  [695s]
+[711/808] type 639 size    576: kept     (rank 46860)  [696s]
+[712/808] type 654 size    576: kept     (rank 46839)  [697s]
+[713/808] type 656 size    576: kept     (rank 46839)  [698s]
+[714/808] type 665 size    576: kept     (rank 46867)  [698s]
+[715/808] type 679 size    576: kept     (rank 46885)  [699s]
+[716/808] type 681 size    576: kept     (rank 46885)  [700s]
+[717/808] type 686 size    576: kept     (rank 46887)  [701s]
+[718/808] type 689 size    576: kept     (rank 46887)  [702s]
+[719/808] type 694 size    576: kept     (rank 46857)  [702s]
+[720/808] type 696 size    576: kept     (rank 46857)  [703s]
+[721/808] type 702 size    576: kept     (rank 46857)  [704s]
+[722/808] type 704 size    576: kept     (rank 46867)  [704s]
+[723/808] type 721 size    576: kept     (rank 46873)  [705s]
+[724/808] type 729 size    576: kept     (rank 46857)  [706s]
+[725/808] type 731 size    576: kept     (rank 46857)  [707s]
+[726/808] type 737 size    576: REMOVED  (rank 46888)  [707s]
+[727/808] type 740 size    576: kept     (rank 46833)  [708s]
+[728/808] type 745 size    576: kept     (rank 46865)  [709s]
+[729/808] type 748 size    576: kept     (rank 46865)  [710s]
+[730/808] type 753 size    576: kept     (rank 46855)  [710s]
+[731/808] type 761 size    576: kept     (rank 46863)  [711s]
+[732/808] type 764 size    576: kept     (rank 46863)  [712s]
+[733/808] type 771 size    576: kept     (rank 46864)  [712s]
+[734/808] type 772 size    576: kept     (rank 46864)  [713s]
+[735/808] type 777 size    576: kept     (rank 46844)  [714s]
+[736/808] type 782 size    576: kept     (rank 46845)  [714s]
+[737/808] type 798 size    576: kept     (rank 46851)  [715s]
+[738/808] type 199 size    384: kept     (rank 46881)  [716s]
+[739/808] type 200 size    384: kept     (rank 46881)  [717s]
+[740/808] type 794 size    384: kept     (rank 46881)  [717s]
+[741/808] type 795 size    384: kept     (rank 46881)  [718s]
+[742/808] type 807 size    384: REMOVED  (rank 46848)  [719s]
+[743/808] type   2 size    288: kept     (rank 46842)  [719s]
+[744/808] type   3 size    288: kept     (rank 46845)  [720s]
+[745/808] type   7 size    288: kept     (rank 46845)  [721s]
+[746/808] type   8 size    288: kept     (rank 46845)  [721s]
+[747/808] type  29 size    288: kept     (rank 46818)  [722s]
+[748/808] type  69 size    288: kept     (rank 46832)  [723s]
+[749/808] type  77 size    288: kept     (rank 46832)  [724s]
+[750/808] type  87 size    288: kept     (rank 46836)  [724s]
+[751/808] type  91 size    288: kept     (rank 46832)  [725s]
+[752/808] type 102 size    288: kept     (rank 46818)  [726s]
+[753/808] type 160 size    288: kept     (rank 46836)  [727s]
+[754/808] type 202 size    288: kept     (rank 46818)  [727s]
+[755/808] type 215 size    288: kept     (rank 46818)  [728s]
+[756/808] type 220 size    288: kept     (rank 46837)  [729s]
+[757/808] type 221 size    288: kept     (rank 46839)  [729s]
+[758/808] type 231 size    288: kept     (rank 46838)  [730s]
+[759/808] type 232 size    288: kept     (rank 46838)  [731s]
+[760/808] type 244 size    288: kept     (rank 46835)  [732s]
+[761/808] type 245 size    288: kept     (rank 46835)  [732s]
+[762/808] type 252 size    288: kept     (rank 46830)  [733s]
+[763/808] type 273 size    288: kept     (rank 46834)  [733s]
+[764/808] type 275 size    288: kept     (rank 46837)  [734s]
+[765/808] type 280 size    288: kept     (rank 46838)  [735s]
+[766/808] type 281 size    288: kept     (rank 46839)  [736s]
+[767/808] type 358 size    288: kept     (rank 46832)  [736s]
+[768/808] type 362 size    288: kept     (rank 46832)  [737s]
+[769/808] type 367 size    288: kept     (rank 46832)  [738s]
+[770/808] type 478 size    288: kept     (rank 46820)  [738s]
+[771/808] type 515 size    288: kept     (rank 46834)  [739s]
+[772/808] type 516 size    288: kept     (rank 46836)  [740s]
+[773/808] type 554 size    288: kept     (rank 46839)  [740s]
+[774/808] type 556 size    288: kept     (rank 46839)  [741s]
+[775/808] type 561 size    288: kept     (rank 46839)  [742s]
+[776/808] type 564 size    288: kept     (rank 46839)  [742s]
+[777/808] type 578 size    288: kept     (rank 46842)  [743s]
+[778/808] type 580 size    288: kept     (rank 46842)  [744s]
+[779/808] type 619 size    288: kept     (rank 46820)  [744s]
+[780/808] type 624 size    288: kept     (rank 46831)  [745s]
+[781/808] type 662 size    288: kept     (rank 46842)  [746s]
+[782/808] type 663 size    288: kept     (rank 46842)  [746s]
+[783/808] type 722 size    288: kept     (rank 46839)  [747s]
+[784/808] type 724 size    288: kept     (rank 46839)  [748s]
+[785/808] type 754 size    288: kept     (rank 46843)  [748s]
+[786/808] type 756 size    288: kept     (rank 46843)  [749s]
+[787/808] type 788 size    288: kept     (rank 46832)  [750s]
+[788/808] type 797 size    288: kept     (rank 46839)  [750s]
+[789/808] type 800 size    288: kept     (rank 46839)  [751s]
+[790/808] type  76 size    192: REMOVED  (rank 46828)  [752s]
+[791/808] type 191 size    192: kept     (rank 46816)  [752s]
+[792/808] type 427 size    192: kept     (rank 46820)  [753s]
+[793/808] type 778 size    192: kept     (rank 46818)  [754s]
+[794/808] type 784 size    192: kept     (rank 46819)  [755s]
+[795/808] type 805 size    192: kept     (rank 46814)  [755s]
+[796/808] type  97 size    144: kept     (rank 46814)  [756s]
+[797/808] type 430 size    144: kept     (rank 46816)  [757s]
+[798/808] type 609 size    144: kept     (rank 46820)  [757s]
+[799/808] type 614 size    144: kept     (rank 46816)  [758s]
+[800/808] type  74 size     96: kept     (rank 46822)  [759s]
+[801/808] type 197 size     96: kept     (rank 46818)  [759s]
+[802/808] type 363 size     96: kept     (rank 46824)  [760s]
+[803/808] type 369 size     96: kept     (rank 46824)  [761s]
+[804/808] type 626 size     96: kept     (rank 46826)  [761s]
+[805/808] type 792 size     96: kept     (rank 46818)  [762s]
+[806/808] type   0 size     72: kept     (rank 46824)  [763s]
+[807/808] type   5 size     72: kept     (rank 46822)  [763s]
+
+minimal sufficient family: 379 types, 509424 partial labelings of 1834800
+  type   0 size     72  ranks=(1, 2, 1) edges=E-E nonsimplex mags=(1, 1, 1) 01:eq 02:ne 12:eq   rep=((0, 1), (1, -1), (2, -1))
+  type   1 size    576  ranks=(1, 2, 1) edges=E-E nonsimplex mags=(1, 1, 2) 01:eq   rep=((0, 1), (1, -1), (2, 2))
+  type   2 size    288  ranks=(1, 2, 1) edges=E-E nonsimplex mags=(1, 1, 2) 02:eq   rep=((0, 1), (1, 2), (2, 1))
+  type   3 size    288  ranks=(1, 2, 1) edges=E-E nonsimplex mags=(1, 1, 2) 02:ne   rep=((0, 1), (1, 2), (2, -1))
+  type   5 size     72  ranks=(1, 2, 2) edges=EE- nonsimplex mags=(1, 1, 1) 01:eq 02:eq 12:ne   rep=((0, 1), (1, -1), (3, 1))
+  type   7 size    288  ranks=(1, 2, 2) edges=EE- nonsimplex mags=(1, 2, 2) 12:eq   rep=((0, 1), (1, 2), (3, 2))
+  type   8 size    288  ranks=(1, 2, 2) edges=EE- nonsimplex mags=(1, 2, 2) 12:ne   rep=((0, 1), (1, 2), (3, -2))
+  type  10 size    576  ranks=(1, 2, 3) edges=EE- nonsimplex mags=(1, 1, 1) 01:eq 02:eq 12:eq   rep=((0, 1), (1, -1), (4, -1))
+  type  13 size   2304  ranks=(1, 2, 3) edges=EE- nonsimplex mags=(1, 2, 2) 12:eq   rep=((0, 1), (1, 2), (4, 2))
+  type  14 size   2304  ranks=(1, 2, 3) edges=EE- nonsimplex mags=(1, 2, 2) 12:ne   rep=((0, 1), (1, 2), (4, -2))
+  type  16 size    576  ranks=(1, 2, 2) edges=E-- nonsimplex mags=(1, 1, 1) 01:eq 02:eq 12:ne   rep=((0, 1), (1, -1), (5, 1))
+  type  17 size    576  ranks=(1, 2, 2) edges=E-- nonsimplex mags=(1, 1, 1) 01:eq 02:ne 12:eq   rep=((0, 1), (1, -1), (5, -1))
+  type  21 size   2304  ranks=(1, 2, 2) edges=E-- nonsimplex mags=(1, 2, 2) 12:eq   rep=((0, 1), (1, 2), (5, 2))
+  type  22 size   2304  ranks=(1, 2, 2) edges=E-- nonsimplex mags=(1, 2, 2) 12:ne   rep=((0, 1), (1, 2), (5, -2))
+  type  24 size    576  ranks=(1, 2, 3) edges=EEE simplex mags=(1, 1, 1) 01:eq 02:eq 12:eq   rep=((0, 1), (1, -1), (6, 1))
+  type  27 size   2304  ranks=(1, 2, 3) edges=EEE simplex mags=(1, 2, 2) 12:eq   rep=((0, 1), (1, 2), (6, -2))
+  type  28 size   4608  ranks=(1, 2, 3) edges=EEE simplex mags=(1, 2, 3)    rep=((0, 1), (1, 2), (6, 3))
+  type  29 size    288  ranks=(1, 2, 2) edges=EE- nonsimplex mags=(1, 1, 1) 01:eq 02:eq 12:eq   rep=((0, 1), (1, -1), (7, -1))
+  type  31 size   1152  ranks=(1, 2, 2) edges=EE- nonsimplex mags=(1, 2, 2) 12:eq   rep=((0, 1), (1, 2), (7, 2))
+  type  32 size   1152  ranks=(1, 2, 2) edges=EE- nonsimplex mags=(1, 2, 2) 12:ne   rep=((0, 1), (1, 2), (7, -2))
+  type  34 size    576  ranks=(1, 2, 1) edges=E-- nonsimplex mags=(1, 1, 1) 01:eq 02:eq 12:ne   rep=((0, 1), (1, -1), (8, 1))
+  type  37 size   2304  ranks=(1, 2, 1) edges=E-- nonsimplex mags=(1, 2, 2) 12:eq   rep=((0, 1), (1, 2), (8, 2))
+  type  39 size    576  ranks=(1, 2, 4) edges=EE- nonsimplex mags=(1, 1, 1) 01:eq 02:eq 12:eq   rep=((0, 1), (1, -1), (13, -1))
+  type  42 size   2304  ranks=(1, 2, 4) edges=EE- nonsimplex mags=(1, 2, 2) 12:eq   rep=((0, 1), (1, 2), (13, 2))
+  type  43 size   2304  ranks=(1, 2, 4) edges=EE- nonsimplex mags=(1, 2, 2) 12:ne   rep=((0, 1), (1, 2), (13, -2))
+  type  45 size    576  ranks=(1, 2, 3) edges=E-- nonsimplex mags=(1, 1, 1) 01:eq 02:eq 12:ne   rep=((0, 1), (1, -1), (14, 1))
+  type  46 size    576  ranks=(1, 2, 3) edges=E-- nonsimplex mags=(1, 1, 1) 01:eq 02:ne 12:eq   rep=((0, 1), (1, -1), (14, -1))
+  type  50 size   2304  ranks=(1, 2, 3) edges=E-- nonsimplex mags=(1, 2, 2) 12:eq   rep=((0, 1), (1, 2), (14, 2))
+  type  51 size   2304  ranks=(1, 2, 3) edges=E-- nonsimplex mags=(1, 2, 2) 12:ne   rep=((0, 1), (1, 2), (14, -2))
+  type  53 size    576  ranks=(1, 2, 4) edges=EEE simplex mags=(1, 1, 1) 01:eq 02:eq 12:eq   rep=((0, 1), (1, -1), (15, 1))
+  type  56 size   2304  ranks=(1, 2, 4) edges=EEE simplex mags=(1, 2, 2) 12:eq   rep=((0, 1), (1, 2), (15, -2))
+  type  57 size   4608  ranks=(1, 2, 4) edges=EEE simplex mags=(1, 2, 3)    rep=((0, 1), (1, 2), (15, 3))
+  type  58 size    576  ranks=(1, 2, 3) edges=EE- nonsimplex mags=(1, 1, 1) 01:eq 02:eq 12:eq   rep=((0, 1), (1, -1), (16, -1))
+  type  61 size   2304  ranks=(1, 2, 3) edges=EE- nonsimplex mags=(1, 2, 2) 12:eq   rep=((0, 1), (1, 2), (16, 2))
+  type  62 size   2304  ranks=(1, 2, 3) edges=EE- nonsimplex mags=(1, 2, 2) 12:ne   rep=((0, 1), (1, 2), (16, -2))
+  type  64 size    576  ranks=(1, 2, 2) edges=E-- nonsimplex mags=(1, 1, 1) 01:eq 02:eq 12:ne   rep=((0, 1), (1, -1), (17, 1))
+  type  67 size   2304  ranks=(1, 2, 2) edges=E-- nonsimplex mags=(1, 2, 2) 12:eq   rep=((0, 1), (1, 2), (17, 2))
+  type  69 size    288  ranks=(1, 1, 3) edges=-EE nonsimplex mags=(1, 1, 1) 01:eq 02:eq 12:eq   rep=((0, 1), (2, 1), (4, -1))
+  type  70 size   1152  ranks=(1, 1, 3) edges=-EE nonsimplex mags=(1, 1, 2) 01:eq   rep=((0, 1), (2, 1), (4, 2))
+  type  71 size   1152  ranks=(1, 1, 3) edges=-EE nonsimplex mags=(1, 1, 2) 01:ne   rep=((0, 1), (2, -1), (4, 2))
+  type  72 size   2304  ranks=(1, 1, 3) edges=-EE nonsimplex mags=(1, 1, 2) 02:eq   rep=((0, 1), (2, 2), (4, -1))
+  type  74 size     96  ranks=(1, 1, 1) edges=--- nonsimplex mags=(1, 1, 1) 01:eq 02:eq 12:eq   rep=((0, 1), (2, 1), (8, 1))
+  type  77 size    288  ranks=(1, 1, 4) edges=-EE nonsimplex mags=(1, 1, 1) 01:eq 02:eq 12:eq   rep=((0, 1), (2, 1), (13, -1))
+  type  78 size   1152  ranks=(1, 1, 4) edges=-EE nonsimplex mags=(1, 1, 2) 01:eq   rep=((0, 1), (2, 1), (13, 2))
+  type  79 size   1152  ranks=(1, 1, 4) edges=-EE nonsimplex mags=(1, 1, 2) 01:ne   rep=((0, 1), (2, -1), (13, 2))
+  type  80 size   2304  ranks=(1, 1, 4) edges=-EE nonsimplex mags=(1, 1, 2) 02:eq   rep=((0, 1), (2, 2), (13, -1))
+  type  82 size    576  ranks=(1, 1, 3) edges=--E nonsimplex mags=(1, 1, 1) 01:eq 02:ne 12:eq   rep=((0, 1), (2, 1), (14, -1))
+  type  84 size   2304  ranks=(1, 1, 3) edges=--E nonsimplex mags=(1, 1, 2) 02:eq   rep=((0, 1), (2, 2), (14, 1))
+  type  87 size    288  ranks=(1, 1, 2) edges=--- nonsimplex mags=(1, 1, 1) 01:eq 02:eq 12:eq   rep=((0, 1), (2, 1), (17, 1))
+  type  91 size    288  ranks=(1, 3, 2) edges=E-E nonsimplex mags=(1, 1, 1) 01:eq 02:ne 12:eq   rep=((0, 1), (4, -1), (5, -1))
+  type  92 size   1152  ranks=(1, 3, 2) edges=E-E nonsimplex mags=(1, 1, 2) 01:eq   rep=((0, 1), (4, -1), (5, 2))
+  type  93 size   1152  ranks=(1, 3, 2) edges=E-E nonsimplex mags=(1, 1, 2) 02:eq   rep=((0, 1), (4, 2), (5, 1))
+  type  94 size   1152  ranks=(1, 3, 2) edges=E-E nonsimplex mags=(1, 1, 2) 02:ne   rep=((0, 1), (4, 2), (5, -1))
+  type  95 size   1152  ranks=(1, 3, 2) edges=E-E nonsimplex mags=(1, 2, 2) 12:eq   rep=((0, 1), (4, 2), (5, 2))
+  type  97 size    144  ranks=(1, 3, 3) edges=EE- nonsimplex mags=(1, 1, 1) 01:eq 02:eq 12:ne   rep=((0, 1), (4, -1), (6, 1))
+  type  99 size    576  ranks=(1, 3, 3) edges=EE- nonsimplex mags=(1, 2, 2) 12:eq   rep=((0, 1), (4, 2), (6, 2))
+  type 100 size    576  ranks=(1, 3, 3) edges=EE- nonsimplex mags=(1, 2, 2) 12:ne   rep=((0, 1), (4, 2), (6, -2))
+  type 102 size    288  ranks=(1, 3, 3) edges=EE- nonsimplex mags=(1, 1, 1) 01:eq 02:eq 12:eq   rep=((0, 1), (4, -1), (10, -1))
+  type 104 size   1152  ranks=(1, 3, 3) edges=EE- nonsimplex mags=(1, 2, 2) 12:eq   rep=((0, 1), (4, 2), (10, 2))
+  type 105 size   1152  ranks=(1, 3, 3) edges=EE- nonsimplex mags=(1, 2, 2) 12:ne   rep=((0, 1), (4, 2), (10, -2))
+  type 107 size    576  ranks=(1, 3, 2) edges=E-- nonsimplex mags=(1, 1, 1) 01:eq 02:eq 12:ne   rep=((0, 1), (4, -1), (11, 1))
+  type 110 size   2304  ranks=(1, 3, 2) edges=E-- nonsimplex mags=(1, 2, 2) 12:eq   rep=((0, 1), (4, 2), (11, 2))
+  type 112 size   1152  ranks=(1, 3, 4) edges=EE- nonsimplex mags=(1, 1, 1) 01:eq 02:eq 12:eq   rep=((0, 1), (4, -1), (13, -1))
+  type 115 size   4608  ranks=(1, 3, 4) edges=EE- nonsimplex mags=(1, 2, 2) 12:eq   rep=((0, 1), (4, 2), (13, 2))
+  type 116 size   4608  ranks=(1, 3, 4) edges=EE- nonsimplex mags=(1, 2, 2) 12:ne   rep=((0, 1), (4, 2), (13, -2))
+  type 118 size   1152  ranks=(1, 3, 3) edges=E-- nonsimplex mags=(1, 1, 1) 01:eq 02:eq 12:ne   rep=((0, 1), (4, -1), (14, 1))
+  type 121 size   4608  ranks=(1, 3, 3) edges=E-- nonsimplex mags=(1, 2, 2) 12:eq   rep=((0, 1), (4, 2), (14, 2))
+  type 123 size    576  ranks=(1, 3, 3) edges=EE- nonsimplex mags=(1, 1, 1) 01:eq 02:eq 12:eq   rep=((0, 1), (4, -1), (16, -1))
+  type 125 size   2304  ranks=(1, 3, 3) edges=EE- nonsimplex mags=(1, 2, 2) 12:eq   rep=((0, 1), (4, 2), (16, 2))
+  type 126 size   2304  ranks=(1, 3, 3) edges=EE- nonsimplex mags=(1, 2, 2) 12:ne   rep=((0, 1), (4, 2), (16, -2))
+  type 128 size   1152  ranks=(1, 3, 2) edges=E-- nonsimplex mags=(1, 1, 1) 01:eq 02:eq 12:ne   rep=((0, 1), (4, -1), (17, 1))
+  type 129 size   1152  ranks=(1, 3, 2) edges=E-- nonsimplex mags=(1, 1, 1) 01:eq 02:ne 12:eq   rep=((0, 1), (4, -1), (17, -1))
+  type 133 size   4608  ranks=(1, 3, 2) edges=E-- nonsimplex mags=(1, 2, 2) 12:eq   rep=((0, 1), (4, 2), (17, 2))
+  type 134 size   4608  ranks=(1, 3, 2) edges=E-- nonsimplex mags=(1, 2, 2) 12:ne   rep=((0, 1), (4, 2), (17, -2))
+  type 136 size    576  ranks=(1, 3, 3) edges=EE- nonsimplex mags=(1, 1, 1) 01:eq 02:eq 12:ne   rep=((0, 1), (4, -1), (18, 1))
+  type 138 size   2304  ranks=(1, 3, 3) edges=EE- nonsimplex mags=(1, 2, 2) 12:eq   rep=((0, 1), (4, 2), (18, 2))
+  type 139 size   2304  ranks=(1, 3, 3) edges=EE- nonsimplex mags=(1, 2, 2) 12:ne   rep=((0, 1), (4, 2), (18, -2))
+  type 141 size    576  ranks=(1, 3, 4) edges=EE- nonsimplex mags=(1, 1, 1) 01:eq 02:eq 12:eq   rep=((0, 1), (4, -1), (19, -1))
+  type 144 size   2304  ranks=(1, 3, 4) edges=EE- nonsimplex mags=(1, 2, 2) 12:eq   rep=((0, 1), (4, 2), (19, 2))
+  type 145 size   2304  ranks=(1, 3, 4) edges=EE- nonsimplex mags=(1, 2, 2) 12:ne   rep=((0, 1), (4, 2), (19, -2))
+  type 147 size    576  ranks=(1, 3, 3) edges=E-- nonsimplex mags=(1, 1, 1) 01:eq 02:eq 12:ne   rep=((0, 1), (4, -1), (20, 1))
+  type 148 size    576  ranks=(1, 3, 3) edges=E-- nonsimplex mags=(1, 1, 1) 01:eq 02:ne 12:eq   rep=((0, 1), (4, -1), (20, -1))
+  type 152 size   2304  ranks=(1, 3, 3) edges=E-- nonsimplex mags=(1, 2, 2) 12:eq   rep=((0, 1), (4, 2), (20, 2))
+  type 153 size   2304  ranks=(1, 3, 3) edges=E-- nonsimplex mags=(1, 2, 2) 12:ne   rep=((0, 1), (4, 2), (20, -2))
+  type 155 size    576  ranks=(1, 3, 4) edges=EEE simplex mags=(1, 1, 1) 01:eq 02:eq 12:eq   rep=((0, 1), (4, -1), (21, 1))
+  type 158 size   2304  ranks=(1, 3, 4) edges=EEE simplex mags=(1, 2, 2) 12:eq   rep=((0, 1), (4, 2), (21, -2))
+  type 159 size   4608  ranks=(1, 3, 4) edges=EEE simplex mags=(1, 2, 3)    rep=((0, 1), (4, 2), (21, 3))
+  type 160 size    288  ranks=(1, 2, 2) edges=--- nonsimplex mags=(1, 1, 1) 01:eq 02:eq 12:eq   rep=((0, 1), (5, 1), (11, 1))
+  type 164 size   1152  ranks=(1, 2, 4) edges=-E- nonsimplex mags=(1, 1, 1) 01:eq 02:eq 12:ne   rep=((0, 1), (5, 1), (13, -1))
+  type 167 size   4608  ranks=(1, 2, 4) edges=-E- nonsimplex mags=(1, 2, 2) 12:eq   rep=((0, 1), (5, 2), (13, 2))
+  type 169 size   1152  ranks=(1, 2, 3) edges=--- nonsimplex mags=(1, 1, 1) 01:eq 02:eq 12:eq   rep=((0, 1), (5, 1), (14, 1))
+  type 174 size    576  ranks=(1, 2, 2) edges=--- nonsimplex mags=(1, 1, 1) 01:eq 02:eq 12:eq   rep=((0, 1), (5, 1), (17, 1))
+  type 175 size    576  ranks=(1, 2, 2) edges=--- nonsimplex mags=(1, 1, 1) 01:eq 02:ne 12:ne   rep=((0, 1), (5, 1), (17, -1))
+  type 180 size    576  ranks=(1, 2, 4) edges=-EE nonsimplex mags=(1, 1, 1) 01:eq 02:eq 12:eq   rep=((0, 1), (5, 1), (19, -1))
+  type 181 size   2304  ranks=(1, 2, 4) edges=-EE nonsimplex mags=(1, 1, 2) 01:eq   rep=((0, 1), (5, 1), (19, 2))
+  type 182 size   2304  ranks=(1, 2, 4) edges=-EE nonsimplex mags=(1, 1, 2) 01:ne   rep=((0, 1), (5, -1), (19, 2))
+  type 183 size   2304  ranks=(1, 2, 4) edges=-EE nonsimplex mags=(1, 1, 2) 02:eq   rep=((0, 1), (5, 2), (19, -1))
+  type 184 size   2304  ranks=(1, 2, 4) edges=-EE nonsimplex mags=(1, 2, 2) 12:eq   rep=((0, 1), (5, 2), (19, -2))
+  type 186 size    576  ranks=(1, 2, 3) edges=--E nonsimplex mags=(1, 1, 1) 01:eq 02:ne 12:eq   rep=((0, 1), (5, 1), (20, -1))
+  type 188 size   2304  ranks=(1, 2, 3) edges=--E nonsimplex mags=(1, 1, 2) 02:eq   rep=((0, 1), (5, 2), (20, 1))
+  type 191 size    192  ranks=(1, 4, 3) edges=E-E nonsimplex mags=(1, 1, 1) 01:eq 02:ne 12:eq   rep=((0, 1), (13, -1), (14, -1))
+  type 192 size    768  ranks=(1, 4, 3) edges=E-E nonsimplex mags=(1, 1, 2) 01:eq   rep=((0, 1), (13, -1), (14, 2))
+  type 193 size    768  ranks=(1, 4, 3) edges=E-E nonsimplex mags=(1, 1, 2) 02:eq   rep=((0, 1), (13, 2), (14, 1))
+  type 194 size    768  ranks=(1, 4, 3) edges=E-E nonsimplex mags=(1, 1, 2) 02:ne   rep=((0, 1), (13, 2), (14, -1))
+  type 195 size    768  ranks=(1, 4, 3) edges=E-E nonsimplex mags=(1, 2, 2) 12:eq   rep=((0, 1), (13, 2), (14, 2))
+  type 197 size     96  ranks=(1, 4, 4) edges=EE- nonsimplex mags=(1, 1, 1) 01:eq 02:eq 12:ne   rep=((0, 1), (13, -1), (15, 1))
+  type 199 size    384  ranks=(1, 4, 4) edges=EE- nonsimplex mags=(1, 2, 2) 12:eq   rep=((0, 1), (13, 2), (15, 2))
+  type 200 size    384  ranks=(1, 4, 4) edges=EE- nonsimplex mags=(1, 2, 2) 12:ne   rep=((0, 1), (13, 2), (15, -2))
+  type 202 size    288  ranks=(1, 4, 4) edges=EE- nonsimplex mags=(1, 1, 1) 01:eq 02:eq 12:eq   rep=((0, 1), (13, -1), (19, -1))
+  type 204 size   1152  ranks=(1, 4, 4) edges=EE- nonsimplex mags=(1, 2, 2) 12:eq   rep=((0, 1), (13, 2), (19, 2))
+  type 205 size   1152  ranks=(1, 4, 4) edges=EE- nonsimplex mags=(1, 2, 2) 12:ne   rep=((0, 1), (13, 2), (19, -2))
+  type 207 size    576  ranks=(1, 4, 3) edges=E-- nonsimplex mags=(1, 1, 1) 01:eq 02:eq 12:ne   rep=((0, 1), (13, -1), (20, 1))
+  type 208 size    576  ranks=(1, 4, 3) edges=E-- nonsimplex mags=(1, 1, 1) 01:eq 02:ne 12:eq   rep=((0, 1), (13, -1), (20, -1))
+  type 212 size   2304  ranks=(1, 4, 3) edges=E-- nonsimplex mags=(1, 2, 2) 12:eq   rep=((0, 1), (13, 2), (20, 2))
+  type 213 size   2304  ranks=(1, 4, 3) edges=E-- nonsimplex mags=(1, 2, 2) 12:ne   rep=((0, 1), (13, 2), (20, -2))
+  type 215 size    288  ranks=(1, 4, 4) edges=EE- nonsimplex mags=(1, 1, 1) 01:eq 02:eq 12:ne   rep=((0, 1), (13, -1), (21, 1))
+  type 217 size   1152  ranks=(1, 4, 4) edges=EE- nonsimplex mags=(1, 2, 2) 12:eq   rep=((0, 1), (13, 2), (21, 2))
+  type 218 size   1152  ranks=(1, 4, 4) edges=EE- nonsimplex mags=(1, 2, 2) 12:ne   rep=((0, 1), (13, 2), (21, -2))
+  type 220 size    288  ranks=(1, 3, 3) edges=--- nonsimplex mags=(1, 1, 1) 01:eq 02:eq 12:eq   rep=((0, 1), (14, 1), (20, 1))
+  type 221 size    288  ranks=(1, 3, 3) edges=--- nonsimplex mags=(1, 1, 1) 01:eq 02:ne 12:ne   rep=((0, 1), (14, 1), (20, -1))
+  type 226 size    576  ranks=(2, 2, 3) edges=--E nonsimplex mags=(1, 1, 1) 01:eq 02:ne 12:eq   rep=((1, 1), (3, 1), (4, -1))
+  type 228 size   2304  ranks=(2, 2, 3) edges=--E nonsimplex mags=(1, 1, 2) 02:eq   rep=((1, 1), (3, 2), (4, 1))
+  type 231 size    288  ranks=(2, 2, 2) edges=--- nonsimplex mags=(1, 1, 1) 01:eq 02:eq 12:eq   rep=((1, 1), (3, 1), (5, 1))
+  type 232 size    288  ranks=(2, 2, 2) edges=--- nonsimplex mags=(1, 1, 1) 01:eq 02:ne 12:ne   rep=((1, 1), (3, 1), (5, -1))
+  type 234 size    576  ranks=(2, 2, 2) edges=--- nonsimplex mags=(1, 1, 1) 01:ne 02:eq 12:ne   rep=((1, 1), (3, -1), (5, 1))
+  type 239 size    576  ranks=(2, 2, 4) edges=--E nonsimplex mags=(1, 1, 1) 01:eq 02:ne 12:eq   rep=((1, 1), (3, 1), (13, -1))
+  type 241 size   2304  ranks=(2, 2, 4) edges=--E nonsimplex mags=(1, 1, 2) 02:eq   rep=((1, 1), (3, 2), (13, 1))
+  type 244 size    288  ranks=(2, 2, 3) edges=--- nonsimplex mags=(1, 1, 1) 01:eq 02:eq 12:eq   rep=((1, 1), (3, 1), (14, 1))
+  type 245 size    288  ranks=(2, 2, 3) edges=--- nonsimplex mags=(1, 1, 1) 01:eq 02:ne 12:ne   rep=((1, 1), (3, 1), (14, -1))
+  type 247 size    576  ranks=(2, 2, 3) edges=--- nonsimplex mags=(1, 1, 1) 01:ne 02:eq 12:ne   rep=((1, 1), (3, -1), (14, 1))
+  type 252 size    288  ranks=(2, 2, 2) edges=--- nonsimplex mags=(1, 1, 1) 01:eq 02:eq 12:eq   rep=((1, 1), (3, 1), (17, 1))
+  type 256 size    576  ranks=(2, 3, 2) edges=--E nonsimplex mags=(1, 1, 1) 01:eq 02:eq 12:eq   rep=((1, 1), (4, 1), (5, 1))
+  type 258 size    576  ranks=(2, 3, 2) edges=--E nonsimplex mags=(1, 1, 1) 01:ne 02:ne 12:eq   rep=((1, 1), (4, -1), (5, -1))
+  type 259 size   2304  ranks=(2, 3, 2) edges=--E nonsimplex mags=(1, 1, 2) 01:ne   rep=((1, 1), (4, -1), (5, 2))
+  type 260 size   2304  ranks=(2, 3, 2) edges=--E nonsimplex mags=(1, 1, 2) 02:eq   rep=((1, 1), (4, 2), (5, 1))
+  type 261 size   2304  ranks=(2, 3, 2) edges=--E nonsimplex mags=(1, 1, 2) 02:ne   rep=((1, 1), (4, 2), (5, -1))
+  type 262 size   2304  ranks=(2, 3, 2) edges=--E nonsimplex mags=(1, 2, 2) 12:eq   rep=((1, 1), (4, 2), (5, 2))
+  type 264 size    576  ranks=(2, 3, 3) edges=-E- nonsimplex mags=(1, 1, 1) 01:eq 02:eq 12:ne   rep=((1, 1), (4, 1), (6, -1))
+  type 266 size    576  ranks=(2, 3, 3) edges=-E- nonsimplex mags=(1, 1, 1) 01:ne 02:eq 12:eq   rep=((1, 1), (4, -1), (6, -1))
+  type 269 size   2304  ranks=(2, 3, 3) edges=-E- nonsimplex mags=(1, 2, 2) 12:eq   rep=((1, 1), (4, 2), (6, 2))
+  type 270 size   2304  ranks=(2, 3, 3) edges=-E- nonsimplex mags=(1, 2, 2) 12:ne   rep=((1, 1), (4, 2), (6, -2))
+  type 272 size    576  ranks=(2, 3, 2) edges=--- nonsimplex mags=(1, 1, 1) 01:eq 02:eq 12:eq   rep=((1, 1), (4, 1), (9, 1))
+  type 273 size    288  ranks=(2, 3, 2) edges=--- nonsimplex mags=(1, 1, 1) 01:eq 02:ne 12:ne   rep=((1, 1), (4, 1), (9, -1))
+  type 275 size    288  ranks=(2, 3, 2) edges=--- nonsimplex mags=(1, 1, 1) 01:ne 02:ne 12:eq   rep=((1, 1), (4, -1), (9, -1))
+  type 280 size    288  ranks=(2, 3, 3) edges=--- nonsimplex mags=(1, 1, 1) 01:eq 02:eq 12:eq   rep=((1, 1), (4, 1), (12, 1))
+  type 281 size    288  ranks=(2, 3, 3) edges=--- nonsimplex mags=(1, 1, 1) 01:eq 02:ne 12:ne   rep=((1, 1), (4, 1), (12, -1))
+  type 286 size   1152  ranks=(2, 3, 4) edges=--- nonsimplex mags=(1, 1, 1) 01:eq 02:eq 12:eq   rep=((1, 1), (4, 1), (13, 1))
+  type 287 size   1152  ranks=(2, 3, 4) edges=--- nonsimplex mags=(1, 1, 1) 01:eq 02:ne 12:ne   rep=((1, 1), (4, 1), (13, -1))
+  type 294 size   1152  ranks=(2, 3, 3) edges=--- nonsimplex mags=(1, 1, 1) 01:eq 02:ne 12:ne   rep=((1, 1), (4, 1), (14, -1))
+  type 296 size   1152  ranks=(2, 3, 3) edges=--- nonsimplex mags=(1, 1, 1) 01:ne 02:eq 12:ne   rep=((1, 1), (4, -1), (14, 1))
+  type 297 size   1152  ranks=(2, 3, 3) edges=--- nonsimplex mags=(1, 1, 1) 01:ne 02:ne 12:eq   rep=((1, 1), (4, -1), (14, -1))
+  type 304 size   1152  ranks=(2, 3, 4) edges=-E- nonsimplex mags=(1, 1, 1) 01:eq 02:eq 12:ne   rep=((1, 1), (4, 1), (15, -1))
+  type 306 size   1152  ranks=(2, 3, 4) edges=-E- nonsimplex mags=(1, 1, 1) 01:ne 02:eq 12:eq   rep=((1, 1), (4, -1), (15, -1))
+  type 309 size   4608  ranks=(2, 3, 4) edges=-E- nonsimplex mags=(1, 2, 2) 12:eq   rep=((1, 1), (4, 2), (15, 2))
+  type 310 size   4608  ranks=(2, 3, 4) edges=-E- nonsimplex mags=(1, 2, 2) 12:ne   rep=((1, 1), (4, 2), (15, -2))
+  type 312 size   1152  ranks=(2, 3, 2) edges=--- nonsimplex mags=(1, 1, 1) 01:eq 02:eq 12:eq   rep=((1, 1), (4, 1), (17, 1))
+  type 313 size   1152  ranks=(2, 3, 2) edges=--- nonsimplex mags=(1, 1, 1) 01:eq 02:ne 12:ne   rep=((1, 1), (4, 1), (17, -1))
+  type 319 size   1152  ranks=(2, 3, 3) edges=--- nonsimplex mags=(1, 1, 1) 01:eq 02:eq 12:eq   rep=((1, 1), (4, 1), (18, 1))
+  type 320 size   1152  ranks=(2, 3, 3) edges=--- nonsimplex mags=(1, 1, 1) 01:eq 02:ne 12:ne   rep=((1, 1), (4, 1), (18, -1))
+  type 322 size   1152  ranks=(2, 3, 3) edges=--- nonsimplex mags=(1, 1, 1) 01:ne 02:eq 12:ne   rep=((1, 1), (4, -1), (18, 1))
+  type 323 size   1152  ranks=(2, 3, 3) edges=--- nonsimplex mags=(1, 1, 1) 01:ne 02:ne 12:eq   rep=((1, 1), (4, -1), (18, -1))
+  type 330 size   1152  ranks=(2, 3, 4) edges=--E nonsimplex mags=(1, 1, 1) 01:eq 02:ne 12:eq   rep=((1, 1), (4, 1), (21, -1))
+  type 332 size   4608  ranks=(2, 3, 4) edges=--E nonsimplex mags=(1, 1, 2) 02:eq   rep=((1, 1), (4, 2), (21, 1))
+  type 335 size    576  ranks=(2, 3, 3) edges=--- nonsimplex mags=(1, 1, 1) 01:eq 02:eq 12:eq   rep=((1, 1), (4, 1), (22, 1))
+  type 336 size    576  ranks=(2, 3, 3) edges=--- nonsimplex mags=(1, 1, 1) 01:eq 02:ne 12:ne   rep=((1, 1), (4, 1), (22, -1))
+  type 342 size   1152  ranks=(2, 3, 2) edges=--- nonsimplex mags=(1, 1, 1) 01:eq 02:ne 12:ne   rep=((1, 1), (4, 1), (23, -1))
+  type 344 size   1152  ranks=(2, 3, 2) edges=--- nonsimplex mags=(1, 1, 1) 01:ne 02:eq 12:ne   rep=((1, 1), (4, -1), (23, 1))
+  type 345 size   1152  ranks=(2, 3, 2) edges=--- nonsimplex mags=(1, 1, 1) 01:ne 02:ne 12:eq   rep=((1, 1), (4, -1), (23, -1))
+  type 352 size   1152  ranks=(2, 3, 3) edges=-E- nonsimplex mags=(1, 1, 1) 01:eq 02:eq 12:ne   rep=((1, 1), (4, 1), (24, -1))
+  type 355 size   4608  ranks=(2, 3, 3) edges=-E- nonsimplex mags=(1, 2, 2) 12:eq   rep=((1, 1), (4, 2), (24, 2))
+  type 357 size   1152  ranks=(2, 2, 3) edges=-EE nonsimplex mags=(1, 1, 2) 01:eq   rep=((1, 1), (5, 1), (6, 2))
+  type 358 size    288  ranks=(2, 2, 3) edges=-EE nonsimplex mags=(1, 1, 1) 01:ne 02:eq 12:eq   rep=((1, 1), (5, -1), (6, -1))
+  type 359 size   1152  ranks=(2, 2, 3) edges=-EE nonsimplex mags=(1, 1, 2) 01:ne   rep=((1, 1), (5, -1), (6, 2))
+  type 360 size   2304  ranks=(2, 2, 3) edges=-EE nonsimplex mags=(1, 1, 2) 02:eq   rep=((1, 1), (5, 2), (6, -1))
+  type 362 size    288  ranks=(2, 2, 2) edges=--- nonsimplex mags=(1, 1, 1) 01:eq 02:eq 12:eq   rep=((1, 1), (5, 1), (7, 1))
+  type 363 size     96  ranks=(2, 2, 2) edges=--- nonsimplex mags=(1, 1, 1) 01:eq 02:ne 12:ne   rep=((1, 1), (5, 1), (7, -1))
+  type 367 size    288  ranks=(2, 2, 2) edges=--- nonsimplex mags=(1, 1, 1) 01:eq 02:eq 12:eq   rep=((1, 1), (5, 1), (9, 1))
+  type 369 size     96  ranks=(2, 2, 2) edges=--- nonsimplex mags=(1, 1, 1) 01:ne 02:ne 12:eq   rep=((1, 1), (5, -1), (9, -1))
+  type 372 size   1152  ranks=(2, 2, 4) edges=--- nonsimplex mags=(1, 1, 1) 01:eq 02:eq 12:eq   rep=((1, 1), (5, 1), (13, 1))
+  type 374 size    576  ranks=(2, 2, 4) edges=--- nonsimplex mags=(1, 1, 1) 01:ne 02:eq 12:ne   rep=((1, 1), (5, -1), (13, 1))
+  type 375 size    576  ranks=(2, 2, 4) edges=--- nonsimplex mags=(1, 1, 1) 01:ne 02:ne 12:eq   rep=((1, 1), (5, -1), (13, -1))
+  type 380 size   1152  ranks=(2, 2, 4) edges=-E- nonsimplex mags=(1, 1, 1) 01:eq 02:eq 12:ne   rep=((1, 1), (5, 1), (15, -1))
+  type 382 size   1152  ranks=(2, 2, 4) edges=-E- nonsimplex mags=(1, 1, 1) 01:ne 02:eq 12:eq   rep=((1, 1), (5, -1), (15, -1))
+  type 385 size   4608  ranks=(2, 2, 4) edges=-E- nonsimplex mags=(1, 2, 2) 12:eq   rep=((1, 1), (5, 2), (15, 2))
+  type 386 size   4608  ranks=(2, 2, 4) edges=-E- nonsimplex mags=(1, 2, 2) 12:ne   rep=((1, 1), (5, 2), (15, -2))
+  type 388 size   1152  ranks=(2, 2, 3) edges=--- nonsimplex mags=(1, 1, 1) 01:eq 02:eq 12:eq   rep=((1, 1), (5, 1), (16, 1))
+  type 390 size    576  ranks=(2, 2, 3) edges=--- nonsimplex mags=(1, 1, 1) 01:ne 02:eq 12:ne   rep=((1, 1), (5, -1), (16, 1))
+  type 391 size    576  ranks=(2, 2, 3) edges=--- nonsimplex mags=(1, 1, 1) 01:ne 02:ne 12:eq   rep=((1, 1), (5, -1), (16, -1))
+  type 396 size    576  ranks=(2, 2, 2) edges=--- nonsimplex mags=(1, 1, 1) 01:eq 02:eq 12:eq   rep=((1, 1), (5, 1), (17, 1))
+  type 397 size   1152  ranks=(2, 2, 2) edges=--- nonsimplex mags=(1, 1, 1) 01:eq 02:ne 12:ne   rep=((1, 1), (5, 1), (17, -1))
+  type 399 size    576  ranks=(2, 2, 2) edges=--- nonsimplex mags=(1, 1, 1) 01:ne 02:eq 12:ne   rep=((1, 1), (5, -1), (17, 1))
+  type 404 size    576  ranks=(2, 2, 3) edges=--- nonsimplex mags=(1, 1, 1) 01:eq 02:eq 12:eq   rep=((1, 1), (5, 1), (18, 1))
+  type 405 size    576  ranks=(2, 2, 3) edges=--- nonsimplex mags=(1, 1, 1) 01:eq 02:ne 12:ne   rep=((1, 1), (5, 1), (18, -1))
+  type 407 size   1152  ranks=(2, 2, 3) edges=--- nonsimplex mags=(1, 1, 1) 01:ne 02:eq 12:ne   rep=((1, 1), (5, -1), (18, 1))
+  type 412 size   2304  ranks=(2, 2, 4) edges=-EE nonsimplex mags=(1, 1, 2) 01:eq   rep=((1, 1), (5, 1), (19, 2))
+  type 413 size    576  ranks=(2, 2, 4) edges=-EE nonsimplex mags=(1, 1, 1) 01:ne 02:eq 12:eq   rep=((1, 1), (5, -1), (19, 1))
+  type 414 size   2304  ranks=(2, 2, 4) edges=-EE nonsimplex mags=(1, 1, 2) 01:ne   rep=((1, 1), (5, -1), (19, 2))
+  type 415 size   4608  ranks=(2, 2, 4) edges=-EE nonsimplex mags=(1, 1, 2) 02:eq   rep=((1, 1), (5, 2), (19, 1))
+  type 417 size   1152  ranks=(2, 2, 3) edges=--E nonsimplex mags=(1, 1, 1) 01:eq 02:ne 12:eq   rep=((1, 1), (5, 1), (20, -1))
+  type 419 size   1152  ranks=(2, 2, 3) edges=--E nonsimplex mags=(1, 1, 1) 01:ne 02:eq 12:eq   rep=((1, 1), (5, -1), (20, 1))
+  type 421 size   4608  ranks=(2, 2, 3) edges=--E nonsimplex mags=(1, 1, 2) 02:eq   rep=((1, 1), (5, 2), (20, 1))
+  type 422 size   4608  ranks=(2, 2, 3) edges=--E nonsimplex mags=(1, 1, 2) 02:ne   rep=((1, 1), (5, 2), (20, -1))
+  type 425 size    576  ranks=(2, 2, 2) edges=--- nonsimplex mags=(1, 1, 1) 01:eq 02:eq 12:eq   rep=((1, 1), (5, 1), (23, 1))
+  type 427 size    192  ranks=(2, 2, 2) edges=--- nonsimplex mags=(1, 1, 1) 01:ne 02:ne 12:eq   rep=((1, 1), (5, -1), (23, -1))
+  type 430 size    144  ranks=(2, 3, 3) edges=EE- nonsimplex mags=(1, 1, 1) 01:eq 02:eq 12:ne   rep=((1, 1), (6, -1), (10, 1))
+  type 432 size    576  ranks=(2, 3, 3) edges=EE- nonsimplex mags=(1, 2, 2) 12:eq   rep=((1, 1), (6, 2), (10, 2))
+  type 433 size    576  ranks=(2, 3, 3) edges=EE- nonsimplex mags=(1, 2, 2) 12:ne   rep=((1, 1), (6, 2), (10, -2))
+  type 435 size   1152  ranks=(2, 3, 4) edges=E-- nonsimplex mags=(1, 1, 1) 01:eq 02:eq 12:ne   rep=((1, 1), (6, -1), (13, 1))
+  type 436 size   1152  ranks=(2, 3, 4) edges=E-- nonsimplex mags=(1, 1, 1) 01:eq 02:ne 12:eq   rep=((1, 1), (6, -1), (13, -1))
+  type 440 size   4608  ranks=(2, 3, 4) edges=E-- nonsimplex mags=(1, 2, 2) 12:eq   rep=((1, 1), (6, 2), (13, 2))
+  type 441 size   4608  ranks=(2, 3, 4) edges=E-- nonsimplex mags=(1, 2, 2) 12:ne   rep=((1, 1), (6, 2), (13, -2))
+  type 443 size   1152  ranks=(2, 3, 3) edges=E-- nonsimplex mags=(1, 1, 1) 01:eq 02:eq 12:ne   rep=((1, 1), (6, -1), (14, 1))
+  type 444 size   1152  ranks=(2, 3, 3) edges=E-- nonsimplex mags=(1, 1, 1) 01:eq 02:ne 12:eq   rep=((1, 1), (6, -1), (14, -1))
+  type 448 size   4608  ranks=(2, 3, 3) edges=E-- nonsimplex mags=(1, 2, 2) 12:eq   rep=((1, 1), (6, 2), (14, 2))
+  type 449 size   4608  ranks=(2, 3, 3) edges=E-- nonsimplex mags=(1, 2, 2) 12:ne   rep=((1, 1), (6, 2), (14, -2))
+  type 451 size    576  ranks=(2, 3, 4) edges=EE- nonsimplex mags=(1, 1, 1) 01:eq 02:eq 12:eq   rep=((1, 1), (6, -1), (15, -1))
+  type 454 size   2304  ranks=(2, 3, 4) edges=EE- nonsimplex mags=(1, 2, 2) 12:eq   rep=((1, 1), (6, 2), (15, 2))
+  type 455 size   2304  ranks=(2, 3, 4) edges=EE- nonsimplex mags=(1, 2, 2) 12:ne   rep=((1, 1), (6, 2), (15, -2))
+  type 457 size   1152  ranks=(2, 3, 3) edges=E-- nonsimplex mags=(1, 1, 1) 01:eq 02:eq 12:ne   rep=((1, 1), (6, -1), (16, 1))
+  type 458 size   1152  ranks=(2, 3, 3) edges=E-- nonsimplex mags=(1, 1, 1) 01:eq 02:ne 12:eq   rep=((1, 1), (6, -1), (16, -1))
+  type 462 size   4608  ranks=(2, 3, 3) edges=E-- nonsimplex mags=(1, 2, 2) 12:eq   rep=((1, 1), (6, 2), (16, 2))
+  type 463 size   4608  ranks=(2, 3, 3) edges=E-- nonsimplex mags=(1, 2, 2) 12:ne   rep=((1, 1), (6, 2), (16, -2))
+  type 465 size    576  ranks=(2, 3, 2) edges=E-- nonsimplex mags=(1, 1, 1) 01:eq 02:eq 12:ne   rep=((1, 1), (6, -1), (17, 1))
+  type 466 size    576  ranks=(2, 3, 2) edges=E-- nonsimplex mags=(1, 1, 1) 01:eq 02:ne 12:eq   rep=((1, 1), (6, -1), (17, -1))
+  type 470 size   2304  ranks=(2, 3, 2) edges=E-- nonsimplex mags=(1, 2, 2) 12:eq   rep=((1, 1), (6, 2), (17, 2))
+  type 471 size   2304  ranks=(2, 3, 2) edges=E-- nonsimplex mags=(1, 2, 2) 12:ne   rep=((1, 1), (6, 2), (17, -2))
+  type 473 size    576  ranks=(2, 3, 4) edges=EEE simplex mags=(1, 1, 1) 01:eq 02:eq 12:eq   rep=((1, 1), (6, -1), (19, 1))
+  type 475 size   2304  ranks=(2, 3, 4) edges=EEE simplex mags=(1, 1, 2) 02:eq   rep=((1, 1), (6, 2), (19, 1))
+  type 476 size   2304  ranks=(2, 3, 4) edges=EEE simplex mags=(1, 2, 2) 12:eq   rep=((1, 1), (6, 2), (19, -2))
+  type 477 size   4608  ranks=(2, 3, 4) edges=EEE simplex mags=(1, 2, 3)    rep=((1, 1), (6, 2), (19, 3))
+  type 478 size    288  ranks=(2, 3, 3) edges=EE- nonsimplex mags=(1, 1, 1) 01:eq 02:eq 12:eq   rep=((1, 1), (6, -1), (24, -1))
+  type 480 size   1152  ranks=(2, 3, 3) edges=EE- nonsimplex mags=(1, 2, 2) 12:eq   rep=((1, 1), (6, 2), (24, 2))
+  type 481 size   1152  ranks=(2, 3, 3) edges=EE- nonsimplex mags=(1, 2, 2) 12:ne   rep=((1, 1), (6, 2), (24, -2))
+  type 483 size    576  ranks=(2, 4, 3) edges=--E nonsimplex mags=(1, 1, 1) 01:eq 02:eq 12:eq   rep=((1, 1), (13, 1), (14, 1))
+  type 485 size    576  ranks=(2, 4, 3) edges=--E nonsimplex mags=(1, 1, 1) 01:ne 02:ne 12:eq   rep=((1, 1), (13, -1), (14, -1))
+  type 486 size   2304  ranks=(2, 4, 3) edges=--E nonsimplex mags=(1, 1, 2) 01:ne   rep=((1, 1), (13, -1), (14, 2))
+  type 487 size   2304  ranks=(2, 4, 3) edges=--E nonsimplex mags=(1, 1, 2) 02:eq   rep=((1, 1), (13, 2), (14, 1))
+  type 488 size   2304  ranks=(2, 4, 3) edges=--E nonsimplex mags=(1, 1, 2) 02:ne   rep=((1, 1), (13, 2), (14, -1))
+  type 489 size   2304  ranks=(2, 4, 3) edges=--E nonsimplex mags=(1, 2, 2) 12:eq   rep=((1, 1), (13, 2), (14, 2))
+  type 491 size    576  ranks=(2, 4, 4) edges=-E- nonsimplex mags=(1, 1, 1) 01:eq 02:eq 12:ne   rep=((1, 1), (13, 1), (15, -1))
+  type 493 size    576  ranks=(2, 4, 4) edges=-E- nonsimplex mags=(1, 1, 1) 01:ne 02:eq 12:eq   rep=((1, 1), (13, -1), (15, -1))
+  type 496 size   2304  ranks=(2, 4, 4) edges=-E- nonsimplex mags=(1, 2, 2) 12:eq   rep=((1, 1), (13, 2), (15, 2))
+  type 497 size   2304  ranks=(2, 4, 4) edges=-E- nonsimplex mags=(1, 2, 2) 12:ne   rep=((1, 1), (13, 2), (15, -2))
+  type 499 size    576  ranks=(2, 4, 2) edges=--E nonsimplex mags=(1, 1, 1) 01:eq 02:eq 12:eq   rep=((1, 1), (13, 1), (17, 1))
+  type 501 size   2304  ranks=(2, 4, 2) edges=--E nonsimplex mags=(1, 1, 2) 02:eq   rep=((1, 1), (13, 2), (17, 1))
+  type 502 size   1152  ranks=(2, 4, 2) edges=--E nonsimplex mags=(1, 2, 2) 12:eq   rep=((1, 1), (13, 2), (17, 2))
+  type 503 size   2304  ranks=(2, 4, 2) edges=--E nonsimplex mags=(1, 2, 3)    rep=((1, 1), (13, 2), (17, 3))
+  type 505 size    576  ranks=(2, 4, 3) edges=--- nonsimplex mags=(1, 1, 1) 01:eq 02:ne 12:ne   rep=((1, 1), (13, 1), (18, -1))
+  type 507 size    576  ranks=(2, 4, 3) edges=--- nonsimplex mags=(1, 1, 1) 01:ne 02:eq 12:ne   rep=((1, 1), (13, -1), (18, 1))
+  type 508 size    576  ranks=(2, 4, 3) edges=--- nonsimplex mags=(1, 1, 1) 01:ne 02:ne 12:eq   rep=((1, 1), (13, -1), (18, -1))
+  type 515 size    288  ranks=(2, 4, 4) edges=--- nonsimplex mags=(1, 1, 1) 01:eq 02:eq 12:eq   rep=((1, 1), (13, 1), (21, 1))
+  type 516 size    288  ranks=(2, 4, 4) edges=--- nonsimplex mags=(1, 1, 1) 01:eq 02:ne 12:ne   rep=((1, 1), (13, 1), (21, -1))
+  type 521 size    576  ranks=(2, 4, 4) edges=--- nonsimplex mags=(1, 1, 1) 01:eq 02:eq 12:eq   rep=((1, 1), (13, 1), (31, 1))
+  type 522 size    576  ranks=(2, 4, 4) edges=--- nonsimplex mags=(1, 1, 1) 01:eq 02:ne 12:ne   rep=((1, 1), (13, 1), (31, -1))
+  type 527 size   1152  ranks=(2, 4, 3) edges=--- nonsimplex mags=(1, 1, 1) 01:eq 02:eq 12:eq   rep=((1, 1), (13, 1), (32, 1))
+  type 528 size   1152  ranks=(2, 4, 3) edges=--- nonsimplex mags=(1, 1, 1) 01:eq 02:ne 12:ne   rep=((1, 1), (13, 1), (32, -1))
+  type 530 size   1152  ranks=(2, 4, 3) edges=--- nonsimplex mags=(1, 1, 1) 01:ne 02:eq 12:ne   rep=((1, 1), (13, -1), (32, 1))
+  type 531 size   1152  ranks=(2, 4, 3) edges=--- nonsimplex mags=(1, 1, 1) 01:ne 02:ne 12:eq   rep=((1, 1), (13, -1), (32, -1))
+  type 538 size   1152  ranks=(2, 4, 4) edges=-E- nonsimplex mags=(1, 1, 1) 01:eq 02:eq 12:ne   rep=((1, 1), (13, 1), (33, -1))
+  type 541 size   4608  ranks=(2, 4, 4) edges=-E- nonsimplex mags=(1, 2, 2) 12:eq   rep=((1, 1), (13, 2), (33, 2))
+  type 543 size    576  ranks=(2, 4, 2) edges=--- nonsimplex mags=(1, 1, 1) 01:eq 02:eq 12:eq   rep=((1, 1), (13, 1), (35, 1))
+  type 547 size   2304  ranks=(2, 3, 4) edges=-EE nonsimplex mags=(1, 1, 2) 01:eq   rep=((1, 1), (14, 1), (15, 2))
+  type 548 size    576  ranks=(2, 3, 4) edges=-EE nonsimplex mags=(1, 1, 1) 01:ne 02:eq 12:eq   rep=((1, 1), (14, -1), (15, -1))
+  type 549 size   2304  ranks=(2, 3, 4) edges=-EE nonsimplex mags=(1, 1, 2) 01:ne   rep=((1, 1), (14, -1), (15, 2))
+  type 550 size   2304  ranks=(2, 3, 4) edges=-EE nonsimplex mags=(1, 1, 2) 02:eq   rep=((1, 1), (14, 2), (15, -1))
+  type 551 size   2304  ranks=(2, 3, 4) edges=-EE nonsimplex mags=(1, 2, 2) 12:eq   rep=((1, 1), (14, 2), (15, 2))
+  type 553 size    576  ranks=(2, 3, 3) edges=--- nonsimplex mags=(1, 1, 1) 01:eq 02:eq 12:eq   rep=((1, 1), (14, 1), (16, 1))
+  type 554 size    288  ranks=(2, 3, 3) edges=--- nonsimplex mags=(1, 1, 1) 01:eq 02:ne 12:ne   rep=((1, 1), (14, 1), (16, -1))
+  type 556 size    288  ranks=(2, 3, 3) edges=--- nonsimplex mags=(1, 1, 1) 01:ne 02:eq 12:ne   rep=((1, 1), (14, -1), (16, 1))
+  type 561 size    288  ranks=(2, 3, 3) edges=--- nonsimplex mags=(1, 1, 1) 01:eq 02:eq 12:eq   rep=((1, 1), (14, 1), (18, 1))
+  type 562 size    576  ranks=(2, 3, 3) edges=--- nonsimplex mags=(1, 1, 1) 01:eq 02:ne 12:ne   rep=((1, 1), (14, 1), (18, -1))
+  type 564 size    288  ranks=(2, 3, 3) edges=--- nonsimplex mags=(1, 1, 1) 01:ne 02:ne 12:eq   rep=((1, 1), (14, -1), (18, -1))
+  type 569 size    576  ranks=(2, 3, 4) edges=-E- nonsimplex mags=(1, 1, 1) 01:eq 02:eq 12:eq   rep=((1, 1), (14, 1), (19, 1))
+  type 571 size    576  ranks=(2, 3, 4) edges=-E- nonsimplex mags=(1, 1, 1) 01:ne 02:eq 12:ne   rep=((1, 1), (14, -1), (19, 1))
+  type 574 size   2304  ranks=(2, 3, 4) edges=-E- nonsimplex mags=(1, 2, 2) 12:eq   rep=((1, 1), (14, 2), (19, 2))
+  type 575 size   2304  ranks=(2, 3, 4) edges=-E- nonsimplex mags=(1, 2, 2) 12:ne   rep=((1, 1), (14, 2), (19, -2))
+  type 577 size    576  ranks=(2, 3, 3) edges=--- nonsimplex mags=(1, 1, 1) 01:eq 02:eq 12:eq   rep=((1, 1), (14, 1), (20, 1))
+  type 578 size    288  ranks=(2, 3, 3) edges=--- nonsimplex mags=(1, 1, 1) 01:eq 02:ne 12:ne   rep=((1, 1), (14, 1), (20, -1))
+  type 580 size    288  ranks=(2, 3, 3) edges=--- nonsimplex mags=(1, 1, 1) 01:ne 02:eq 12:ne   rep=((1, 1), (14, -1), (20, 1))
+  type 585 size    576  ranks=(2, 3, 3) edges=--- nonsimplex mags=(1, 1, 1) 01:eq 02:eq 12:eq   rep=((1, 1), (14, 1), (32, 1))
+  type 586 size   1152  ranks=(2, 3, 3) edges=--- nonsimplex mags=(1, 1, 1) 01:eq 02:ne 12:ne   rep=((1, 1), (14, 1), (32, -1))
+  type 588 size    576  ranks=(2, 3, 3) edges=--- nonsimplex mags=(1, 1, 1) 01:ne 02:ne 12:eq   rep=((1, 1), (14, -1), (32, -1))
+  type 593 size   1152  ranks=(2, 3, 4) edges=-E- nonsimplex mags=(1, 1, 1) 01:eq 02:eq 12:ne   rep=((1, 1), (14, 1), (33, -1))
+  type 595 size   1152  ranks=(2, 3, 4) edges=-E- nonsimplex mags=(1, 1, 1) 01:ne 02:eq 12:eq   rep=((1, 1), (14, -1), (33, -1))
+  type 598 size   4608  ranks=(2, 3, 4) edges=-E- nonsimplex mags=(1, 2, 2) 12:eq   rep=((1, 1), (14, 2), (33, 2))
+  type 599 size   4608  ranks=(2, 3, 4) edges=-E- nonsimplex mags=(1, 2, 2) 12:ne   rep=((1, 1), (14, 2), (33, -2))
+  type 601 size   1152  ranks=(2, 3, 3) edges=--- nonsimplex mags=(1, 1, 1) 01:eq 02:eq 12:eq   rep=((1, 1), (14, 1), (34, 1))
+  type 602 size    576  ranks=(2, 3, 3) edges=--- nonsimplex mags=(1, 1, 1) 01:eq 02:ne 12:ne   rep=((1, 1), (14, 1), (34, -1))
+  type 604 size    576  ranks=(2, 3, 3) edges=--- nonsimplex mags=(1, 1, 1) 01:ne 02:eq 12:ne   rep=((1, 1), (14, -1), (34, 1))
+  type 609 size    144  ranks=(2, 4, 2) edges=E-E nonsimplex mags=(1, 1, 1) 01:eq 02:ne 12:eq   rep=((1, 1), (15, -1), (17, -1))
+  type 610 size   1152  ranks=(2, 4, 2) edges=E-E nonsimplex mags=(1, 1, 2) 01:eq   rep=((1, 1), (15, -1), (17, 2))
+  type 611 size    576  ranks=(2, 4, 2) edges=E-E nonsimplex mags=(1, 1, 2) 02:eq   rep=((1, 1), (15, 2), (17, 1))
+  type 612 size    576  ranks=(2, 4, 2) edges=E-E nonsimplex mags=(1, 1, 2) 02:ne   rep=((1, 1), (15, 2), (17, -1))
+  type 614 size    144  ranks=(2, 4, 4) edges=EE- nonsimplex mags=(1, 1, 1) 01:eq 02:eq 12:ne   rep=((1, 1), (15, -1), (19, 1))
+  type 616 size    576  ranks=(2, 4, 4) edges=EE- nonsimplex mags=(1, 2, 2) 12:eq   rep=((1, 1), (15, 2), (19, 2))
+  type 617 size    576  ranks=(2, 4, 4) edges=EE- nonsimplex mags=(1, 2, 2) 12:ne   rep=((1, 1), (15, 2), (19, -2))
+  type 619 size    288  ranks=(2, 4, 4) edges=EE- nonsimplex mags=(1, 1, 1) 01:eq 02:eq 12:eq   rep=((1, 1), (15, -1), (33, -1))
+  type 621 size   1152  ranks=(2, 4, 4) edges=EE- nonsimplex mags=(1, 2, 2) 12:eq   rep=((1, 1), (15, 2), (33, 2))
+  type 622 size   1152  ranks=(2, 4, 4) edges=EE- nonsimplex mags=(1, 2, 2) 12:ne   rep=((1, 1), (15, 2), (33, -2))
+  type 624 size    288  ranks=(3, 3, 3) edges=--- nonsimplex mags=(1, 1, 1) 01:eq 02:eq 12:eq   rep=((4, 1), (6, 1), (10, 1))
+  type 626 size     96  ranks=(3, 3, 3) edges=--- nonsimplex mags=(1, 1, 1) 01:ne 02:ne 12:eq   rep=((4, 1), (6, -1), (10, -1))
+  type 629 size   1152  ranks=(3, 3, 4) edges=--- nonsimplex mags=(1, 1, 1) 01:eq 02:eq 12:eq   rep=((4, 1), (6, 1), (13, 1))
+  type 631 size    576  ranks=(3, 3, 4) edges=--- nonsimplex mags=(1, 1, 1) 01:ne 02:eq 12:ne   rep=((4, 1), (6, -1), (13, 1))
+  type 632 size    576  ranks=(3, 3, 4) edges=--- nonsimplex mags=(1, 1, 1) 01:ne 02:ne 12:eq   rep=((4, 1), (6, -1), (13, -1))
+  type 637 size    576  ranks=(3, 3, 3) edges=--- nonsimplex mags=(1, 1, 1) 01:eq 02:eq 12:eq   rep=((4, 1), (6, 1), (14, 1))
+  type 639 size    576  ranks=(3, 3, 3) edges=--- nonsimplex mags=(1, 1, 1) 01:ne 02:eq 12:ne   rep=((4, 1), (6, -1), (14, 1))
+  type 643 size   1152  ranks=(3, 3, 3) edges=--- nonsimplex mags=(1, 1, 1) 01:eq 02:eq 12:eq   rep=((4, 1), (6, 1), (16, 1))
+  type 644 size   1152  ranks=(3, 3, 3) edges=--- nonsimplex mags=(1, 1, 1) 01:eq 02:ne 12:ne   rep=((4, 1), (6, 1), (16, -1))
+  type 646 size   1152  ranks=(3, 3, 3) edges=--- nonsimplex mags=(1, 1, 1) 01:ne 02:eq 12:ne   rep=((4, 1), (6, -1), (16, 1))
+  type 647 size   1152  ranks=(3, 3, 3) edges=--- nonsimplex mags=(1, 1, 1) 01:ne 02:ne 12:eq   rep=((4, 1), (6, -1), (16, -1))
+  type 654 size    576  ranks=(3, 3, 4) edges=--E nonsimplex mags=(1, 1, 1) 01:eq 02:ne 12:eq   rep=((4, 1), (6, 1), (19, -1))
+  type 656 size    576  ranks=(3, 3, 4) edges=--E nonsimplex mags=(1, 1, 1) 01:ne 02:eq 12:eq   rep=((4, 1), (6, -1), (19, 1))
+  type 658 size   2304  ranks=(3, 3, 4) edges=--E nonsimplex mags=(1, 1, 2) 02:eq   rep=((4, 1), (6, 2), (19, 1))
+  type 659 size   2304  ranks=(3, 3, 4) edges=--E nonsimplex mags=(1, 1, 2) 02:ne   rep=((4, 1), (6, 2), (19, -1))
+  type 662 size    288  ranks=(3, 3, 3) edges=--- nonsimplex mags=(1, 1, 1) 01:eq 02:eq 12:eq   rep=((4, 1), (6, 1), (20, 1))
+  type 663 size    288  ranks=(3, 3, 3) edges=--- nonsimplex mags=(1, 1, 1) 01:eq 02:ne 12:ne   rep=((4, 1), (6, 1), (20, -1))
+  type 665 size    576  ranks=(3, 3, 3) edges=--- nonsimplex mags=(1, 1, 1) 01:ne 02:eq 12:ne   rep=((4, 1), (6, -1), (20, 1))
+  type 670 size   1152  ranks=(3, 4, 3) edges=--E nonsimplex mags=(1, 1, 1) 01:eq 02:eq 12:eq   rep=((4, 1), (13, 1), (14, 1))
+  type 672 size   1152  ranks=(3, 4, 3) edges=--E nonsimplex mags=(1, 1, 1) 01:ne 02:ne 12:eq   rep=((4, 1), (13, -1), (14, -1))
+  type 673 size   4608  ranks=(3, 4, 3) edges=--E nonsimplex mags=(1, 1, 2) 01:ne   rep=((4, 1), (13, -1), (14, 2))
+  type 674 size   4608  ranks=(3, 4, 3) edges=--E nonsimplex mags=(1, 1, 2) 02:eq   rep=((4, 1), (13, 2), (14, 1))
+  type 675 size   4608  ranks=(3, 4, 3) edges=--E nonsimplex mags=(1, 1, 2) 02:ne   rep=((4, 1), (13, 2), (14, -1))
+  type 676 size   4608  ranks=(3, 4, 3) edges=--E nonsimplex mags=(1, 2, 2) 12:eq   rep=((4, 1), (13, 2), (14, 2))
+  type 678 size   1152  ranks=(3, 4, 4) edges=--- nonsimplex mags=(1, 1, 1) 01:eq 02:eq 12:eq   rep=((4, 1), (13, 1), (15, 1))
+  type 679 size    576  ranks=(3, 4, 4) edges=--- nonsimplex mags=(1, 1, 1) 01:eq 02:ne 12:ne   rep=((4, 1), (13, 1), (15, -1))
+  type 681 size    576  ranks=(3, 4, 4) edges=--- nonsimplex mags=(1, 1, 1) 01:ne 02:eq 12:ne   rep=((4, 1), (13, -1), (15, 1))
+  type 686 size    576  ranks=(3, 4, 3) edges=--- nonsimplex mags=(1, 1, 1) 01:eq 02:eq 12:eq   rep=((4, 1), (13, 1), (18, 1))
+  type 687 size   1152  ranks=(3, 4, 3) edges=--- nonsimplex mags=(1, 1, 1) 01:eq 02:ne 12:ne   rep=((4, 1), (13, 1), (18, -1))
+  type 689 size    576  ranks=(3, 4, 3) edges=--- nonsimplex mags=(1, 1, 1) 01:ne 02:eq 12:ne   rep=((4, 1), (13, -1), (18, 1))
+  type 694 size    576  ranks=(3, 4, 4) edges=-E- nonsimplex mags=(1, 1, 1) 01:eq 02:eq 12:ne   rep=((4, 1), (13, 1), (21, -1))
+  type 696 size    576  ranks=(3, 4, 4) edges=-E- nonsimplex mags=(1, 1, 1) 01:ne 02:eq 12:eq   rep=((4, 1), (13, -1), (21, -1))
+  type 699 size   2304  ranks=(3, 4, 4) edges=-E- nonsimplex mags=(1, 2, 2) 12:eq   rep=((4, 1), (13, 2), (21, 2))
+  type 700 size   2304  ranks=(3, 4, 4) edges=-E- nonsimplex mags=(1, 2, 2) 12:ne   rep=((4, 1), (13, 2), (21, -2))
+  type 702 size    576  ranks=(3, 4, 3) edges=--E nonsimplex mags=(1, 1, 1) 01:eq 02:eq 12:eq   rep=((4, 1), (13, 1), (22, 1))
+  type 704 size    576  ranks=(3, 4, 3) edges=--E nonsimplex mags=(1, 1, 1) 01:ne 02:ne 12:eq   rep=((4, 1), (13, -1), (22, -1))
+  type 705 size   2304  ranks=(3, 4, 3) edges=--E nonsimplex mags=(1, 1, 2) 01:ne   rep=((4, 1), (13, -1), (22, 2))
+  type 706 size   2304  ranks=(3, 4, 3) edges=--E nonsimplex mags=(1, 1, 2) 02:eq   rep=((4, 1), (13, 2), (22, 1))
+  type 707 size   2304  ranks=(3, 4, 3) edges=--E nonsimplex mags=(1, 1, 2) 02:ne   rep=((4, 1), (13, 2), (22, -1))
+  type 708 size   2304  ranks=(3, 4, 3) edges=--E nonsimplex mags=(1, 2, 2) 12:eq   rep=((4, 1), (13, 2), (22, 2))
+  type 710 size   1152  ranks=(3, 4, 3) edges=--- nonsimplex mags=(1, 1, 1) 01:eq 02:eq 12:eq   rep=((4, 1), (13, 1), (24, 1))
+  type 711 size   1152  ranks=(3, 4, 3) edges=--- nonsimplex mags=(1, 1, 1) 01:eq 02:ne 12:ne   rep=((4, 1), (13, 1), (24, -1))
+  type 713 size   1152  ranks=(3, 4, 3) edges=--- nonsimplex mags=(1, 1, 1) 01:ne 02:eq 12:ne   rep=((4, 1), (13, -1), (24, 1))
+  type 714 size   1152  ranks=(3, 4, 3) edges=--- nonsimplex mags=(1, 1, 1) 01:ne 02:ne 12:eq   rep=((4, 1), (13, -1), (24, -1))
+  type 721 size    576  ranks=(3, 4, 3) edges=--- nonsimplex mags=(1, 1, 1) 01:eq 02:eq 12:eq   rep=((4, 1), (13, 1), (30, 1))
+  type 722 size    288  ranks=(3, 4, 3) edges=--- nonsimplex mags=(1, 1, 1) 01:eq 02:ne 12:ne   rep=((4, 1), (13, 1), (30, -1))
+  type 724 size    288  ranks=(3, 4, 3) edges=--- nonsimplex mags=(1, 1, 1) 01:ne 02:ne 12:eq   rep=((4, 1), (13, -1), (30, -1))
+  type 729 size    576  ranks=(3, 4, 4) edges=-E- nonsimplex mags=(1, 1, 1) 01:eq 02:eq 12:eq   rep=((4, 1), (13, 1), (31, 1))
+  type 731 size    576  ranks=(3, 4, 4) edges=-E- nonsimplex mags=(1, 1, 1) 01:ne 02:eq 12:ne   rep=((4, 1), (13, -1), (31, 1))
+  type 734 size   2304  ranks=(3, 4, 4) edges=-E- nonsimplex mags=(1, 2, 2) 12:eq   rep=((4, 1), (13, 2), (31, 2))
+  type 735 size   2304  ranks=(3, 4, 4) edges=-E- nonsimplex mags=(1, 2, 2) 12:ne   rep=((4, 1), (13, 2), (31, -2))
+  type 738 size   1152  ranks=(3, 4, 3) edges=--- nonsimplex mags=(1, 1, 1) 01:eq 02:ne 12:ne   rep=((4, 1), (13, 1), (32, -1))
+  type 740 size    576  ranks=(3, 4, 3) edges=--- nonsimplex mags=(1, 1, 1) 01:ne 02:eq 12:ne   rep=((4, 1), (13, -1), (32, 1))
+  type 745 size    576  ranks=(3, 4, 4) edges=--- nonsimplex mags=(1, 1, 1) 01:eq 02:eq 12:eq   rep=((4, 1), (13, 1), (33, 1))
+  type 746 size   1152  ranks=(3, 4, 4) edges=--- nonsimplex mags=(1, 1, 1) 01:eq 02:ne 12:ne   rep=((4, 1), (13, 1), (33, -1))
+  type 748 size    576  ranks=(3, 4, 4) edges=--- nonsimplex mags=(1, 1, 1) 01:ne 02:ne 12:eq   rep=((4, 1), (13, -1), (33, -1))
+  type 753 size    576  ranks=(3, 4, 4) edges=--- nonsimplex mags=(1, 1, 1) 01:eq 02:eq 12:eq   rep=((4, 1), (13, 1), (39, 1))
+  type 754 size    288  ranks=(3, 4, 4) edges=--- nonsimplex mags=(1, 1, 1) 01:eq 02:ne 12:ne   rep=((4, 1), (13, 1), (39, -1))
+  type 756 size    288  ranks=(3, 4, 4) edges=--- nonsimplex mags=(1, 1, 1) 01:ne 02:eq 12:ne   rep=((4, 1), (13, -1), (39, 1))
+  type 761 size    576  ranks=(3, 3, 3) edges=--- nonsimplex mags=(1, 1, 1) 01:eq 02:eq 12:eq   rep=((4, 1), (14, 1), (16, 1))
+  type 762 size   1152  ranks=(3, 3, 3) edges=--- nonsimplex mags=(1, 1, 1) 01:eq 02:ne 12:ne   rep=((4, 1), (14, 1), (16, -1))
+  type 764 size    576  ranks=(3, 3, 3) edges=--- nonsimplex mags=(1, 1, 1) 01:ne 02:ne 12:eq   rep=((4, 1), (14, -1), (16, -1))
+  type 769 size   1152  ranks=(3, 3, 3) edges=--- nonsimplex mags=(1, 1, 1) 01:eq 02:eq 12:eq   rep=((4, 1), (14, 1), (18, 1))
+  type 771 size    576  ranks=(3, 3, 3) edges=--- nonsimplex mags=(1, 1, 1) 01:ne 02:eq 12:ne   rep=((4, 1), (14, -1), (18, 1))
+  type 772 size    576  ranks=(3, 3, 3) edges=--- nonsimplex mags=(1, 1, 1) 01:ne 02:ne 12:eq   rep=((4, 1), (14, -1), (18, -1))
+  type 777 size    576  ranks=(3, 3, 3) edges=--- nonsimplex mags=(1, 1, 1) 01:eq 02:eq 12:eq   rep=((4, 1), (14, 1), (28, 1))
+  type 778 size    192  ranks=(3, 3, 3) edges=--- nonsimplex mags=(1, 1, 1) 01:eq 02:ne 12:ne   rep=((4, 1), (14, 1), (28, -1))
+  type 782 size    576  ranks=(3, 3, 3) edges=--- nonsimplex mags=(1, 1, 1) 01:eq 02:eq 12:eq   rep=((4, 1), (18, 1), (20, 1))
+  type 784 size    192  ranks=(3, 3, 3) edges=--- nonsimplex mags=(1, 1, 1) 01:ne 02:ne 12:eq   rep=((4, 1), (18, -1), (20, -1))
+  type 787 size   1152  ranks=(3, 3, 4) edges=-EE nonsimplex mags=(1, 1, 2) 01:eq   rep=((4, 1), (18, 1), (21, 2))
+  type 788 size    288  ranks=(3, 3, 4) edges=-EE nonsimplex mags=(1, 1, 1) 01:ne 02:eq 12:eq   rep=((4, 1), (18, -1), (21, -1))
+  type 789 size   1152  ranks=(3, 3, 4) edges=-EE nonsimplex mags=(1, 1, 2) 01:ne   rep=((4, 1), (18, -1), (21, 2))
+  type 790 size   2304  ranks=(3, 3, 4) edges=-EE nonsimplex mags=(1, 1, 2) 02:eq   rep=((4, 1), (18, 2), (21, -1))
+  type 792 size     96  ranks=(3, 4, 4) edges=EE- nonsimplex mags=(1, 1, 1) 01:eq 02:eq 12:ne   rep=((4, 1), (21, -1), (31, 1))
+  type 794 size    384  ranks=(3, 4, 4) edges=EE- nonsimplex mags=(1, 2, 2) 12:eq   rep=((4, 1), (21, 2), (31, 2))
+  type 795 size    384  ranks=(3, 4, 4) edges=EE- nonsimplex mags=(1, 2, 2) 12:ne   rep=((4, 1), (21, 2), (31, -2))
+  type 797 size    288  ranks=(4, 4, 4) edges=--- nonsimplex mags=(1, 1, 1) 01:eq 02:eq 12:eq   rep=((13, 1), (15, 1), (19, 1))
+  type 798 size    576  ranks=(4, 4, 4) edges=--- nonsimplex mags=(1, 1, 1) 01:eq 02:ne 12:ne   rep=((13, 1), (15, 1), (19, -1))
+  type 800 size    288  ranks=(4, 4, 4) edges=--- nonsimplex mags=(1, 1, 1) 01:ne 02:ne 12:eq   rep=((13, 1), (15, -1), (19, -1))
+  type 805 size    192  ranks=(4, 4, 4) edges=--- nonsimplex mags=(1, 1, 1) 01:eq 02:eq 12:eq   rep=((13, 1), (21, 1), (33, 1))
