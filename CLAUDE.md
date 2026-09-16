@@ -30,8 +30,9 @@ where alpha ranges over partial labelings containing a complementary pair and 1_
 | Tucker, S^2 (m=3, labels +-1,+-2) | F_2 | exactly 3 |
 | Tucker, S^2 | Q | exactly 5 (fails at 3 and 4) |
 | Tucker, S^3 (m=4, labels +-1..+-3) | F_2 | exactly 4 (fails at 3; tower gives 4) |
+| Tucker, S^n | F_2 | <= n+1 (tower); = n+1 for n = 2, 3 (computed); lower bound open for n >= 4 |
 | Ky Fan, S^2, labels +-1..+-3 | F_2 | exactly 3 |
-| Ky Fan, any n | F_2 | exactly n+1 (theorem, below) |
+| Ky Fan, S^n, k >= n+1 | F_2 | exactly n+1 (theorem, below: tower + separating functional) |
 
 **Theorem (tower).** Define the local lemma on an (n+1)-tuple of labels:
     g_n(l) = sum_i [l minus l_i is positively alternating] + [l positively alternating] + [l negatively alternating]   (mod 2).
@@ -39,7 +40,9 @@ Then g_n = 0 on every tuple with no complementary pair (verified exhaustively fo
     A^{(m)} + 1 = sum_{j=1..m} sum_{sigma in H^{(j)}} g_{j-1}(lambda|_sigma)
 as an identity on all labelings, where H^{(j)} is the hemisphere of the [j]-complex (padded with zeros). Right side has degree m = n+1. Verified numerically for m = 3,4,5 (tower.py). Tucker follows because A_+ = 0 syntactically when k <= n.
 
-**Conjecture (open).** Tucker's F_2 degree on S^n is exactly n+1 for all n. Upper bound is the theorem; lower bound is known only for n = 2, 3.
+**Theorem (Ky Fan degree).** Over F_2, the degree is exactly n+1 for all n >= 1, k >= n+1. Upper bound: the tower. Lower bound: the functional E(f) = sum_{lambda(x_i) in S_i} f(lambda) over one top simplex sigma_0 = {x_1 < ... < x_{n+1}} with S_1 = {+1,+2}, S_i = {+i,-i} for i = 2..n+1, all other vertices fixed. Even |S_i| makes E vanish on every function of <= n vertices (including constants, so E(1) = 0); only +-sigma_0 contribute to E(A_+) (a chain other than +-sigma_0 cannot use exactly the reps of sigma_0, since consecutive chain elements cannot be flipped independently), and the collision at magnitude 2 leaves exactly one alternating tuple in the box, so E(A_+ + 1) = 1. Hence A_+ + 1 is not in the span of size-<= n indicators. Script: `kyfan_lower.py` (verified m = 3,4,5; the naive negation-closed box S_1 = {+1,-1} gives E(A_+) = 0, which is why the collision is needed).
+
+**Conjecture (open).** Tucker's F_2 degree on S^n is exactly n+1 for all n. Upper bound is the tower; lower bound is known only for n = 2, 3. The Ky Fan functional cannot be reused: it kills constants, and Tucker's certificate is for the constant 1. A Tucker lower bound requires a pseudo-solution with E[empty] = 1, a global object. (The other direction, deg KyFan >= deg Tucker by restricting labels to +-1..+-n, gives nothing new.)
 
 **Structural facts about the degree-2 pseudo-solution on S^2 (pseudo2b.py, pseudo2c.py):**
 - No pseudo-solution is invariant under the full symmetry group, nor under the label group (signed permutations of magnitudes), nor under the stabilizer of a hemisphere.
@@ -56,17 +59,24 @@ as an identity on all labelings, where H^{(j)} is the hemisphere of the [j]-comp
 
 ## 3. Files
 
-- `scripts/build.py` — complex for m=3, brute-force Tucker/Ky Fan checks.
-- `scripts/nsdeg.py` — SA-dual system, NS degree over F_2 and F_p, m=3 (dense bit-packed GF(2) elimination in numpy; fine to ~40k unknowns, useless beyond).
-- `scripts/primal.py` — explicit certificates via random-point primal; full-group orbit reduction (F_p only).
-- `scripts/s3.py`, `z9a.py`, `z9b.py` — m=4: symmetric search (uninformative over F_2) and the Z_3xZ_3-averaged unrestricted F_2 search (this is what proved degree >= 4 on S^3). z9b is checkpointed elimination from a sandbox with a 300 s limit; on a laptop just run it straight.
-- `scripts/tower.py` — the theorem: exhaustive local-lemma check and the telescoped identity for m = 3,4,5.
-- `scripts/pseudo2.py`, `pseudo2b.py`, `pseudo2c.py` — degree-2 pseudo-solution structure on S^2. These use `exec()` on other files; refactor before extending.
+Package `kyfan/` (parametrized by m; `from kyfan import SignedComplex, label_set, ...`):
+- `complex.py` — `SignedComplex(m)`: verts, free reps (`rep(v)` = (index, sign)), `label(v, L)`, edges, top chains, `hemisphere_top(j)`.
+- `labels.py` — `label_set(k)`, `posalt`/`negalt`, `pos_alt_count` (A_+), DFS over valid labelings, octahedron demo.
+- `violating.py` — `violating_pairs`, `is_violating`, `partial_labelings(n, labels, d)` (sorted tuples of (free index, label)).
+- `group.py` — elements (pi, eps, lpi, leps), `act`, `compose`, `generated_group`, `assert_odd_order`; generators for the full group, hemisphere stabilizer, label group, and `z3z3_generators` (the only F_2-valid averaging); `orbits`.
+- `dual.py` — `sa_dual_system(cx, labels, d, gens=, support=)`: unknowns = non-violating size-d partial labelings (orbit-quotiented / support-restricted), consistency rows at level d-1 only, plus E[empty]=1; `solve(rows, ncols, 'F2' | p)`.
+- `primal.py` — random-point primal (`sampled_primal`, `FastRows` for large vectorized systems), `verify_random`, `verify_exhaustive_F2`, `verify_exact_F2` (canonical one-hot basis), `kyfan_target_monomials`.
+- `linalg.py` — dense bit-packed GF(2) Gauss-Jordan (`gf2_dense`, `gf2_dense_packed`; fine to ~40k unknowns, the bottleneck — Task 1 replaces it), sparse mod-p elimination, python-int bitset solver, dense mod-p, real lstsq residual.
+- `tower.py` — local lemma `g`, `local_lemma_violations`, telescoped identity `check_identity`.
+- `lower.py` — the Ky Fan separating functional (`box`, `E`, `check`).
 
-(Refactoring is step 4 of Phase 0 below.) The plan: refactor everything into one module `kyfan/` (complex construction parametrized by m, labeling utilities, violating pairs, group action with odd-order subgroups, SA-dual system builder, sparse GF(2)/GF(p) solvers) with a test that reproduces every number in the table above. Keep the exec-based scripts as reference until the tests pass.
+`tests/` are the settled table (see results.md for the test-to-number map); `./reproduce.sh` (fast, ~2 min) or `./reproduce.sh all` (~15 min).
+The original `scripts/` were reviewed in `review.md`, reproduced, and deleted after the tests passed (git history: commit 5a4dd50).
 
 
 ## 3a. Phase 0 — review and reproduce before anything else
+
+**Status: completed 2026-09-16** (see review.md, results.md). Kept for the record.
 
 Do this first, and do not start Task 1 until every check passes.
 
