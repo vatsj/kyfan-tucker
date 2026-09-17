@@ -1,0 +1,70 @@
+m=4 (equator S^2, 13 free vertices, 10 movable): explicit gadget: top_mag 0.462, top_label 0.231, flag_density 0.1667 (=1/(2n)=0.1667)
+    chain 0: 3000 sweeps, frozen-move rate 0.470, final hamming 0.38  [1s]
+    chain 1: 3000 sweeps, frozen-move rate 0.471, final hamming 0.15  [1s]
+    chain 2: 3000 sweeps, frozen-move rate 0.473, final hamming 0.23  [2s]
+    chain 3: 3000 sweeps, frozen-move rate 0.467, final hamming 0.31  [2s]
+    top_mag      : mean 0.4606 (sd 0.0622)  tau 2.3 sweeps  ESS 3889  R-hat 1.001  chain means ['0.4640', '0.4615', '0.4566', '0.4602']
+    top_label    : mean 0.2762 (sd 0.0488)  tau 2.1 sweeps  ESS 4306  R-hat 1.001  chain means ['0.2792', '0.2751', '0.2751', '0.2752']
+    n_mags       : mean 3.0000 (sd 0.0000)  tau 2.0 sweeps  ESS 4500  R-hat 1.000  chain means ['3.0000', '3.0000', '3.0000', '3.0000']
+    flag_density : mean 0.0939 (sd 0.0479)  tau 2.3 sweeps  ESS 3930  R-hat 1.001  chain means ['0.0959', '0.0941', '0.0933', '0.0924']
+    hamming      : mean 0.2280 (sd 0.0889)  tau 2.6 sweeps  ESS 3517  R-hat 1.002  chain means ['0.2297', '0.2252', '0.2292', '0.2279']
+  match probabilities m=4: 2000 samples/chain, burn 750, thin 3  [3s]
+    random: |A|=1: 0.6714±0.0358  |A|=2: 0.4853±0.0434  |A|=3: 0.2704±0.0165  |A|=4: 0.1813±0.0145  |A|=6: 0.0758±0.0067  |A|=8: 0.0328±0.0024  |A|=12: nan±nan   fitted beta/vertex 0.645
+    chain : |A|=1: 0.8084±0.0361  |A|=2: 0.4692±0.0363  |A|=3: 0.2787±0.0279  |A|=4: nan±nan  |A|=6: nan±nan  |A|=8: nan±nan  |A|=12: nan±nan   fitted beta/vertex 0.587
+    ball  : |A|=1: 0.6894±0.0373  |A|=2: 0.4236±0.0299  |A|=3: 0.3412±0.0253  |A|=4: 0.2623±0.0172  |A|=6: 0.0719±0.0056  |A|=8: nan±nan  |A|=12: nan±nan   fitted beta/vertex 0.650
+m=5 (equator S^3, 40 free vertices, 36 movable): explicit gadget: top_mag 0.450, top_label 0.225, flag_density 0.1250 (=1/(2n)=0.1250)
+    chain 0: 3000 sweeps, frozen-move rate 0.238, final hamming 0.40  [2s]
+    chain 1: 3000 sweeps, frozen-move rate 0.241, final hamming 0.42  [4s]
+    chain 2: 3000 sweeps, frozen-move rate 0.239, final hamming 0.55  [5s]
+    chain 3: 3000 sweeps, frozen-move rate 0.242, final hamming 0.45  [7s]
+    top_mag      : mean 0.3709 (sd 0.0383)  tau 2.3 sweeps  ESS 4014  R-hat 1.001  chain means ['0.3689', '0.3734', '0.3698', '0.3713']
+    top_label    : mean 0.2241 (sd 0.0310)  tau 2.4 sweeps  ESS 3754  R-hat 1.000  chain means ['0.2233', '0.2250', '0.2238', '0.2244']
+    n_mags       : mean 4.0000 (sd 0.0000)  tau 2.0 sweeps  ESS 4500  R-hat 1.000  chain means ['4.0000', '4.0000', '4.0000', '4.0000']
+    flag_density : mean 0.0240 (sd 0.0137)  tau 2.3 sweeps  ESS 3950  R-hat 0.999  chain means ['0.0240', '0.0243', '0.0237', '0.0239']
+    hamming      : mean 0.4347 (sd 0.0660)  tau 3.9 sweeps  ESS 2364  R-hat 1.000  chain means ['0.4336', '0.4325', '0.4363', '0.4364']
+  match probabilities m=5: 2000 samples/chain, burn 750, thin 3  [8s]
+    random: |A|=1: 0.4734±0.0371  |A|=2: 0.2866±0.0323  |A|=3: 0.0815±0.0081  |A|=4: 0.0446±0.0063  |A|=6: 0.0079±0.0015  |A|=8: 0.0025±0.0005  |A|=12: 0.0002±0.0000   fitted beta/vertex 0.479
+    chain : |A|=1: 0.7982±0.0372  |A|=2: 0.4385±0.0415  |A|=3: 0.1209±0.0097  |A|=4: 0.0796±0.0122  |A|=6: nan±nan  |A|=8: nan±nan  |A|=12: nan±nan   fitted beta/vertex 0.440
+    ball  : |A|=1: 0.5520±0.0434  |A|=2: 0.2929±0.0340  |A|=3: 0.1650±0.0262  |A|=4: 0.1028±0.0193  |A|=6: 0.0272±0.0053  |A|=8: 0.0085±0.0015  |A|=12: 0.0003±0.0001   fitted beta/vertex 0.515
+m=6 (equator S^4, 121 free vertices, 116 movable): explicit gadget: top_mag 0.446, top_label 0.223, flag_density 0.1000 (=1/(2n)=0.1000)
+    chain 0: 3000 sweeps, frozen-move rate 0.124, final hamming 0.60  [5s]
+    chain 1: 3000 sweeps, frozen-move rate 0.122, final hamming 0.63  [11s]
+    chain 2: 3000 sweeps, frozen-move rate 0.122, final hamming 0.49  [16s]
+    chain 3: 3000 sweeps, frozen-move rate 0.121, final hamming 0.55  [22s]
+    top_mag      : mean 0.2872 (sd 0.0210)  tau 2.5 sweeps  ESS 3656  R-hat 1.000  chain means ['0.2868', '0.2878', '0.2876', '0.2867']
+    top_label    : mean 0.1701 (sd 0.0181)  tau 2.9 sweeps  ESS 3192  R-hat 1.001  chain means ['0.1696', '0.1711', '0.1702', '0.1697']
+    n_mags       : mean 5.0000 (sd 0.0000)  tau 2.0 sweeps  ESS 4500  R-hat 1.000  chain means ['5.0000', '5.0000', '5.0000', '5.0000']
+    flag_density : mean 0.0051 (sd 0.0026)  tau 2.2 sweeps  ESS 4090  R-hat 1.000  chain means ['0.0050', '0.0051', '0.0052', '0.0051']
+    hamming      : mean 0.5791 (sd 0.0405)  tau 4.7 sweeps  ESS 2170  R-hat 1.000  chain means ['0.5792', '0.5781', '0.5799', '0.5791']
+  match probabilities m=6: 2000 samples/chain, burn 750, thin 3  [22s]
+    random: |A|=1: 0.3907±0.0381  |A|=2: 0.1612±0.0242  |A|=3: 0.0457±0.0058  |A|=4: 0.0141±0.0025  |A|=6: 0.0033±0.0010  |A|=8: 0.0002±0.0000  |A|=12: 0.0000±0.0000   fitted beta/vertex 0.355
+    chain : |A|=1: 0.9335±0.0254  |A|=2: 0.4160±0.0244  |A|=3: 0.1192±0.0117  |A|=4: 0.0978±0.0295  |A|=6: nan±nan  |A|=8: nan±nan  |A|=12: nan±nan   fitted beta/vertex 0.449
+    ball  : |A|=1: 0.4742±0.0473  |A|=2: 0.2054±0.0254  |A|=3: 0.1392±0.0324  |A|=4: 0.0479±0.0125  |A|=6: 0.0110±0.0032  |A|=8: 0.0019±0.0006  |A|=12: 0.0001±0.0000   fitted beta/vertex 0.466
+m=7 (equator S^5, 364 free vertices, 358 movable): explicit gadget: top_mag 0.445, top_label 0.223, flag_density 0.0833 (=1/(2n)=0.0833)
+    chain 0: 3000 sweeps, frozen-move rate 0.062, final hamming 0.69  [18s]
+    chain 1: 3000 sweeps, frozen-move rate 0.062, final hamming 0.71  [35s]
+    chain 2: 3000 sweeps, frozen-move rate 0.062, final hamming 0.71  [53s]
+    chain 3: 3000 sweeps, frozen-move rate 0.062, final hamming 0.64  [77s]
+    top_mag      : mean 0.2260 (sd 0.0119)  tau 2.3 sweeps  ESS 4081  R-hat 1.000  chain means ['0.2258', '0.2266', '0.2257', '0.2259']
+    top_label    : mean 0.1304 (sd 0.0100)  tau 3.5 sweeps  ESS 2666  R-hat 1.002  chain means ['0.1306', '0.1305', '0.1297', '0.1308']
+    n_mags       : mean 6.0000 (sd 0.0000)  tau 2.0 sweeps  ESS 4500  R-hat 1.000  chain means ['6.0000', '6.0000', '6.0000', '6.0000']
+    flag_density : mean 0.0009 (sd 0.0004)  tau 2.3 sweeps  ESS 3966  R-hat 1.000  chain means ['0.0009', '0.0009', '0.0009', '0.0009']
+    hamming      : mean 0.6774 (sd 0.0234)  tau 4.3 sweeps  ESS 2125  R-hat 1.000  chain means ['0.6772', '0.6773', '0.6773', '0.6779']
+  match probabilities m=7: 2000 samples/chain, burn 750, thin 3  [70s]
+    random: |A|=1: 0.2635±0.0156  |A|=2: 0.0985±0.0153  |A|=3: 0.0333±0.0097  |A|=4: 0.0049±0.0006  |A|=6: 0.0004±0.0001  |A|=8: 0.0000±0.0000  |A|=12: 0.0000±0.0000   fitted beta/vertex 0.294
+    chain : |A|=1: 0.9502±0.0236  |A|=2: 0.5383±0.0332  |A|=3: 0.1475±0.0179  |A|=4: 0.0396±0.0063  |A|=6: 0.0039±0.0020  |A|=8: nan±nan  |A|=12: nan±nan   fitted beta/vertex 0.320
+    ball  : |A|=1: 0.4465±0.0435  |A|=2: 0.1791±0.0204  |A|=3: 0.0473±0.0082  |A|=4: 0.0300±0.0109  |A|=6: 0.0031±0.0007  |A|=8: 0.0013±0.0005  |A|=12: 0.0000±0.0000   fitted beta/vertex 0.406
+m=8 (equator S^6, 1093 free vertices, 1086 movable): explicit gadget: top_mag 0.445, top_label 0.222, flag_density 0.0714 (=1/(2n)=0.0714)
+    chain 0: 3000 sweeps, frozen-move rate 0.031, final hamming 0.78  [59s]
+    chain 1: 3000 sweeps, frozen-move rate 0.030, final hamming 0.75  [119s]
+    chain 2: 3000 sweeps, frozen-move rate 0.031, final hamming 0.75  [181s]
+    chain 3: 3000 sweeps, frozen-move rate 0.031, final hamming 0.74  [238s]
+    top_mag      : mean 0.1832 (sd 0.0064)  tau 2.2 sweeps  ESS 4110  R-hat 1.000  chain means ['0.1832', '0.1833', '0.1831', '0.1832']
+    top_label    : mean 0.1041 (sd 0.0056)  tau 3.9 sweeps  ESS 2329  R-hat 1.000  chain means ['0.1041', '0.1039', '0.1040', '0.1042']
+    n_mags       : mean 7.0000 (sd 0.0000)  tau 2.0 sweeps  ESS 4500  R-hat 1.000  chain means ['7.0000', '7.0000', '7.0000', '7.0000']
+    flag_density : mean 0.0001 (sd 0.0001)  tau 2.4 sweeps  ESS 3854  R-hat 1.000  chain means ['0.0001', '0.0001', '0.0001', '0.0001']
+    hamming      : mean 0.7408 (sd 0.0132)  tau 5.4 sweeps  ESS 1688  R-hat 1.001  chain means ['0.7419', '0.7403', '0.7405', '0.7405']
+  match probabilities m=8: 2000 samples/chain, burn 750, thin 3  [239s]
+    random: |A|=1: 0.2326±0.0162  |A|=2: 0.0664±0.0095  |A|=3: 0.0197±0.0062  |A|=4: 0.0023±0.0003  |A|=6: 0.0002±0.0000  |A|=8: 0.0000±0.0000  |A|=12: 0.0000±0.0000   fitted beta/vertex 0.220
+    chain : |A|=1: 0.9492±0.0241  |A|=2: 0.4899±0.0245  |A|=3: 0.1739±0.0216  |A|=4: 0.0382±0.0043  |A|=6: 0.0016±0.0006  |A|=8: nan±nan  |A|=12: nan±nan   fitted beta/vertex 0.270
+    ball  : |A|=1: 0.3099±0.0306  |A|=2: 0.1238±0.0128  |A|=3: 0.0378±0.0080  |A|=4: 0.0142±0.0041  |A|=6: 0.0020±0.0005  |A|=8: 0.0002±0.0001  |A|=12: 0.0000±0.0000   fitted beta/vertex 0.335

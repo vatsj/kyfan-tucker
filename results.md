@@ -33,7 +33,7 @@ Layout: `kyfan/` package (see CLAUDE.md §3), `tests/` (fast by default; `slow` 
 
 | # | statement | field | degree | evidence | test | runtime |
 |---|---|---|---|---|---|---|
-| 1 | Tucker, S^2 (m=3, labels ±1,±2) | F_2 | = 3 | dual: 1,104 unknowns, consistent at d=2 (rank 507, 597 free); 12,688 unknowns, inconsistent at d=3 (rank 8,400). Explicit certificate (5,616 violating size-3 unknowns; ~458 monomials) verified exactly: canonical one-hot basis expansion, and exhaustively on all 4^13 labelings | `test_nsdeg.py`; `test_primal.py::test_tucker_s2_F2_degree3_certificate_exact`, `…_exhaustive` (slow) | 2 s; 10 s, 30 s |
+| 1 | Tucker, S^2 (m=3, labels ±1,±2) | F_2 | = 3 | dual: 1,104 unknowns, consistent at d=2 (rank 507, 597 free); 12,688 unknowns, inconsistent at d=3 (rank 8,400). Explicit certificate (5,616 violating size-3 unknowns; ~458 monomials — the minimum is 304, see "Certificate size") verified exactly: canonical one-hot basis expansion, and exhaustively on all 4^13 labelings | `test_nsdeg.py`; `test_primal.py::test_tucker_s2_F2_degree3_certificate_exact`, `…_exhaustive` (slow) | 2 s; 10 s, 30 s |
 | 2 | Tucker, S^2 | Q | = 5 | dual consistent at d=3 over F_p (p=1000003, rank 8,401); full-group orbit primal (valid over Q/F_p, |G|=384): inconsistent at d=3 (55 orbits) and d=4 (657 orbits) — one-way sound; at d=5: 924,480 violating unknowns in 5,482 orbits, float rank 1,976, relative residual 3e-15, max error 1e-14 on fresh labelings, and an exact F_p certificate | `test_nsdeg.py`; `test_primal.py::test_tucker_s2_Fp_symmetric_degree3_4_none`; `…::test_tucker_s2_Q_degree5_symmetric_certificate` (veryslow) | 5 s; 5 s; 5 min |
 | 3 | Tucker, S^3 (m=4, labels ±1..±3) | F_2 | = 4 | d=3, via the dual: the Z_3×Z_3-invariant degree-3 SA-dual (1,834,800 non-violating size-3 partial labelings in 204,048 orbits; 111,233 rows) is consistent, rank 94,064 — an explicit invariant pseudo-solution (support 8,036 orbits), checked against all 987,265 unreduced consistency equations. Averaging is valid over F_2 since |Z_3×Z_3| = 9 is odd. The unrestricted dual (987,457 × 1,834,800) is also consistent, rank 827,876. Cross-check via the sampled primal (z9): inconsistent, 33,312 orbit-unknowns, rank 27,584. d=4: tower | `test_sparse.py::test_s3_degree3_pseudo_solution_via_dual` (30 s); `test_s3.py::test_s3_degree3_F2_no_certificate_z9` (veryslow, 7 min) | 30 s; 7 min |
 | 4 | Ky Fan, S^2, labels ±1..±3 | F_2 | = 3 | ≤: explicit certificate (13,176 violating unknowns; ~1,286 monomials) verified exactly (canonical basis: Σc_α1_α ≡ A_+ + 1). ≥: row 5 | `test_primal.py::test_kyfan_s2_F2_degree3_certificate_exact` | 60 s |
@@ -150,6 +150,87 @@ an h=1 solution at n=2 (2–7 free parameters), 0 of 12 admit h=2 at n=3. The ps
 | no label-group-invariant (198 orbits), no hemisphere-stabilizer-invariant (44), no distinct-magnitudes-only (624 unknowns) solution; nor with both restrictions (78; 19) |
 | coordinate-Z_3-invariant solution exists (368 orbits, 201 free) |
 | knockout by full-group orbit type: exactly 4 of 20 types are necessary — distinct-magnitude edges at rank pairs (1,2), (1,3), (2,3); equal labels on two unrelated rank-1 vertices |
+
+## Certificate size (2026-09-17) — `SIZE_LOWER_BOUND.md`, `analysis/isd.py`, `analysis/spread_mcmc.py`
+
+Size = number of monomials (violating partial labelings) in a certificate 1 = Σ 1_α; #flags = m!·2^m (48 on S^2).
+
+**Status of the theory (`SIZE_LOWER_BOUND.md`, collaborator's write-up, all ingredients proved in this repo):**
+- **Proved**: every certificate of degree exactly n+1 has size ≥ #flags (Thm 1); every certificate of degree ≤ D has size
+  ≥ #flags / C(D, m), superpolynomial (N^{Θ(log log N)}) for D = O(n) (Thm 2). Both use only Lemma A (every flag forces a
+  full-flag term) = restriction lemma + tree theorem (i) + realization (ii) + B_m-transport of the explicit gadget to every flag.
+- **Reduces to the spread lemma for all degrees** (Thm 4): if for every flag there is a distribution on gadget labelings with
+  P[ρ|_A = a] ≤ β^{|A| − cm} for all vertex sets A off the flag, then every certificate of any degree has size ≥ #flags/K^m.
+  Thm 3 (proved) is the special case where every term uses ≥ μ magnitudes off the flags it serves.
+- **Empirical support for the lemma**: the MCMC numbers below (the explicit gadget itself violates the lemma — its
+  magnitude-1 class contains a 1/(2n) fraction of all flags — so D_F must be random; uniform on gadget-compatible labelings is the candidate).
+
+**Minimum certificate size on S^2 (m=3, labels ±1,±2)** — `analysis/isd.py`; unknowns = all violating partial labelings of
+sizes 2..d, rows = random labelings (one-way sound; every certificate below was re-verified on all 4^13 labelings).
+The reduced system is very sparse (a size-2 violating monomial is the sum of its 4 size-3 extensions at any third vertex;
+free columns have weight 4–17), so textbook Stern/Dumer on random rows degenerates (almost all keys 0); the ISD used is
+Canteaut–Chabaud information-set updates + Prange + Dumer p=1, p=1+1 (matching on rows inside the rhs support) + a
+first-improvement descent in the coset with the sparse null basis. Exactness comes from CP-SAT (`ortools`) on the reduced
+system: x_piv = rhs + M_free x_free, minimise Σx_free + Σ y_i with y_i = rhs_i ⊕ (⊕ M_ij x_j) as XOR constraints.
+True certificates are a subset of the sampled system's solutions, so the CP-SAT optimum is a lower bound; a verified
+certificate attaining it makes the number exact.
+
+| degree | unknowns | rank | first Prange | ISD best (time) | CP-SAT | lower bound from theory | verified |
+|---|---|---|---|---|---|---|---|
+| ≤ 3 | 5,760 monomials | 4,176 | 360 | **304** (≈40 s, 3.5k information sets) | **OPTIMAL 304** (31 s, 8 workers) | 48 (Thm 1) | exhaustive, 17 s; `tests/test_min_size.py` (slow, 70 s) |
+| ≤ 4, Z_3-invariant | 33,512 orbits of 100,520 monomials | 16,902 | 136 (Dumer: 133) | **104 orbits = 312 monomials** (300 s, 435 information sets) | FEASIBLE 104, proven bound only **24** at the 1800 s cap | 12 (Thm 2: 48/C(4,3)) | exhaustive, 18 s; `analysis/isd_s2_d4_z3_cert.txt` |
+
+- Degree 3: the minimum is exactly **304 = 16 size-2 + 288 size-3 monomials**, 6.3× the flag bound. (The ~458 quoted in row 1 was
+  a first Prange solution, not a minimum.) Command: `python analysis/isd.py --d 3 --seconds 60 --cpsat 600 --save analysis/isd_s2_d3.pkl` (2.5 min).
+- Degree 4 (Z_3 = coordinate 3-cycle on coords 0,1,2, odd order, so orbit sums are legitimate F_2 certificates): the best Z_3-invariant certificate found has orbit weight w* = 104 (312 monomials), and it uses **no size-4 monomial
+  at all** (profile {2: 24, 3: 288}) — it is a Z_3-symmetrised degree-3 certificate, barely larger than the degree-3 optimum 304.
+  CP-SAT (1800 s, 8 workers, hinted) did not improve on 104 and only proved w* ≥ 24, so the invariant minimum is in [24, 104].
+  For the true (non-invariant) degree-4 minimum s the reduction gives s ∈ [w* − 8, 3 w*] (x + gx + g²x is invariant; 8 fixed orbits),
+  i.e. only **s ∈ [16, 312]** from what is proved, and s ≤ 304 from degree 3. **Not decisive**: neither "degree 4 brings the size down
+  a lot" nor "it doesn't" is established. The elimination (349 s dense on 45,000 × 33,512) and the CP-SAT relaxation are the
+  bottlenecks; a longer CP-SAT run, or a direct non-invariant degree-4 model (100,520 columns), is the next step if this matters.
+  Command: `python analysis/isd.py --d 4 --z3 --rows 45000 --seconds 300 --cpsat 1800 --save analysis/isd_s2_d4_z3.pkl` (≈ 6 min elimination + 5 min ISD + 30 min CP-SAT + 2 × 18 s verification ≈ 42 min).
+
+**Spread-lemma MCMC (`analysis/spread_mcmc.py`, output `analysis/spread_mcmc.out`, pickle `analysis/spread_mcmc.pkl`).**
+Glauber dynamics (heat bath, one random movable free vertex per move, uniform over its allowed labels) on the set G_m of
+valid equatorial labelings that agree with the explicit gadget on the chain σ and whose pole-chain residual domains contain
+the reverse-caterpillar domains (every element is a gadget by the label-agnostic tree theorem). Stationary distribution =
+uniform on the component of the explicit gadget. Diagnostics: 4 chains × 3000 sweeps (25% burn-in), integrated
+autocorrelation time τ (Sokal window), ESS, split-R-hat; match probabilities between two *independent* chains
+(2000 samples each, thin 3), ± = standard error over 40 random sets A. Ergodicity of the dynamics is not proved.
+
+| m (equator S^{m−2}, movable vertices) | frozen-move rate | τ (sweeps), R-hat | largest-magnitude fraction (explicit) | flag density of largest class (explicit 1/(2n)) | Hamming from start | runtime |
+|---|---|---|---|---|---|---|
+| 4 (10) | 0.47 | 2.0–2.6, 1.00 | 0.461 (0.462) | 0.094 (0.167) | 0.23 | 2 s |
+| 5 (36) | 0.24 | 2.0–3.9, 1.00 | 0.371 (0.450) | 0.024 (0.125) | 0.43 | 7 s |
+| 6 (116) | 0.12 | 2.0–4.7, 1.00 | 0.287 (0.446) | 0.0051 (0.100) | 0.58 | 22 s |
+| 7 (358) | 0.062 | 2.0–4.3, 1.00 | 0.226 (0.445) | 0.0009 (0.083) | 0.68 | 77 s |
+| 8 (1086) | 0.031 | 2.0–5.4, 1.00 | 0.183 (0.445) | 0.0001 (0.071) | 0.74 | 240 s + 240 s match |
+
+Match probability P[L'|_A = L|_A] for two independent gadget samples, by |A| (random / chain / ball sets), and the fitted
+per-vertex decay β (least squares on log P):
+
+| m | |A|=1 | 2 | 3 | 4 | 6 | 8 | 12 | β (random / chain / ball) |
+|---|---|---|---|---|---|---|---|---|
+| 4 random | 0.67 | 0.49 | 0.27 | 0.18 | 0.076 | 0.033 | – | 0.65 / 0.59 / 0.65 |
+| 5 random | 0.47 | 0.29 | 0.082 | 0.045 | 0.0079 | 0.0025 | 0.0002 | 0.48 / 0.44 / 0.52 |
+| 6 random | 0.39 | 0.16 | 0.046 | 0.014 | 0.0033 | 0.0002 | <1e-4 | 0.36 / 0.45 / 0.47 |
+| 6 ball | 0.47 | 0.21 | 0.14 | 0.048 | 0.011 | 0.0019 | 0.0001 | |
+| 7 random | 0.26 | 0.099 | 0.033 | 0.0049 | 0.0004 | <1e-4 | <1e-4 | 0.29 / 0.32 / 0.41 |
+| 7 chain | 0.95 | 0.54 | 0.15 | 0.040 | 0.0039 | – | – | |
+| 7 ball | 0.45 | 0.18 | 0.047 | 0.030 | 0.0031 | 0.0013 | <1e-4 | |
+| 8 random | 0.23 | 0.066 | 0.020 | 0.0023 | 0.0002 | <1e-4 | <1e-4 | 0.22 / 0.27 / 0.34 |
+| 8 chain | 0.95 | 0.49 | 0.17 | 0.038 | 0.0016 | – | – | |
+| 8 ball | 0.31 | 0.12 | 0.038 | 0.014 | 0.0020 | 0.0002 | <1e-4 | |
+
+What this shows: all statistics have ESS in the thousands and R-hat = 1.00 (same-start chains, so R-hat is a weak check;
+the small τ and the stable Hamming distance from the start are the stronger evidence of mixing). The largest magnitude
+class shrinks toward the uniform share 1/n and its flag density decays much faster than the explicit gadget's 1/(2n);
+match probabilities decay geometrically in |A| on all three set types, and the fitted β itself *decreases* with m
+(random sets: 0.65, 0.48, 0.36, 0.29, 0.22 for m = 4..8, roughly 1/n as for independent uniform magnitudes; chains 0.59→0.27;
+balls 0.65→0.34). Chains start high (P ≈ 0.95 at |A|=1: the rank-1 vertex of a random chain is often in the rigid zone)
+but decay as fast as random sets from |A| = 2 on. This is consistent with the spread lemma with a fixed β < 1 and a small c. The residual frozen-move rate (vertices with ≤ 1 allowed
+label) falls like ~1/n — the "rigid zone" near σ allowed by the c·m term.
 
 ## Negative / methodological
 

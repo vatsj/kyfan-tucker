@@ -1,0 +1,21 @@
+S^2 (m=3, labels +-1,+-2), degree <= 4, z3=True
+  system: 33512 columns (Z_3 orbits), 45000 rows  [6s]
+  rank 16902 (of 33512 columns)  [349s]
+  first information set: Prange 136, after Dumer p<=2: 133
+    round 50: best 104  [33s]
+    round 100: best 104  [67s]
+    round 150: best 104  [101s]
+    round 200: best 104  [138s]
+    round 250: best 104  [173s]
+    round 300: best 104  [206s]
+    round 350: best 104  [242s]
+    round 400: best 104  [276s]
+  ISD: 435 information sets in 300s; best 104
+  [ISD] column weight 104; monomials after orbit expansion 312; sampled rows satisfied: True
+  [ISD] EXHAUSTIVE verification on all 4^13 labelings: True  [17s]
+  [ISD] size profile: {2: 24, 3: 288}
+  CP-SAT exact model, 1800s, 8 workers, hinted with the ISD solution
+  CP-SAT: status FEASIBLE, weight 104, lower bound 24.0  [1803s]
+  [CP-SAT] column weight 104; monomials after orbit expansion 312; sampled rows satisfied: True
+  [CP-SAT] EXHAUSTIVE verification on all 4^13 labelings: True  [18s]
+  [CP-SAT] size profile: {2: 24, 3: 288}
