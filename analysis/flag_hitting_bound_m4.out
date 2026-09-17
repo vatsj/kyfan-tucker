@@ -1,0 +1,47 @@
+S^3 (m=4), pole-chain flag, labels +-1..+-3; full labelings of the flag: 1296
+  explicit gadget domains [[3], [2, -3], [1, -2, -3], [-1, -2, -3]]: 18 points, dim Z = 1, |supp| = 9 (3^(n-1) = 9)
+  label orbit: 48 distinct domain tuples of 2^n n! = 48
+  [orbit] 48 gadgets, Z-dimensions [1], 48 parity constraints, support sizes 9..9, rhs all odd: True, touching 246 of 1296 full labelings, max multiplicity 8  [0.0s]
+  [orbit] CP-SAT: OPTIMAL, t = 6, bound 6.0  [0.3s]
+  [orbit] => every degree-4 certificate on S^3 has >= 192 x 6 = 1152 size-4 terms
+  realizable tree gadgets at the pole chain: 16 (["(1, 'x', (2, 'x', 'x'))", "(1, (2, 'x', 'x'), 'x')", "(2, 'x', (1, 'x', 'x'))", "(2, (1, 'x', 'x'), 'x')"]); with label orbits: 96 domain tuples
+  [trees] 96 gadgets, Z-dimensions [1], 96 parity constraints, support sizes 9..9, rhs all odd: True, touching 270 of 1296 full labelings, max multiplicity 16  [0.0s]
+  [trees] CP-SAT: OPTIMAL, t = 6, bound 6.0  [0.0s]
+  [trees] => every degree-4 certificate on S^3 has >= 192 x 6 = 1152 size-4 terms
+  realizable position permutations of the tree gadgets: 32 of 96 tried:
+    explicit perm (0, 1, 2, 3): [[3], [2, -3], [1, -2, -3], [-1, -2, -3]]
+    explicit perm (0, 1, 3, 2): [[3], [2, -3], [-1, -2, -3], [1, -2, -3]]
+    explicit perm (0, 2, 3, 1): [[3], [1, -2, -3], [-1, -2, -3], [2, -3]]
+    explicit perm (0, 3, 2, 1): [[3], [-1, -2, -3], [1, -2, -3], [2, -3]]
+    explicit perm (1, 2, 3, 0): [[2, -3], [1, -2, -3], [-1, -2, -3], [3]]
+    explicit perm (1, 3, 2, 0): [[2, -3], [-1, -2, -3], [1, -2, -3], [3]]
+    explicit perm (2, 3, 1, 0): [[1, -2, -3], [-1, -2, -3], [2, -3], [3]]
+    explicit perm (3, 2, 1, 0): [[-1, -2, -3], [1, -2, -3], [2, -3], [3]]
+    ((1, 'x', (2, 'x', 'x')), (1, 2, 3)) perm (0, 1, 2, 3): [[3], [1, -3], [-1, 2, -3], [-1, -2, -3]]
+    ((1, 'x', (2, 'x', 'x')), (1, 2, 3)) perm (0, 1, 3, 2): [[3], [1, -3], [-1, -2, -3], [-1, 2, -3]]
+    ((1, 'x', (2, 'x', 'x')), (1, 2, 3)) perm (0, 2, 3, 1): [[3], [-1, 2, -3], [-1, -2, -3], [1, -3]]
+    ((1, 'x', (2, 'x', 'x')), (1, 2, 3)) perm (0, 3, 2, 1): [[3], [-1, -2, -3], [-1, 2, -3], [1, -3]]
+    ((1, 'x', (2, 'x', 'x')), (1, 2, 3)) perm (1, 2, 3, 0): [[1, -3], [-1, 2, -3], [-1, -2, -3], [3]]
+    ((1, 'x', (2, 'x', 'x')), (1, 2, 3)) perm (1, 3, 2, 0): [[1, -3], [-1, -2, -3], [-1, 2, -3], [3]]
+    ((1, 'x', (2, 'x', 'x')), (1, 2, 3)) perm (2, 3, 1, 0): [[-1, 2, -3], [-1, -2, -3], [1, -3], [3]]
+    ((1, 'x', (2, 'x', 'x')), (1, 2, 3)) perm (3, 2, 1, 0): [[-1, -2, -3], [-1, 2, -3], [1, -3], [3]]
+    ((1, (2, 'x', 'x'), 'x'), (1, 2, 3)) perm (0, 1, 2, 3): [[3], [1, 2, -3], [1, -2, -3], [-1, -3]]
+    ((1, (2, 'x', 'x'), 'x'), (1, 2, 3)) perm (0, 2, 1, 3): [[3], [1, -2, -3], [1, 2, -3], [-1, -3]]
+    ((1, (2, 'x', 'x'), 'x'), (1, 2, 3)) perm (0, 3, 1, 2): [[3], [-1, -3], [1, 2, -3], [1, -2, -3]]
+    ((1, (2, 'x', 'x'), 'x'), (1, 2, 3)) perm (0, 3, 2, 1): [[3], [-1, -3], [1, -2, -3], [1, 2, -3]]
+    ((1, (2, 'x', 'x'), 'x'), (1, 2, 3)) perm (1, 2, 3, 0): [[1, 2, -3], [1, -2, -3], [-1, -3], [3]]
+    ((1, (2, 'x', 'x'), 'x'), (1, 2, 3)) perm (2, 1, 3, 0): [[1, -2, -3], [1, 2, -3], [-1, -3], [3]]
+    ((1, (2, 'x', 'x'), 'x'), (1, 2, 3)) perm (3, 1, 2, 0): [[-1, -3], [1, 2, -3], [1, -2, -3], [3]]
+    ((1, (2, 'x', 'x'), 'x'), (1, 2, 3)) perm (3, 2, 1, 0): [[-1, -3], [1, -2, -3], [1, 2, -3], [3]]
+    ((2, (1, 'x', 'x'), 'x'), (1, 2, 3)) perm (0, 1, 2, 3): [[3], [1, 2, -3], [-1, 2, -3], [-2, -3]]
+    ((2, (1, 'x', 'x'), 'x'), (1, 2, 3)) perm (0, 2, 1, 3): [[3], [-1, 2, -3], [1, 2, -3], [-2, -3]]
+    ((2, (1, 'x', 'x'), 'x'), (1, 2, 3)) perm (0, 3, 1, 2): [[3], [-2, -3], [1, 2, -3], [-1, 2, -3]]
+    ((2, (1, 'x', 'x'), 'x'), (1, 2, 3)) perm (0, 3, 2, 1): [[3], [-2, -3], [-1, 2, -3], [1, 2, -3]]
+    ((2, (1, 'x', 'x'), 'x'), (1, 2, 3)) perm (1, 2, 3, 0): [[1, 2, -3], [-1, 2, -3], [-2, -3], [3]]
+    ((2, (1, 'x', 'x'), 'x'), (1, 2, 3)) perm (2, 1, 3, 0): [[-1, 2, -3], [1, 2, -3], [-2, -3], [3]]
+    ((2, (1, 'x', 'x'), 'x'), (1, 2, 3)) perm (3, 1, 2, 0): [[-2, -3], [1, 2, -3], [-1, 2, -3], [3]]
+    ((2, (1, 'x', 'x'), 'x'), (1, 2, 3)) perm (3, 2, 1, 0): [[-2, -3], [-1, 2, -3], [1, 2, -3], [3]]
+  with label orbits: 192 gadget domain tuples
+  [perms] 192 gadgets, Z-dimensions [1], 192 parity constraints, support sizes 9..9, rhs all odd: True, touching 468 of 1296 full labelings, max multiplicity 16  [0.0s]
+  [perms] CP-SAT: OPTIMAL, t = 12, bound 12.0  [0.1s]
+  [perms] => every degree-4 certificate on S^3 has >= 192 x 12 = 2304 size-4 terms

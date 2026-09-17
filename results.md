@@ -162,6 +162,25 @@ Size = number of monomials (violating partial labelings) in a certificate 1 = Σ
 - **Reduces to the spread lemma for all degrees** (Thm 4): if for every flag there is a distribution on gadget labelings with
   P[ρ|_A = a] ≤ β^{|A| − cm} for all vertex sets A off the flag, then every certificate of any degree has size ≥ #flags/K^m.
   Thm 3 (proved) is the special case where every term uses ≥ μ magnitudes off the flags it serves.
+- **Theorem 1′ (per-flag parities, proved; `SIZE_LOWER_BOUND.md` §1′)**: every gadget ρ at a flag U forces
+  |T_U ∩ supp μ_ρ| odd (T_U = the certificate's full-flag terms on U); t(U) = min |T| over all gadgets. Computed with
+  `analysis/flag_hitting_bound.py` (CP-SAT exact, branch-and-bound cross-check; `tests/test_flag_hitting.py`, 4 s):
+
+  | S^n | gadget family at the pole chain | gadget types | t | full-flag terms ≥ |
+  |---|---|---|---|---|
+  | S^2 | label orbit of the explicit gadget | 8 | 4 | 24 × 4 = 96 |
+  | S^2 | label orbit × realizable chain permutations = **all 16 gadget types** (exhaustive over 3,568 restrictions, two independent coordinatizations: `flag_hitting_bound_s2.py`, `flag_hitting_bound.py --family all`) | 16 | **8** | **192** (min certificate has 12 per class, parities verified) |
+  | S^3 | label orbit of the explicit gadget (2^3·3! = 48; supports of size 9 in 6^4) | 48 | 6 | 192 × 6 = 1,152 |
+  | S^3 | + all realizable tree shapes/leaf orders (`realize`), label orbits | 96 | 6 | 1,152 |
+  | S^3 | + realizable chain permutations (32 of 96, singleton domain at an end of the chain) | 192 | **12** | 192 × **12 = 2,304** |
+
+  Commands: `python analysis/flag_hitting_bound.py --m 3 --family orbit trees all` (2 s), `--m 4 --family orbit trees perms` (2 s),
+  `python analysis/flag_hitting_bound_s2.py` (1 s); outputs `analysis/flag_hitting_bound_m3.out`, `_m4.out`, `_s2.out`.
+  What this shows: on S^3 the per-flag count is ≥ 12 per class (vs. 2 needed for Theorem 1's #flags = 384): ≥ 2,304
+  size-4 terms in every degree-4 certificate. The label orbit alone under-counts (4 vs 8 on S^2, 6 vs ≥ 12 on S^3);
+  chain permutations are the missing gadgets on S^2 and the exhaustive family is unreachable on S^3 (6^36), so 12 is a
+  lower bound on t(S^3), not its value. Note: Theorem 1's "distinct flags ⇒ distinct terms" only separates antipodal
+  *classes* (m!2^{m−1}); Theorem 1′ supplies the missing factor.
 - **Empirical support for the lemma**: the MCMC numbers below (the explicit gadget itself violates the lemma — its
   magnitude-1 class contains a 1/(2n) fraction of all flags — so D_F must be random; uniform on gadget-compatible labelings is the candidate).
 

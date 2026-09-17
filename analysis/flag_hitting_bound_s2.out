@@ -1,0 +1,10 @@
+flag free reps [0, 7, 10]; other free vertices 10; in-U constraints 6 (all pairs)
+non-violating restrictions: 3568, distinct domain triples: 148  [1s]
+gadget domain types: 16 | restrictions that are gadgets: 928 | satisfiable residuals: 0
+constraints on T: 16 from 16 gadget types; Z-dimensions: [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1]
+rank 16, free variables 48
+solution space too large to enumerate here
+supports: 16 of sizes [3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3], touching 32 full labelings; max degree 2
+EXACT minimum full-flag terms per antipodal flag class: 8  ->  degree-3 certificates need >= 24 x 8 = 192 size-3 terms (minimum certificate has 288)
+certificate's terms on this flag: 12; parities ok: True
+python analysis/flag_hitting_bound_s2.py  1.22s user 0.02s system 99% cpu 1.241 total

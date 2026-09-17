@@ -32,6 +32,60 @@ Every certificate of degree exactly n+1 has size ≥ #flags = m!·2^m.
 *Proof.* The term α given by Lemma A has |α| ≤ n+1 and α|_U = full(U), so α is exactly a full labeling of U.
 Distinct flags have distinct vertex sets, so the assigned terms are distinct. ∎
 
+## 1′. Theorem 1′ (proved): per-flag parity constraints
+
+Fix a flag U (identified with its antipode: both use the same free vertices, so a *flag class* is an antipodal pair;
+there are m!·2^{m−1} classes). A *gadget* for U is any non-violating partial labeling ρ of the free vertices outside U
+whose residual CSP on U has no degree-n certificate; let Z_ρ be the space of vectors e on the residual's full
+assignments with Σ_{x ⊇ β} e(x) = 0 for every violating β of size ≤ n (pseudo-solutions are the e ∈ Z_ρ with
+Σ_x e(x) = 1; when the residual is a tree gadget, Z_ρ is one-dimensional, spanned by μ_ρ).
+
+**Lemma B.** Let C be a certificate of degree exactly n+1 and T_U = {α ∈ C : supp(α) = U}. Then for every gadget ρ of U
+and every e ∈ Z_ρ,   Σ_{x ∈ T_U} e(x) = Σ_x e(x).   In particular |T_U ∩ supp μ_ρ| is odd for every tree-gadget ρ.
+*Proof.* Every α ∈ T_U has empty off-U part, so it survives the restriction by ρ unchanged; every other surviving term
+has size ≤ n and is violating in the residual. Hence Σ_{α ∈ T_U} 1_α + 1 lies in the span of the violating
+low-degree indicators, and pairing with e ∈ Z_ρ (which kills that span) gives the identity. ∎
+
+**Theorem 1′.** size(C) ≥ Σ_{flag classes U} t(U), where t(U) = min{ |T| : T ⊆ full labelings of U satisfying Lemma B
+for every gadget ρ of U }. On S^2 (m = 3): at one flag there are 3,568 non-violating restrictions, 16 gadget domain types,
+each with Z_ρ one-dimensional and |supp μ_ρ| = 3; the 16 supports touch 32 of the 64 full labelings with maximum
+multiplicity 2, and the exact minimum odd-hitting set has size **t = 8** (branch and bound, `analysis/flag_hitting_bound_s2.py`).
+Hence every degree-3 certificate of Tucker on S^2 has ≥ 24 · 8 = **192** size-3 terms. (The true minimum, 304 = 288 + 16,
+has exactly 12 full-flag terms on every class; those 12 satisfy all 16 parities; the gap 8 → 12 is cross-flag coupling
+through the shared size-2 terms, invisible to a per-flag bound.)
+
+Remark. Restricting to the label-group orbit of the explicit gadget gives a computable sub-family at any flag, hence
+a valid lower bound on t(U) for every n: 2^n n! tree gadgets with supports of size 3^{n−1} inside (2n)^{n+1} labelings.
+
+**Computation (2026-09-17, `analysis/flag_hitting_bound.py`, outputs `analysis/flag_hitting_bound_m{3,4}.out`;
+`tests/test_flag_hitting.py`).** Since every gadget is transported to every flag class by the hyperoctahedral group,
+t(U) is the same for all classes; the pole chain is used. Gadget families (each a subset of the true family, so each
+gives a valid lower bound on t; the parity system is solved exactly by CP-SAT, cross-checked by branch and bound):
+
+| S^n | family | gadget domain tuples | t (exact for the family) | full-flag terms ≥ classes × t |
+|---|---|---|---|---|
+| S^2 | label orbit of the explicit gadget | 8 | 4 | 24 × 4 = 96 |
+| S^2 | label orbit × realizable chain permutations | 16 = all gadget types | **8** | 24 × 8 = **192** |
+| S^2 | all 3,568 restrictions (exhaustive, independent coordinates) | 16 | 8 | 192 |
+| S^3 | label orbit of the explicit gadget | 48 (supports of size 9 in 1296) | 6 | 192 × 6 = 1,152 |
+| S^3 | all 4 tree shapes × 6 leaf orders realized by `realize` (16 base gadgets), label orbits | 96 | 6 | 1,152 |
+| S^3 | label orbit × realizable chain permutations | 192 (32 realizable of 96 permutations) | **12** | 192 × 12 = **2,304** |
+
+"Realizable chain permutations": the residual CSP on a chain is symmetric under permuting the n+1 positions, so a
+permuted domain tuple is again a (tree) gadget *if* some restriction produces it; realizability is decided by CP-SAT
+(a valid labeling of the other free vertices whose forbidden sets are exactly the complements of the target domains;
+the returned labeling is re-checked independently). On S^2 the realizable permutations of the reverse caterpillar are
+exactly the four keeping the singleton domain at an end of the chain (identity, swap of the other two, and their
+reversals), and their label orbits are exactly the 16 exhaustive gadget types. On S^3, 32 of the 96 position
+permutations of the four tree shapes are realizable (8 per shape, all with the singleton domain at an end of the
+chain), and they double t from 6 to 12.
+So on S^3 every degree-4 certificate has ≥ 2,304 full-flag terms, versus Theorem 1's count of 384 (= #flags); the true
+t(U) may be larger still (the exhaustive family is out of reach: 6^36 restrictions).
+
+Note on Theorem 1's count: a full labeling of U is the same term as a full labeling of −U (same free vertices), so the
+"distinct flags have distinct terms" argument gives #flags/2 = m!·2^{m−1} classes, and #flags = m!·2^m needs t(U) ≥ 2,
+which Theorem 1′ supplies with room to spare (t ≥ 8 on S^2, ≥ 12 on S^3).
+
 ## 2. Theorem 2 (proved): certificates of degree O(n)
 
 Every certificate of degree ≤ D has size ≥ m!·2^m / C(D, m). In particular, for D = cm (c ≥ 1 constant),
@@ -102,6 +156,7 @@ constraints, started from the explicit gadget; MCMC ergodicity not verified, sam
 | statement | status |
 |---|---|
 | size ≥ m!2^m for degree-(n+1) certificates | proved (Thm 1) |
+| size ≥ Σ_classes t(U) for degree-(n+1) certificates; t = 8 on S^2 (exact), ≥ 12 on S^3 | proved (Thm 1′), computed |
 | size ≥ m!2^m / C(D,m) for degree ≤ D; superpoly for D = O(n) | proved (Thm 2) |
 | size ≥ m!2^{m−1}/(2^{n−μ}(n−μ)!) if terms use ≥ μ magnitudes off served flags | proved (Thm 3) |
 | size ≥ m!2^m/K^m for all degrees | conditional on the Spread Lemma (Thm 4) |

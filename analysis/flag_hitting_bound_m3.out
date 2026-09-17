@@ -1,0 +1,17 @@
+S^2 (m=3), pole-chain flag, labels +-1..+-2; full labelings of the flag: 64
+  explicit gadget domains [[2], [1, -2], [-1, -2]]: 4 points, dim Z = 1, |supp| = 3 (3^(n-1) = 3)
+  label orbit: 8 distinct domain tuples of 2^n n! = 8
+  [orbit] 8 gadgets, Z-dimensions [1], 8 parity constraints, support sizes 3..3, rhs all odd: True, touching 20 of 64 full labelings, max multiplicity 2  [0.0s]
+  [orbit] CP-SAT: OPTIMAL, t = 4, bound 4.0  [0.4s]
+  [orbit] branch-and-bound odd hitting number: 4
+  [orbit] => every degree-3 certificate on S^2 has >= 24 x 4 = 96 size-3 terms
+  realizable tree gadgets at the pole chain: 2 (["(1, 'x', 'x')"]); with label orbits: 8 domain tuples
+  [trees] 8 gadgets, Z-dimensions [1], 8 parity constraints, support sizes 3..3, rhs all odd: True, touching 20 of 64 full labelings, max multiplicity 2  [0.0s]
+  [trees] CP-SAT: OPTIMAL, t = 4, bound 4.0  [0.0s]
+  [trees] branch-and-bound odd hitting number: 4
+  [trees] => every degree-3 certificate on S^2 has >= 24 x 4 = 96 size-3 terms
+  m=3 all restrictions: 3568 non-violating, 148 domain types, 16 gadget types
+  [all] 16 gadgets, Z-dimensions [1], 16 parity constraints, support sizes 3..3, rhs all odd: True, touching 32 of 64 full labelings, max multiplicity 2  [0.0s]
+  [all] CP-SAT: OPTIMAL, t = 8, bound 8.0  [0.0s]
+  [all] branch-and-bound odd hitting number: 8
+  [all] => every degree-3 certificate on S^2 has >= 24 x 8 = 192 size-3 terms
