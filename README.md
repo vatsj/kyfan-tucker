@@ -55,10 +55,10 @@ is built automatically on first use if `cargo` is on the path.
 |---|---|---|---|
 | fast | `make test-fast` | every proof check that fits, all paper numbers with random-labeling certificate checks, MCMC sanity | ~1.5 min |
 | slow | `make test-slow` | exhaustive certificate checks, CP-SAT optimality of 304, all 11 tree shapes at n = 7, S^3 sparse dual, realization m = 9 | ~6 min |
-| veryslow | `make test-veryslow` | S^3 degree-3 dense GF(2) lower bound (~7 min), S^2 Q degree-5 certificate, realization m = 10, m = 8 sphere verify | ~20 min |
+| veryslow | `make test-veryslow` | S^7 chain-gadget bound (16 min, pure-Python edge enumeration), S^3 degree-3 dense GF(2) lower bound (12 min), S^2 Q degree-5 certificate (7 min), realization m = 10 (3 min), m = 8 caterpillar realization | ~40 min |
 | paper | `make reproduce-paper` | the three cited computations and the five proof checks (fast + slow of those files) | ~5 min |
 
-`./reproduce.sh` = fast + slow; `./reproduce.sh all` = everything. CI (`.github/workflows/test-fast.yml`) runs the fast tier.
+`./reproduce.sh` = fast + slow (~8 min); `./reproduce.sh all` = everything (~50 min). CI (`.github/workflows/test-fast.yml`) runs the fast tier.
 
 ## Layout
 

@@ -13,7 +13,7 @@ test-fast:           ## ~1.5 min: every proof check and paper number that fits (
 test-slow:           ## ~6 min: exhaustive certificate checks, CP-SAT optimality of 304, S^3 sparse dual, n = 7 tree shapes
 	$(PY) -m pytest -m "slow" -q --durations=10
 
-test-veryslow:       ## ~20 min: S^3 degree-3 dense GF(2) lower bound (z9), S^2 Q degree-5 certificate, realization m = 10, m = 8 sphere verify
+test-veryslow:       ## ~40 min: S^3 degree-3 dense GF(2) lower bound (z9), S^2 Q degree-5 certificate, realization m = 10, m = 8 sphere verify
 	$(PY) -m pytest -m "veryslow" -q --durations=10
 
 test-all: test-fast test-slow test-veryslow

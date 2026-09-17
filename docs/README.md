@@ -1,7 +1,7 @@
 # docs/ — index: statement → proof text → mechanical check → tier → runtime
 
 Numbering follows the paper. Tiers: **fast** = `make test-fast` (`-m "not slow and not veryslow"`, ~1.5 min total),
-**slow** = `make test-slow` (~6 min total), **veryslow** = `make test-veryslow` (~20 min total). Runtimes are wall-clock on an
+**slow** = `make test-slow` (~6 min total), **veryslow** = `make test-veryslow` (~40 min total). Runtimes are wall-clock on an
 Apple-silicon laptop (Python 3.13.7, numpy 2.5.3, Rust 1.91); the sparse GF(2) solver `gf2solve/` is used wherever "sparse" is
 noted. Setup and the paper-cited commands: top-level `README.md`.
 
