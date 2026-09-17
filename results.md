@@ -13,15 +13,17 @@ Everything in CLAUDE.md §3a and §4 Tasks 1–4 is done, in one session; the br
   proof now in CLAUDE.md §2 (`kyfan/lower.py`).
 - **Task 1**: Rust sparse GF(2) solver (`gf2solve/`), 1.8M unknowns in 20 s. **Task 2**: structure of the degree-3 pseudo-solution on S^3.
   **Task 3**: the ball is tight over F_2 at m=3,4.
-- **Main new result**: a *restriction lemma* plus explicit **chain gadgets** prove **Tucker's F_2 degree on S^n is exactly n+1 for n = 4, 5, 6, 7**
-  (previously known: n = 2, 3). The gadget is one top simplex through the pole; its domains form a binary conflict tree; the degree-n
-  pseudo-solution is unique with support 3^n. The conjecture remains open only for n ≥ 8 and reduces to two combinatorial statements
-  (section "Task 3 + restriction gadgets", last paragraph).
+- **Main result (theorem): Tucker's F_2 degree on S^n is exactly n+1 for every n.** A *restriction lemma* reduces the lower
+  bound to a **tree gadget** (one top simplex through the pole, residual domains = a binary conflict tree). Two parts, both
+  now proved: **(i)** the tree gadget has degree n+1 for every tree (explicit pseudo-solution + extension lemma,
+  `TREE_GADGET_THEOREM.md`); **(ii)** an explicit closed-form equatorial labeling λ(u) = s·(n−q+1) realizes it on S^n for
+  all n (`REALIZATION_THEOREM.md`). The earlier searched `GADGETS` (n=4..7) and the deterministic `realize` (n≤8) are now
+  superseded by (ii) but kept as independent checks; the "never backtracks" question is moot.
 
-Reading order for a new session: this Status; row 6 of the table; the section "Task 3 + restriction gadgets"; `kyfan/gadget.py`
-(the lemma and `verify`); then `analysis/README.md` for the exploratory drivers. To reproduce the headline in under a minute:
-`.venv/bin/python -m pytest tests/test_gadget.py -q` (S^3..S^6 gadgets, ~25 s; S^7 is `-m veryslow`, ~10 min). To make a new one:
-`PYTHONPATH=. .venv/bin/python analysis/gadget3.py 6 3 "(1;(2;x,x),(3;x,(4;x,x)))" "5,4,3,2,1"`.
+Reading order for a new session: this Status; row 6 of the table; `TREE_GADGET_THEOREM.md` (i) and `REALIZATION_THEOREM.md`
+(ii); `kyfan/tree_rule.py`, `kyfan/realize_explicit.py`, `kyfan/gadget.py` (the restriction lemma and `verify`); then
+`analysis/README.md` for the exploratory drivers. To reproduce the theorem in seconds:
+`.venv/bin/python -m pytest tests/test_realize_explicit.py tests/test_rule_vs_solver.py tests/test_extension_lemma.py -q`.
 
 Layout: `kyfan/` package (see CLAUDE.md §3), `tests/` (fast by default; `slow` runs by default, `veryslow` needs `-m veryslow`),
 `gf2solve/` (Rust; built automatically on first use, needs `cargo`), `analysis/` (exploratory scripts + their `.out` outputs, indexed in `analysis/README.md`),
@@ -36,7 +38,7 @@ Layout: `kyfan/` package (see CLAUDE.md §3), `tests/` (fast by default; `slow` 
 | 3 | Tucker, S^3 (m=4, labels ±1..±3) | F_2 | = 4 | d=3, via the dual: the Z_3×Z_3-invariant degree-3 SA-dual (1,834,800 non-violating size-3 partial labelings in 204,048 orbits; 111,233 rows) is consistent, rank 94,064 — an explicit invariant pseudo-solution (support 8,036 orbits), checked against all 987,265 unreduced consistency equations. Averaging is valid over F_2 since |Z_3×Z_3| = 9 is odd. The unrestricted dual (987,457 × 1,834,800) is also consistent, rank 827,876. Cross-check via the sampled primal (z9): inconsistent, 33,312 orbit-unknowns, rank 27,584. d=4: tower | `test_sparse.py::test_s3_degree3_pseudo_solution_via_dual` (30 s); `test_s3.py::test_s3_degree3_F2_no_certificate_z9` (veryslow, 7 min) | 30 s; 7 min |
 | 4 | Ky Fan, S^2, labels ±1..±3 | F_2 | = 3 | ≤: explicit certificate (13,176 violating unknowns; ~1,286 monomials) verified exactly (canonical basis: Σc_α1_α ≡ A_+ + 1). ≥: row 5 | `test_primal.py::test_kyfan_s2_F2_degree3_certificate_exact` | 60 s |
 | 5 | Ky Fan, S^n, k ≥ n+1 | F_2 | = n+1 | ≤: tower theorem — local lemma g_n = 0 on non-complementary tuples, exhaustive n≤3, k≤5; telescoped identity on random labelings m=3,4,5 (29 / 221 / 2,141 local-lemma instances). ≥: separating functional (CLAUDE.md §2): E(A_+)=1, E(1)=0, E(1_α)=0 on size-n α (exhaustive m=3, sampled m=4,5); the negation-closed box gives E(A_+)=0 | `test_tower.py` | 15 s |
-| 6 | Tucker, S^n | F_2 | = n+1 for n = 2..7 (and ≤ n+1 for all n) | upper: tower (row 5, A_+ ≡ 0 when k ≤ n). Lower, n = 4..7 (**new, 2026-09-16**): restriction lemma + chain gadget (below): a non-violating partial labeling ρ fixing all but the n+1 vertices of one top simplex through the pole, whose residual CSP has a consistent degree-n dual (unique pseudo-solution, support 3^n). Verified independently by `kyfan.gadget.verify` (sphere edge list, all-level dual, dense solver, solution re-checked) | `test_gadget.py` (m=8: veryslow) | m=4,5: <1 s; m=6: 5 s; m=7: 20 s; m=8: 10 min |
+| 6 | Tucker, S^n | F_2 | **= n+1 for all n (theorem)** | upper: tower (row 5, A_+ ≡ 0 when k ≤ n). Lower: restriction lemma + tree gadget. **(i)** the tree gadget has degree n+1 for every binary conflict tree (`TREE_GADGET_THEOREM.md`, `kyfan/tree_rule.py`); **(ii)** the explicit equatorial labeling λ(u) = s·(n−q+1), q = start of u's final same-sign run, realizes the reverse-caterpillar tree as the pole-chain residual — validity and domains proved in `REALIZATION_THEOREM.md`, no search. Mechanically checked: (i) all tree shapes n≤6 (+n=7 sparse); (ii) validity+domains m≤10 and residual degree-n dual consistent+unique m≤8. Also verified for n=2,3 by direct dual (rows 1,3) and by the searched `GADGETS` m=4..8 (`kyfan.gadget.verify`) | `test_realize_explicit.py`, `test_rule_vs_solver.py`, `test_extension_lemma.py`, `test_gadget.py`, `test_realize.py` | (i) 2 s; (ii) m≤8: 4 s |
 
 ## Task 3 + restriction gadgets — the ball, and the S^4, S^5, S^6, S^7 lower bounds
 
@@ -74,15 +76,16 @@ The equatorial labelings are stored in `kyfan.gadget.GADGETS`; a uniform *determ
 has degree n+1 with a unique degree-n pseudo-solution of support 3^n (`test_gadget.py::test_abstract_tree_gadgets`, `analysis/abstract_trees.out`).
 Non-tree designs (e.g. {−1,3},{−1,−3,4},{−1,−4}) have lower degree.
 
-**Status of a proof for all n.** (i) **DONE** — the tree gadget has F_2 degree exactly n+1 for every binary conflict tree
+**Proof for all n — both parts done.** (i) The tree gadget has F_2 degree exactly n+1 for every binary conflict tree
 (`TREE_GADGET_THEOREM.md`): explicit pseudo-solution E (the block rule, `kyfan/tree_rule.py`), consistency via the extension
-Lemma (★). The closed form is checked against the solver for all tree shapes n ≤ 6 and against the sparse solver at n = 7
-(`test_rule_vs_solver.py`, `test_extension_lemma.py`). (ii) **Deterministic construction** — `kyfan/gadget.py:realize(m)`
-builds an explicit equatorial labeling realizing the caterpillar tree by a greedy forward-checking fill that takes **zero
-backtracks** for every tested m (so it is forced, not a search); the residual is a verified degree-n gadget for m ≤ 8
-(`test_realize.py`; `chain_domains` reduces the check to the pole-chain, no full sphere). What remains for all n: prove the
-greedy caterpillar construction never backtracks (equivalently, the explicit allowed-set CSP is satisfiable) — a clean
-combinatorial statement. This construction re-derives the S^4..S^7 lower bounds uniformly, independent of the searched `GADGETS`.
+Lemma (★). Checked against the solver for all tree shapes n ≤ 6 and against the sparse solver at n = 7
+(`test_rule_vs_solver.py`, `test_extension_lemma.py`). (ii) **Explicit realization** (`REALIZATION_THEOREM.md`,
+`kyfan/realize_explicit.py`): the closed-form labeling λ(u) = s·(n−q+1), where q is the start of u's final maximal
+same-sign run, is valid (no complementary comparable pair — one-line proof) and its pole-chain residual is exactly the
+reverse caterpillar D(r) = {+(n−r)} ∪ {−(n−r+1),…,−n}, pole {+n}. No search. Validity + domains checked m ≤ 10, residual
+degree-n dual consistent+unique m ≤ 8 (`test_realize_explicit.py`). Together with the restriction lemma and the tower upper
+bound this is a theorem: **Tucker's F_2 degree on S^n is n+1 for all n.** The searched `GADGETS` (n=4..7) and the greedy
+`realize` (n≤8, zero backtracks) remain as independent constructions; the "never backtracks" question is retired.
 
 ## Task 1 — sparse GF(2) solver (`gf2solve/`, Rust; `linalg.gf2_sparse`, default in `dual.solve`)
 
@@ -158,5 +161,8 @@ an h=1 solution at n=2 (2–7 free parameters), 0 of 12 admit h=2 at n=3. The ps
 
 ## Open
 
-- Tucker F_2 lower bound n+1 for n ≥ 8 (row 6): statement (i) is proved (`TREE_GADGET_THEOREM.md`); what remains is statement (ii) — that the deterministic caterpillar construction (`realize`) never backtracks for all n.
-- Task 2 follow-ups: prove the AAB/simplex-ABC necessity pattern for general n (it is a statement about degree-n certificates of strengthened lemmas); explain why constant-magnitude configurations are dispensable at n=3 but not n=2.
+- Tucker's F_2 degree on S^n is **settled** (= n+1 for all n, row 6): (i) `TREE_GADGET_THEOREM.md` + (ii) `REALIZATION_THEOREM.md`.
+- Task 2 follow-ups (not needed for the theorem, but of interest): explain the AAB/simplex-ABC necessity pattern of the S^3
+  degree-3 pseudo-solution for general n; explain why constant-magnitude configurations are dispensable at n=3 but not n=2.
+- Independent corroboration recorded but not a test: the deterministic `realize` reached S^8 = 9 (876,809-unknown dual) before
+  its exploratory run was stopped.

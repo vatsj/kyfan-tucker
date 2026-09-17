@@ -30,7 +30,7 @@ where alpha ranges over partial labelings containing a complementary pair and 1_
 | Tucker, S^2 (m=3, labels +-1,+-2) | F_2 | exactly 3 |
 | Tucker, S^2 | Q | exactly 5 (fails at 3 and 4) |
 | Tucker, S^3 (m=4, labels +-1..+-3) | F_2 | exactly 4 (fails at 3; tower gives 4) |
-| Tucker, S^n | F_2 | <= n+1 (tower); = n+1 for n = 2..7 (restriction gadgets, below); open for n >= 8 |
+| Tucker, S^n | F_2 | = n+1 for all n (theorem: tower upper bound + restriction lemma + tree gadget, below) |
 | Ky Fan, S^2, labels +-1..+-3 | F_2 | exactly 3 |
 | Ky Fan, S^n, k >= n+1 | F_2 | exactly n+1 (theorem, below: tower + separating functional) |
 
@@ -44,9 +44,11 @@ as an identity on all labelings, where H^{(j)} is the hemisphere of the [j]-comp
 
 **Theorem (restriction lemma).** If rho is a non-violating partial labeling of the free vertices of S^n with unfixed set U, every degree-d certificate restricts (substitute rho) to a degree-<= d certificate of the residual CSP on U (domains D(u) = labels minus {-rho(w) : w fixed, adjacent to u}; pairwise non-complementary on edges). So a consistent degree-d residual dual proves the sphere degree is > d.
 
-**Theorem (computer-verified, 2026-09-16).** Tucker's F_2 degree on S^n is exactly n+1 for n = 2, ..., 7. Lower bounds for n = 4..7 via the restriction lemma with U = one top simplex through the pole e_{n+1} and rho = a valid equatorial labeling using magnitudes 1..n-1 except one antipodal pair of top simplices +-sigma labeled -+n, pulled back to the cap. The residual domains form a binary conflict tree (see results.md, "Chain gadgets"); its degree-n dual is consistent with a unique pseudo-solution of support 3^n. `kyfan/gadget.py` (`GADGETS`, `verify`), `tests/test_gadget.py`.
+**Theorem (Tucker degree).** Tucker's F_2 degree on S^n is exactly n+1 for every n >= 2. Upper bound: the tower (A_+ = 0 when k <= n). Lower bound: the restriction lemma with U = one top simplex through the pole e_{n+1}. Two parts, both proved:
+- **(i)** For every binary conflict tree the tree gadget (pole {+n}, leaves with the signed root-to-leaf paths ∪ {-n}) has F_2 degree n+1 — explicit pseudo-solution (the block rule) and consistency via the extension lemma. `TREE_GADGET_THEOREM.md`, `kyfan/tree_rule.py`, `tests/test_rule_vs_solver.py`, `tests/test_extension_lemma.py`.
+- **(ii)** The explicit equatorial labeling lambda(u) = s*(n-q+1), where p = last nonzero index of u, s = u_p, and q = start of the final maximal same-sign run ending at p, is valid (no complementary comparable pair) and its pole-chain residual is exactly the reverse-caterpillar tree. No search. `REALIZATION_THEOREM.md`, `kyfan/realize_explicit.py`, `tests/test_realize_explicit.py`.
 
-**Conjecture (open for n >= 8).** Tucker's F_2 degree on S^n is exactly n+1 for all n. Upper bound is the tower. The lower bound reduces to two statements: (i) the abstract tree gadget (pole + binary conflict tree on n leaves) has F_2 degree n+1 for all n — **proved** (`TREE_GADGET_THEOREM.md`, `kyfan/tree_rule.py`, `tests/test_rule_vs_solver.py`, `tests/test_extension_lemma.py`); (ii) it is realizable on S^n by an explicit equatorial labeling — a **deterministic backtrack-free construction** (`kyfan/gadget.py:realize`, `tests/test_realize.py`) does this for all tested n (m ≤ 8), reducing (ii) to proving that construction never backtracks. The Ky Fan functional cannot be reused: it kills constants, and Tucker's certificate is for the constant 1. A Tucker lower bound requires a pseudo-solution with E[empty] = 1, a global object. (The other direction, deg KyFan >= deg Tucker by restricting labels to +-1..+-n, gives nothing new.)
+Mechanically checked: (i) all tree shapes n <= 6 (and n = 7 sparse); (ii) validity + residual domains m <= 10 and the residual degree-n dual consistent+unique m <= 8. Also verified for n = 2, 3 by the direct dual (`nsdeg`, the S^3 Z_3xZ_3 dual) and for n = 4..7 by the searched `GADGETS` (`kyfan.gadget.verify`) and the deterministic `realize` (n <= 8). The Ky Fan functional cannot be reused here (it kills constants; Tucker's certificate is for the constant 1) — the tree gadget is what supplies a pseudo-solution with E[empty] = 1.
 
 **Structural facts about the degree-2 pseudo-solution on S^2 (`tests/test_pseudo2.py`):**
 - No pseudo-solution is invariant under the full symmetry group, nor under the label group (signed permutations of magnitudes), nor under the stabilizer of a hemisphere.
@@ -78,6 +80,7 @@ Package `kyfan/` (parametrized by m; `from kyfan import SignedComplex, label_set
 - `gadget.py` — restriction lemma + chain gadgets: `GADGETS[m]` (searched equatorial labelings, m = 4..8), `chain_U`, `verify(m)` (independent end-to-end check); statement (ii): `chain_domains` (fast, no full sphere), `caterpillar_tree`, `realize(m)` (deterministic construction), `check_realization`.
 - `abstract_gadget.py` — tree gadgets without the sphere: `build_dual`, `degree(domains)`.
 - `tree_rule.py` — statement (i): the explicit block-rule pseudo-solution `rule_E`, the block rule `rule_patterns`, and the solver ground truth `unique_E`.
+- `realize_explicit.py` — statement (ii): the closed-form labeling `explicit_label`/`explicit_Leq` and `check(m)` (validity, reverse-caterpillar domains, residual dual).
 - `analysis.py` — Task 2 helpers (orbit types, knockouts, descriptions). Exploratory drivers and their outputs live in `analysis/`.
 
 `tests/` are the settled table (see results.md for the test-to-number map); `./reproduce.sh` (fast, ~2 min) or `./reproduce.sh all` (~15 min).

@@ -48,19 +48,15 @@ sparse solver) for n = 7: `tests/test_rule_vs_solver.py`, `tests/test_extension_
 ## Consequence and statement (ii)
 
 By the restriction lemma (`kyfan/gadget.py`), Tucker's F_2 degree on S^n is n+1 for every n for which some equatorial
-labeling of S^{n−1} realizes a binary conflict tree as the residual on a top simplex through the pole. This is statement (ii).
+labeling of S^{n−1} realizes a binary conflict tree as the residual on a top simplex through the pole. This is statement (ii),
+now **proved** by an explicit closed-form labeling in `REALIZATION_THEOREM.md` (λ(u) = s·(n−q+1), q = start of u's final
+same-sign run; it realizes the reverse caterpillar). So **Tucker's F_2 degree on S^n is exactly n+1 for all n.**
 
-**Progress on (ii): a deterministic construction.** `kyfan/gadget.py:realize(m)` builds an explicit equatorial labeling
-realizing the *caterpillar* tree (magnitudes 1..n−1, leaf k → chain rank n+1−k): fix the equatorial top simplex σ to ∓n;
-each other free vertex v gets the label set forced by the target domains (for each chain rank r, if v or −v lies in the
-star/down-set of σ's rank-r vertex, forbid the corresponding path labels); then fill by greedy forward-checking (smallest
-domain, then smallest label). **This runs with zero backtracks for every tested m (3..8)** — i.e. the construction is
-forced, not a search — and the resulting residual is a degree-n gadget (checked end-to-end: `residual` on the full sphere
-for m ≤ 6, and `chain_domains` + the sparse degree-n dual up to m = 8). `tests/test_realize.py`.
+Two earlier constructions remain as independent checks, both superseded by the closed form: the searched `GADGETS`
+(n = 4..7, `kyfan.gadget.verify`) and the deterministic greedy realizer `kyfan/gadget.py:realize(m)`, which fills the
+caterpillar target domains by forward-checking and runs with **zero backtracks** for every tested m (3..8)
+(`tests/test_realize.py`). The "never backtracks" question is retired — the closed form makes it moot.
 
-So (ii) is reduced to a clean statement with strong computational evidence: **the greedy caterpillar construction never
-backtracks (equivalently, the explicit allowed-set CSP on S^{n−1} is satisfiable) for all n.** A proof of that — e.g.
-exhibiting the labeling in closed form, or showing the allowed-set CSP is arc-consistent hence greedily solvable —
-finishes Tucker's F_2 degree = n+1 for all n. `chain_domains(m, Leq)` reduces the check to the pole-chain only (no
-O(3^m·3^m) sphere edge list), so it scales; the equatorial CSP's O(V^2) `forbidden_pairs` is the remaining bottleneck
-past m ≈ 8.
+`chain_domains(m, Leq)` reduces the residual check to the pole-chain only (no
+O(3^m·3^m) sphere edge list), so it scales; the explicit labeling needs no CSP at all, and its residual dual is the only
+cost past m ≈ 8.
