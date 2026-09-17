@@ -1,0 +1,16 @@
+cff-version: 1.2.0
+message: "If you use this repository, please cite it as below."
+title: "kyfan-tucker: Nullstellensatz / Sherali-Adams degree of Tucker and Ky Fan over F_2 - proofs, checks and computations"
+type: software
+authors:
+  - family-names: Stavrianos
+    given-names: Jacob
+version: "1.0.0"
+date-released: "2026-09-17"
+repository-code: "https://github.com/vatsj/kyfan-tucker"
+license: MIT
+abstract: >-
+  Companion repository: mechanically checked proof components (tower certificate, extension lemma,
+  explicit realization, separating functional), the exact small numbers (minimum certificate size 304
+  at degree 3 on S^2; per-flag hitting numbers t = 8 on S^2 and t >= 12 on S^3; degree-4 search profile),
+  and the Glauber-dynamics evidence for the Spread Lemma.

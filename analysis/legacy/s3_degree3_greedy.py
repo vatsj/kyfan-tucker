@@ -8,7 +8,7 @@ from kyfan.group import z3z3_generators
 from kyfan.analysis import describe
 
 cx = SignedComplex(4); labels = label_set(3); mags = [1, 2, 3]; V = violating_pairs(cx, labels); d = 3
-types, _ = pickle.load(open('analysis/s3_degree3_types.pkl', 'rb'))
+types, _ = pickle.load(open('analysis/legacy/s3_degree3_types.pkl', 'rb'))
 z3 = z3z3_generators(4, mags)
 col, members = unknowns(cx, labels, d, V, gens=z3)
 rows, ncols, _ = sa_dual_system(cx, labels, d, V=V, gens=z3, col=col)
@@ -28,4 +28,4 @@ kept = [t for t in range(len(types)) if not ({col[a] for a in types[t]} <= remov
 print(f"\nminimal sufficient family: {len(kept)} types, {sum(len(types[t]) for t in kept)} partial labelings of {sum(map(len, types))}")
 for t in kept:
     print(f"  type {t:3d} size {len(types[t]):6d}  {describe(cx, types[t][0])}   rep={types[t][0]}")
-pickle.dump(kept, open('analysis/s3_degree3_greedy.pkl', 'wb'))
+pickle.dump(kept, open('analysis/legacy/s3_degree3_greedy.pkl', 'wb'))

@@ -1,26 +1,16 @@
-# analysis/ — exploratory drivers (Tasks 2, 3 and the restriction gadgets)
+# analysis/ — the computations cited by the paper
 
-Run from the repo root with `PYTHONPATH=. .venv/bin/python analysis/<script> ...`. Each `.out` file is the output of the
-command that produced it (`.pkl` files are ignored by git; regenerate by rerunning). Everything here is exploratory — the
-settled numbers live in `tests/`; results.md points at the relevant `.out` files.
+Run from the repository root with `PYTHONPATH=. .venv/bin/python analysis/<script> ...`. Each `.out` file is the captured output of
+the command listed. `.pkl` files are gitignored (regenerate by rerunning). The numbers these scripts produce are asserted by
+`tests/test_paper_numbers.py`, `tests/test_min_size.py`, `tests/test_flag_hitting.py`, `tests/test_spread_mcmc.py`.
 
 | script | command | output | what it shows |
 |---|---|---|---|
-| `s3_degree3_types.py` | `analysis/s3_degree3_types.py` (16 min) | `s3_degree3_types.out` | 808 full-group types of size-3 partial labelings on S^3; knockout: 4 necessary types |
-| `s3_degree3_marginals.py` | (3 min) | `s3_degree3_marginals.out` | marginal knockout on size-1, size-2 types |
-| `s3_degree3_restrictions.py` | | `s3_degree3_restrictions.out` | label-sym / hemisphere / distinct-magnitude restrictions (all NO) |
-| `s3_degree3_greedy.py` | (20 min, needs `s3_degree3_types.pkl`) | `s3_degree3_greedy.out` | greedy minimal type family (379 of 808) |
-| `class_knockout.py` | `analysis/class_knockout.py 3` / `4` | `class_knockout_m3.out`, `class_knockout_m4.out`, `class_knockout_m4_invariant.out`, `class_necessary_suffice_m4.out` | class-level (simplex?, #edges, AAA/AAB/ABC) knockouts and minimal families |
-| inline (see results.md) | | `simplex_support.out`, `magnitude_support.out`, `s2_degree2_greedy.out` | further support restrictions at n=2,3 |
-| `base_labeling.py`, `s3_degree3_base.py` | `analysis/base_labeling.py 3 6` / `4 4` | `base_labeling_m3.out`, `base_labeling_m4.out`, `base_labeling_m4_random.out`, `s3_degree3_base.out` | "base labeling + corrections" supports (NO) |
-| inline | | `ball_m3.out`, `ball_m4.out` | Task 3 ball degrees (m=3: all 80 L_eq; m=4: 45 L_eq) |
-| inline | | `residual_m3.out`, `residual_m3_small.out`, `residual_m4_chains.out`, `residual_m4_Wv.out`, `residual_m5_Wv.out` | restriction experiments leading to the chain gadget |
-| `gadget.py` | `analysis/gadget.py m ntries` | `gadget_m5.out` | first chain-gadget construction (random equatorial labelings; fails at m=5) |
-| `gadget2.py` | `analysis/gadget2.py m ntries "1:1"` | `gadget2_m6.out` | chain gadget with a forbidden value on the star of sigma's rank-1 vertex (found the m=5 gadget) |
-| `gadget3.py` | `analysis/gadget3.py 6 3 "(1;(2;x,x),(3;x,(4;x,x)))" "5,4,3,2,1"` | `gadget3_m6.out`, `gadget3_m7.out`, `gadget3_m8.out` | **realizes a target tree gadget at any m; the S^5, S^6, S^7 lower bounds** |
-| `verify_gadget.py` | `analysis/verify_gadget.py 5 0` (needs `gadget2_m5.pkl`) | `verify_gadget_m5_0.out` | the first independent verification of the S^4 gadget (superseded by `kyfan.gadget.verify`) |
-| inline | | `abstract_trees.out`, `mu_structure.out` | abstract tree gadgets (degree n+1, unique pseudo-solution, support 3^n); a global mu of support 3^(n-1) generating it |
-| `isd.py` | `analysis/isd.py --d 3 --seconds 60 --cpsat 600 --save analysis/isd_s2_d3.pkl` (2.5 min); `--d 4 --z3 --rows 45000 --seconds 300 --cpsat 1800 --save analysis/isd_s2_d4_z3.pkl` (42 min) | `isd_s2_d3_cert.txt`, `isd_s2_d4_z3.out`, `isd_s2_d4_z3_cert.txt` (pickles are gitignored) | **minimum certificate size on S^2**: sparse-aware ISD (Canteaut–Chabaud + Prange/Dumer + coset descent) and the exact CP-SAT model on the reduced sampled system; degree 3 = 304 (optimal), degree 4 via Z_3 orbits: best 312 monomials, not proved minimal (see results.md "Certificate size") |
-| `flag_hitting_bound.py` | `analysis/flag_hitting_bound.py --m 3 --family orbit trees all`; `--m 4 --family orbit trees perms` (2 s each) | `flag_hitting_bound_m3.out`, `flag_hitting_bound_m4.out` | Theorem 1′ (SIZE_LOWER_BOUND.md §1′): per-flag parity constraints from gadget pseudo-solutions, t(U) = min full-flag terms per flag class (CP-SAT exact); gadget families = label orbit / realized trees / realizable chain permutations (CP-SAT realizer); S^2: t = 8, S^3: t ≥ 12 |
-| `flag_hitting_bound_s2.py` | `analysis/flag_hitting_bound_s2.py` (1 s) | `flag_hitting_bound_s2.out` | collaborator's original S^2 computation: exhaustive 3,568 restrictions, 16 gadget types, t = 8, min certificate's parities |
-| `spread_mcmc.py` | `analysis/spread_mcmc.py --m 4 5 6 7 8 --chains 4 --sweeps 3000 --match --nsamp 2000 --save analysis/spread_mcmc.pkl` (~10 min) | `spread_mcmc.out`, `spread_mcmc.pkl` | spread-lemma evidence (SIZE_LOWER_BOUND.md §4): Glauber chains over gadget-compatible equatorial labelings with τ/ESS/R-hat, flag densities, two-chain match probabilities and fitted β |
+| `isd.py` | `analysis/isd.py --d 3 --seconds 60 --cpsat 600 --save analysis/isd_s2_d3.pkl` (2.5 min) | `isd_s2_d3_cert.txt` | **minimum certificate size on S^2 at degree ≤ 3 = 304** (16 size-2 + 288 size-3 monomials): sparse-aware information-set decoding (Canteaut–Chabaud + Prange/Dumer + coset descent) finds 304, CP-SAT proves optimality on the reduced sampled system, the certificate is verified on all 4^13 labelings (`docs/size_lower_bound.md`) |
+| `isd.py` | `analysis/isd.py --d 4 --z3 --rows 45000 --seconds 300 --cpsat 1800 --save analysis/isd_s2_d4_z3.pkl` (42 min) | `isd_s2_d4_z3.out`, `isd_s2_d4_z3_cert.txt` | degree ≤ 4, Z_3-invariant search: best certificate 312 monomials = 104 orbits, profile {2: 24, 3: 288} — **no size-4 monomial**; CP-SAT FEASIBLE 104, proven bound 24 (not decisive) |
+| `flag_hitting_bound.py` | `analysis/flag_hitting_bound.py --m 3 --family orbit trees all` (2 s); `--m 4 --family orbit trees perms --save-realizations analysis/flag_hitting_bound_m4_realizations.txt` (2 s) | `flag_hitting_bound_m3.out`, `flag_hitting_bound_m4.out`, `flag_hitting_bound_m4_realizations.txt` (the 32 realizing labelings, re-verified without CP-SAT by `tests/test_paper_numbers.py`) | **Theorem 1′**: per-flag parity constraints from gadget pseudo-solutions, t(U) = minimum number of full-flag terms (CP-SAT exact, branch-and-bound cross-check); gadget families = label orbit / realized trees / realizable chain permutations (CP-SAT realizer); **S^2: t = 8, S^3: t ≥ 12** |
+| `flag_hitting_bound_s2.py` | `analysis/flag_hitting_bound_s2.py` (1 s) | `flag_hitting_bound_s2.out` | independent S^2 computation in vertex coordinates: exhaustive 3,568 restrictions, 16 gadget types, t = 8; the minimum certificate's 12 full-flag terms satisfy all 16 parities |
+| `spread_mcmc.py` | `analysis/spread_mcmc.py --m 4 5 6 7 8 --chains 4 --sweeps 3000 --match --nsamp 2000 --save analysis/spread_mcmc.pkl` (~10 min) | `spread_mcmc.out` | **Spread Lemma evidence**: Glauber chains over gadget-compatible equatorial labelings with τ / ESS / split-R-hat, flag densities, two-chain match probabilities and fitted β (`docs/spread_evidence.md`) |
+
+`legacy/` holds the exploratory drivers from the degree computation (pseudo-solution structure on S^3, the ball form, the
+searched chain gadgets) and the review of the original scripts; see `legacy/README.md`.

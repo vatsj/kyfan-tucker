@@ -1,4 +1,4 @@
-"""Minimum certificate size on S^2 (SIZE_LOWER_BOUND.md; `analysis/isd.py`).
+"""Minimum certificate size on S^2 (docs/size_lower_bound.md; `analysis/isd.py`).
 
 Degree <= 3: the minimum number of monomials in an F_2 certificate of Tucker on S^2 is exactly 304.
   <= : the certificate stored in analysis/isd_s2_d3_cert.txt (16 size-2 + 288 size-3 monomials) is verified exhaustively.

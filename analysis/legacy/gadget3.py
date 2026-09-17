@@ -89,5 +89,5 @@ for seed in range(ntries):
         found.append((L, r))
     print(f"seed {seed}: domains {[doms[y] for y in U]} -> degree-{n} dual {'CONSISTENT (sphere degree >= %d)' % m if r['consistent'] else 'inconsistent'} rank {r['rank']}/{r['unknowns']}", flush=True)
 print(f"\nhistogram: {dict(hist)}  [{time.time()-t:.0f}s]")
-import pickle; pickle.dump(found, open(f'analysis/gadget3_m{m}.pkl', 'wb'))
+import pickle; pickle.dump(found, open(f'analysis/legacy/gadget3_m{m}.pkl', 'wb'))
 if found: print("FOUND: L_eq =", found[0][0])

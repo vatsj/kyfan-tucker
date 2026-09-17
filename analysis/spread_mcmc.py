@@ -1,4 +1,4 @@
-"""Spread-lemma experiments (SIZE_LOWER_BOUND.md §4) with MCMC diagnostics.
+"""Spread-lemma experiments (docs/size_lower_bound.md §4; full description and caveats in docs/spread_evidence.md).
 
 The set G_m of *gadget-compatible* equatorial labelings for the pole flag of S^{m-1}: valid labelings L of the
 equator (the [m-1]-complex, labels +-[n], n = m-1) that agree with the explicit labeling on the chain
@@ -10,14 +10,15 @@ Sampler: Glauber dynamics (heat bath) on G_m -- pick a uniformly random movable 
 uniformly among the labels allowed by the static (domain) constraints and the current neighbours.  Stationary
 distribution = uniform on the connected component of the explicit gadget (ergodicity NOT proved; see diagnostics).
 
-Diagnostics (new here; `gadget_spread_experiments.py` had none):
+Diagnostics:
   * several independent chains (different seeds; all start at the explicit gadget, the only known member of G_m),
   * per scalar statistic: mean, integrated autocorrelation time tau (Sokal window), ESS, split-R-hat across chains,
   * Hamming distance from the start, and the fraction of moves with <= 1 allowed label (frozen vertices),
   * match probabilities  P[ L'|_A = L|_A ]  estimated between two INDEPENDENT chains (no self-matching), with
     standard errors over random sets A, and the per-vertex decay rate beta fitted from log P vs |A|.
 
-Usage: python analysis/spread_mcmc.py --m 7 --chains 4 --sweeps 3000
+Usage (the stored analysis/spread_mcmc.out):
+    PYTHONPATH=. python analysis/spread_mcmc.py --m 4 5 6 7 8 --chains 4 --sweeps 3000 --match --nsamp 2000 --save analysis/spread_mcmc.pkl
 """
 import sys, os, time, argparse, pickle
 sys.path.insert(0, os.path.join(os.path.dirname(__file__), '..'))

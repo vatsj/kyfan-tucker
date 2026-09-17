@@ -1,4 +1,4 @@
-"""Theorem 1' (SIZE_LOWER_BOUND.md): per-flag parity constraints and the number t(U) of full-flag terms.
+"""Theorem 1' (docs/size_lower_bound.md): per-flag parity constraints and the number t(U) of full-flag terms.
 
 Fix the pole-chain flag U = e_m < lift(sigma) of S^{m-1} (n = m-1; ranks 0..n, rank 0 = pole). For a gadget rho of U
 (a non-violating restriction whose residual on U has no degree-n certificate) let Z_rho be the space of e on the full
@@ -16,13 +16,17 @@ Gadget families (all in vertex-label coordinates: a full assignment is the tuple
                         trees) that is *realizable* as a restriction (CP-SAT: a valid labeling of the other free
                         vertices producing exactly those domains), then their label orbits. On S^2 this is exactly the
                         exhaustive family (label orbit x chain reversal, 16 types).
-  * `--family all`    : (m = 3 only) every non-violating restriction rho at the flag, 4^10 of them -- reproduces the
-                        collaborator's flag_hitting_bound_s2.py (16 gadget domain types, t = 8) in these coordinates.
+  * `--family all`    : (m = 3 only) every non-violating restriction rho at the flag, 4^10 of them -- reproduces
+                        flag_hitting_bound_s2.py (16 gadget domain types, t = 8) in these coordinates.
 The parity system is solved exactly by CP-SAT (min sum x subject to sum_{S} x = rhs mod 2), cross-checked by the
 branch-and-bound odd-hitting-set search when every Z_rho is one-dimensional.
 
-    python analysis/flag_hitting_bound.py --m 3 --family all orbit trees
-    python analysis/flag_hitting_bound.py --m 4 --family orbit trees
+    python analysis/flag_hitting_bound.py --m 3 --family orbit trees all
+    python analysis/flag_hitting_bound.py --m 4 --family orbit trees perms --save-realizations analysis/flag_hitting_bound_m4_realizations.txt
+
+`--save-realizations` writes the realizing labelings found by `--family perms` (one per line: target domains, then the
+labels of the free vertices off the pole chain); `load_realizations` reads them back and `check_realization` re-verifies
+each one without CP-SAT (tests/test_paper_numbers.py).
 """
 import argparse
 import itertools
@@ -238,17 +242,60 @@ def realizable(m, target, seconds=60):
         assert st == cp_model.INFEASIBLE, solver.StatusName(st)
         return None
     L = {i: next(l for l in labels if solver.Value(x[i, l])) for i in others}
-    # independent check: the labeling is non-violating off U and produces exactly the target domains
+    check_realization(m, target, L)      # independent of the solver
+    return L
+
+
+def check_realization(m, target, L):
+    """Assert that the labeling L (dict: free index off the pole chain -> label) is non-violating off U and that the
+    residual domains it produces on the pole chain are exactly `target`.  Pure recomputation, no CP-SAT."""
+    n = m - 1
+    cx = SignedComplex(m)
+    labels = label_set(n)
+    U = pole_chain(m)
+    Uset = set(U)
+    Uidx = {cx.rep(y)[0] for y in U}
+    assert set(L) == {i for i in range(cx.n_free) if i not in Uidx} and all(l in labels for l in L.values())
+    nbrs = {y: [] for y in U}
     for a, b in cx.edges:
         (i, si), (j, sj) = cx.rep(a), cx.rep(b)
         if i in L and j in L:
-            assert si * L[i] != -sj * L[j]
+            assert si * L[i] != -sj * L[j], "complementary edge off the pole chain"
+        elif i in L or j in L:
+            for y, w in ((a, b), (b, a)):
+                if y in Uset:
+                    nbrs[y].append(cx.rep(w))
     got = [set(labels) for _ in U]
     for r, y in enumerate(U):
         for i, s in nbrs[y]:
             got[r].discard(-s * L[i])
     assert got == [set(t) for t in target], (got, target)
-    return L
+    return True
+
+
+def save_realizations(path, found):
+    with open(path, 'w') as f:
+        f.write("# realizing labelings found by flag_hitting_bound.py --family perms (CP-SAT); one per line:\n")
+        f.write("# <base> <perm> | <domain of rank 0> ; ... ; <domain of rank n> | i:l pairs (free index off the pole chain, label)\n")
+        for key, (name, perm, L) in found.items():
+            doms = ' ; '.join(' '.join(str(l) for l in sorted(k, key=lambda l: (abs(l), l))) for k in key)
+            labs = ' '.join(f"{i}:{L[i]}" for i in sorted(L))
+            f.write(f"{name} {','.join(map(str, perm))} | {doms} | {labs}\n")
+
+
+def load_realizations(path):
+    """Returns a list of (name, perm, target domains as list of sets, L)."""
+    out = []
+    for line in open(path):
+        if line.startswith('#') or not line.strip():
+            continue
+        head, doms, labs = line.split('|')
+        name, perm = head.strip().rsplit(None, 1)          # the base name may contain spaces (a tree literal)
+        perm = tuple(int(x) for x in perm.split(','))
+        target = [set(int(l) for l in d.split()) for d in doms.split(';')]
+        L = {int(i): int(l) for i, l in (tok.split(':') for tok in labs.split())}
+        out.append((name, perm, target, L))
+    return out
 
 
 def family_perms(m):
@@ -266,11 +313,12 @@ def family_perms(m):
             if key in tried:
                 continue
             tried.add(key)
-            if realizable(m, T) is not None:
+            L = realizable(m, T)
+            if L is not None:
                 assert is_gadget(T, n)
-                found[key] = (name, perm)
+                found[key] = (name, perm, L)
     print(f"  realizable position permutations of the tree gadgets: {len(found)} of {len(tried)} tried:")
-    for key, (name, perm) in found.items():
+    for key, (name, perm, _) in found.items():
         print(f"    {name} perm {perm}: {[sorted(k, key=lambda l: (abs(l), l)) for k in key]}")
     fam = {}
     for key in found:
@@ -391,6 +439,7 @@ def main():
     ap.add_argument('--m', type=int, default=3)
     ap.add_argument('--family', nargs='+', default=['orbit'])
     ap.add_argument('--seconds', type=float, default=600)
+    ap.add_argument('--save-realizations', default=None, help="write the labelings found by --family perms to this file")
     a = ap.parse_args()
     m, n = a.m, a.m - 1
     print(f"S^{n} (m={m}), pole-chain flag, labels +-1..+-{n}; full labelings of the flag: {(2 * n) ** (n + 1)}")
@@ -411,6 +460,8 @@ def main():
         elif fam == 'perms':
             found, gadgets = family_perms(m)
             print(f"  with label orbits: {len(gadgets)} gadget domain tuples")
+            if a.save_realizations:
+                save_realizations(a.save_realizations, found)
             run(m, gadgets, 'perms', a.seconds, bb=False)
         elif fam == 'all':
             assert m == 3

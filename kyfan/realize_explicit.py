@@ -1,5 +1,5 @@
 """Statement (ii), explicit: a closed-form equatorial labeling whose pole-chain residual is a binary conflict tree,
-completing Tucker's F_2 degree = n+1 for all n (REALIZATION_THEOREM.md).
+completing Tucker's F_2 degree = n+1 for all n (docs/realization.md).
 
 For a signed subset u in {-1,0,+1}^n \\ {0}, let p be the last nonzero index and q <= p the start of the final maximal
 run of equal signs (u_q = ... = u_p = s, and q = 1 or u_{q-1} != s). Then
@@ -7,7 +7,7 @@ run of equal signs (u_q = ... = u_p = s, and q = 1 or u_{q-1} != s). Then
     lambda(u) = s * (n - q + 1).
 
 lambda is antipodal, takes values in +-[n], equals -+n exactly on the chain sigma = {-(e_1+...+e_r)} and its antipode,
-and has no complementary comparable pair (proof in REALIZATION_THEOREM.md). Pulled back to S^n it fixes everything off
+and has no complementary comparable pair (proof in docs/realization.md). Pulled back to S^n it fixes everything off
 the pole chain U = e_{n+1} u lift(sigma); the residual domains on U are the reverse caterpillar
     D(0) = {+n} (pole),  D(r) = {+(n-r)} u {-(n-r+1), ..., -n}  (r = 1..n; D(n) = {-1,...,-n}),
 i.e. the leaf paths of (n-1; x, (n-2; x, (... (1; x, x)))) plus the pole. No search, no CSP: this is the construction.

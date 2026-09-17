@@ -9,7 +9,7 @@ from kyfan.gadget import (realize, check_realization, chain_domains, residual, c
 from kyfan.complex import rank
 
 
-@pytest.mark.parametrize("m", [4, 5, 6, 7, 8])
+@pytest.mark.parametrize("m", [4, 5, 6, 7, pytest.param(8, marks=pytest.mark.slow)])
 def test_chain_domains_matches_residual(m):
     """The fast up/down-set domain computation reproduces the full-sphere residual on the stored gadgets."""
     n = m - 1

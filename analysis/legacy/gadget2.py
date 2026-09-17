@@ -81,4 +81,4 @@ for seed in range(ntries):
 print(f"residual degree histogram over {ntries} labelings: {dict(hist)}  [{time.time()-t:.0f}s]")
 for L, U, d, doms in found[:6]:
     print(f"  degree {d if d else '>%d (SPHERE DEGREE >= %d)' % (m-1, m)}: domains {doms}\n     L_eq={L}")
-import pickle; pickle.dump(found, open(f'analysis/gadget2_m{m}.pkl', 'wb'))
+import pickle; pickle.dump(found, open(f'analysis/legacy/gadget2_m{m}.pkl', 'wb'))

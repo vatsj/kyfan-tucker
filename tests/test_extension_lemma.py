@@ -1,24 +1,16 @@
-"""TREE_GADGET_THEOREM.md, Lemma (star): for S a proper subset of the leaves with |S| <= n-2, a leaf l not in S, and
+"""docs/tree_gadget.md, Lemma (star): for S a proper subset of the leaves with |S| <= n-2, a leaf l not in S, and
 any assignment beta on S, the number of picks x making beta u {l -> x} an (S u {l})-pattern is 1 if beta is an S-pattern
-and 0 or 2 otherwise. This is exactly what makes E consistent. Verified exhaustively per tree shape.
+and 0 or 2 otherwise. This is exactly what makes E consistent. Verified exhaustively for every unordered binary tree
+shape with n <= 6 leaves (1 + 2 + 3 + 6 shapes; fast tier) and all 11 shapes with n = 7 (slow tier, ~40 s).
 """
 from collections import Counter
 
 import pytest
 
-from kyfan.tree_rule import leaves_and_paths, rule_patterns
+from kyfan.tree_rule import leaves_and_paths, rule_patterns, all_tree_shapes
 
-TREES = [
-    ((1, (2, 'x', 'x'), 'x'), 3),
-    ((1, (2, (3, 'x', 'x'), 'x'), 'x'), 4),
-    ((1, (2, 'x', 'x'), (3, 'x', 'x')), 4),
-    ((1, (2, (3, (4, 'x', 'x'), 'x'), 'x'), 'x'), 5),
-    ((1, (2, (3, 'x', 'x'), 'x'), (4, 'x', 'x')), 5),
-    ((1, (2, (3, 'x', 'x'), (4, 'x', 'x')), 'x'), 5),
-    ((1, (2, (3, (4, (5, 'x', 'x'), 'x'), 'x'), 'x'), 'x'), 6),
-    ((1, (2, (3, 'x', 'x'), (4, 'x', 'x')), (5, 'x', 'x')), 6),
-]
-TREE_N7 = ((1, (2, (3, (4, 'x', 'x'), 'x'), (5, 'x', 'x')), (6, 'x', 'x')), 7)
+TREES = [(t, n) for n in (3, 4, 5, 6) for t in all_tree_shapes(n)]
+TREES_N7 = [(t, 7) for t in all_tree_shapes(7)]
 
 
 def _check_star(tree, n):
@@ -54,7 +46,9 @@ def test_extension_lemma(tree, n):
 
 
 @pytest.mark.slow
-def test_extension_lemma_n7():
-    cnt, violation = _check_star(*TREE_N7)
+@pytest.mark.parametrize("tree,n", TREES_N7)
+def test_extension_lemma_n7(tree, n):
+    cnt, violation = _check_star(tree, n)
     assert violation is None
     assert set(cnt) <= {(True, 1), (False, 0), (False, 2)}
+    assert cnt[(True, 1)] > 0

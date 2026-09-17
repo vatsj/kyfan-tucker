@@ -1,5 +1,11 @@
 # Statement (ii): an explicit realization, and Tucker's F_2 degree on S^n = n+1 for all n
 
+Code: `kyfan/realize_explicit.py` (`explicit_label`, `explicit_Leq`, `reverse_caterpillar_domains`, `check`). Tests:
+`tests/test_realize_explicit.py` — equatorial validity, exact reverse-caterpillar residual domains, and a consistent, unique
+degree-(m−1) residual dual for m = 3..8 (m = 8: 95,901 unknowns, sparse solver, ~3 s; fast tier), plus validity and exact
+domains alone for m = 9, 10 (`test_explicit_valid_and_domains_m9_m10`: 21 s, slow tier; 3.5 min, veryslow tier); the
+full-sphere `verify` for m = 4, 5, 6.
+
 ## The labeling
 
 For a signed subset u ∈ {-1,0,+1}^n \ {0} of [n], let p be the last nonzero index and let q ≤ p be the start of the
@@ -39,10 +45,12 @@ D(n−1) = {+1, −2, …, −(n−1)}, D(n) = {−1, …, −(n−1)} are preci
 
 ## Conclusion
 
-By the tree-gadget theorem (statement (i), TREE_GADGET_THEOREM.md), the residual has a degree-n pseudo-solution over
-F_2, so by the restriction lemma no degree-n certificate of Tucker on S^n exists. With the tower upper bound:
+By the tree-gadget theorem (statement (i), `docs/tree_gadget.md`), the residual has a degree-n pseudo-solution over
+F_2, so by the restriction lemma no degree-n certificate of Tucker on S^n exists. With the tower upper bound
+(`docs/tower.md`):
 
     Tucker's F_2 Nullstellensatz degree (Sherali–Adams level) on S^n is exactly n+1, for every n ≥ 2.
 
 Checked mechanically: validity and the exact residual domains for m = 3..10 (S^2..S^9), and consistency + uniqueness of
-the residual degree-n dual for m ≤ 8 (sparse solver). `kyfan/realize_explicit.py`, `tests/test_realize_explicit.py`.
+the residual degree-n dual for m ≤ 8 (sparse solver). For n = 2, 3 the degree is also confirmed by the direct SA dual on the
+sphere (`tests/test_nsdeg.py`, `tests/test_sparse.py`), and for n = 4..7 by the searched gadgets (`tests/test_gadget.py`).

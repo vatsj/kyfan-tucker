@@ -178,7 +178,7 @@ def fp_dense_solve(A, b, p=1000003):
 
 
 def real_lstsq_residual(A, b):
-    """Relative residual of least squares over R: < 1e-9 counts as a certificate, > 1e-3 as none (CLAUDE.md §2)."""
+    """Relative residual of least squares over R: < 1e-9 counts as a certificate, > 1e-3 as none (docs/AGENT_BRIEF.md §2)."""
     x, *_ = np.linalg.lstsq(A.astype(float), b.astype(float), rcond=None)
     return float(np.linalg.norm(A @ x - b) / np.sqrt(len(b)))
 

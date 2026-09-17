@@ -1,3 +1,4 @@
-numpy>=1.24
-pytest>=8
-ortools>=9.8   # CP-SAT, used by analysis/isd.py and tests/test_min_size.py
+# Pinned to the versions used to produce the stored outputs (Python 3.13.7). See README.md "Install".
+numpy==2.5.3
+pytest==9.1.1
+ortools==9.15.6755   # CP-SAT: analysis/isd.py, analysis/flag_hitting_bound.py, tests/test_min_size.py, tests/test_paper_numbers.py, tests/test_flag_hitting.py

@@ -1,4 +1,4 @@
-"""nsdeg.py: Tucker on S^2 (labels +-1,+-2) — F_2 degree exactly 3, F_p not refutable at 3 (results.md #1, #2)."""
+"""Tucker on S^2 (labels +-1,+-2) — F_2 degree exactly 3, F_p not refutable at 3 (HISTORY.md table rows 1, 2)."""
 from kyfan.dual import sa_dual_system, solve
 
 

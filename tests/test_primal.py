@@ -1,4 +1,4 @@
-"""primal.py: explicit certificates (results.md #1, #2 d=3,4, #4)."""
+"""Explicit certificates from the random-point primal (HISTORY.md table rows 1, 2 (d = 3, 4), 4)."""
 import random
 import pytest
 
@@ -61,7 +61,7 @@ def test_tucker_s2_F2_full_group_symmetric_none_d3_d4(cx3, L2, V32):
 
 @pytest.mark.veryslow
 def test_tucker_s2_Q_degree5_symmetric_certificate(cx3, L2, V32):
-    """results.md #2, d=5: 924,480 violating unknowns in 5,482 full-group orbits; float rank 1,976; residual ~1e-14;
+    """HISTORY.md table row 2, d=5: 924,480 violating unknowns in 5,482 full-group orbits; float rank 1,976; residual ~1e-14;
     fresh-labeling check; and an exact certificate mod p = 1000003. ~5 min (the dense mod-p solve dominates)."""
     import numpy as np
     from kyfan.primal import violating_columns, FastRows

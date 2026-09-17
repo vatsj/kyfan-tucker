@@ -1,7 +1,10 @@
 # Size lower bounds for Nullstellensatz certificates of Tucker on S^n
 
-Companion to `TREE_GADGET_THEOREM.md` (statement (i)) and `REALIZATION_THEOREM.md` (statement (ii)). Everything here
-is over F_2 in the one-hot quotient: a certificate is an identity of functions on all labelings of the free vertices,
+Companion to `docs/tree_gadget.md` (statement (i)) and `docs/realization.md` (statement (ii)). Computations:
+`analysis/isd.py` (minimum certificate size, `tests/test_min_size.py`, `tests/test_paper_numbers.py`),
+`analysis/flag_hitting_bound.py` (Theorem 1′, `tests/test_flag_hitting.py`, `tests/test_paper_numbers.py`),
+`analysis/spread_mcmc.py` (Spread Lemma evidence, `docs/spread_evidence.md`, `tests/test_spread_mcmc.py`).
+Everything here is over F_2 in the one-hot quotient: a certificate is an identity of functions on all labelings of the free vertices,
 
     1 = Σ_{α ∈ C} 1_α ,
 
@@ -11,7 +14,7 @@ N = 3^m − 1 vertices, m!2^m = N^{Θ(log log N)}. "full(U)" means a labeling of
 
 ## 0. Ingredients (proved elsewhere in this repo)
 
-- **Restriction lemma** (`kyfan/gadget.py`). If ρ is a non-violating partial labeling of all free vertices outside a
+- **Restriction lemma** (`docs/tree_gadget.md`; code `kyfan/gadget.py`). If ρ is a non-violating partial labeling of all free vertices outside a
   flag U, then substituting ρ into a certificate C gives a certificate of the residual CSP on U whose terms are
   { α|_U : α ∈ C, α|_{off U} ⊆ ρ }.
 - **Tree theorem** (i). The residual CSP has F_2 degree n+1 whenever its domains contain the domains of a binary
@@ -57,7 +60,7 @@ through the shared size-2 terms, invisible to a per-flag bound.)
 Remark. Restricting to the label-group orbit of the explicit gadget gives a computable sub-family at any flag, hence
 a valid lower bound on t(U) for every n: 2^n n! tree gadgets with supports of size 3^{n−1} inside (2n)^{n+1} labelings.
 
-**Computation (2026-09-17, `analysis/flag_hitting_bound.py`, outputs `analysis/flag_hitting_bound_m{3,4}.out`;
+**Computation (`analysis/flag_hitting_bound.py`, outputs `analysis/flag_hitting_bound_m{3,4}.out`;
 `tests/test_flag_hitting.py`).** Since every gadget is transported to every flag class by the hyperoctahedral group,
 t(U) is the same for all classes; the pole chain is used. Gadget families (each a subset of the true family, so each
 gives a valid lower bound on t; the parity system is solved exactly by CP-SAT, cross-checked by branch and bound):
@@ -84,7 +87,9 @@ t(U) may be larger still (the exhaustive family is out of reach: 6^36 restrictio
 
 Note on Theorem 1's count: a full labeling of U is the same term as a full labeling of −U (same free vertices), so the
 "distinct flags have distinct terms" argument gives #flags/2 = m!·2^{m−1} classes, and #flags = m!·2^m needs t(U) ≥ 2,
-which Theorem 1′ supplies with room to spare (t ≥ 8 on S^2, ≥ 12 on S^3).
+which Theorem 1′ supplies with room to spare (t ≥ 8 on S^2, ≥ 12 on S^3). The same antipodal identification affects
+Theorem 2 as stated below: counting flag classes instead of flags, its unconditional form is size ≥ m!·2^{m−1} / C(D, m)
+(the asymptotic statement N^{Θ(log log N)} is unaffected).
 
 ## 2. Theorem 2 (proved): certificates of degree O(n)
 
@@ -120,8 +125,9 @@ most 2·(m−1)!2^{m−1} = #flags/m flags (flags through a fixed vertex of rank
 
 This is superpolynomial as soon as μ → ∞ with m. It fails exactly for terms that are large but use O(1) magnitudes
 outside the flags they serve — the "monochromatic region" terms. Against the *explicit* gadget those terms are
-dangerous: the explicit labeling has a 1/(2n) fraction of all flags inside its magnitude-1 class
-(`gadget_spread_experiments.py`, `flag_density`), so a single monochromatic term serves ~#flags/(2m) flags.
+dangerous: the explicit labeling has a 1/(2n) fraction of all flags inside its largest-magnitude class
+(`analysis/spread_mcmc.py`, `flag_density`; see `docs/spread_evidence.md`), so a single monochromatic term serves
+~#flags/(2m) flags.
 
 ## 4. The spread lemma (conjecture), and Theorem 4 (proved conditional on it)
 
@@ -140,13 +146,17 @@ P[α survives] ≤ (1/#flags) Σ_{F ⊆ supp α} β^{|supp α| − m − cm} ≤
 Writing s = m + r and x = r/m: C(m+r, m) β^r ≤ (e(1+x)β^x)^m ≤ K_0(β)^m, where K_0 = max_{x≥0} e(1+x)β^x < ∞.
 So P[α survives] ≤ K_0^m β^{−cm}/#flags and size ≥ #flags/(K_0 β^{−c})^m. ∎
 
-**Evidence** (`gadget_spread_experiments.py`, Glauber dynamics over valid labelings satisfying the tree-domain
-constraints, started from the explicit gadget; MCMC ergodicity not verified, samples correlated):
-- largest-magnitude class fraction: 0.44, 0.36, 0.29, 0.23 for m = 4..7 (explicit gadget: ≈ 0.45 for all m);
-- flag density of the largest magnitude class: 0.104, 0.027, 0.005, 0.001 for m = 4..7 (explicit: 1/(2n));
-- match probability of a fresh gadget against a fixed labeling on A, m = 6: |A| = 1,2,3,4,6,8 →
-  random sets 0.39, 0.19, 0.06, 0.013, 0.004, 0.001; chains 0.90, 0.47, 0.14, 0.07; balls 0.37, 0.17, 0.09, 0.03, 0.009, 0.003.
-  Geometric decay with β ≈ 0.5–0.6 per vertex on all three set types, consistent with the lemma with a small c.
+**Evidence** (`analysis/spread_mcmc.py`, output `analysis/spread_mcmc.out`; Glauber dynamics on the valid equatorial
+labelings that agree with the explicit gadget on the pole chain and whose residual domains contain the reverse-caterpillar
+domains, started from the explicit gadget; ergodicity of the dynamics is not proved. Full description, diagnostics and caveats
+in `docs/spread_evidence.md`):
+- largest-magnitude class fraction: 0.461, 0.371, 0.287, 0.226, 0.183 for m = 4..8 (explicit gadget: ≈ 0.45 for all m);
+- flag density of the largest magnitude class: 0.094, 0.024, 0.0051, 0.0009, 0.0001 for m = 4..8 (explicit: 1/(2n) = 0.167,
+  0.125, 0.100, 0.083, 0.071);
+- match probability of two independent gadget samples on a set A, m = 6, random A with |A| = 1, 2, 3, 4, 6, 8:
+  0.39, 0.16, 0.046, 0.014, 0.0033, 0.0002; ball-shaped A: 0.47, 0.21, 0.14, 0.048, 0.011, 0.0019.
+  Geometric decay on all three set types (random, chain, ball), with fitted per-vertex β decreasing in m
+  (random sets: 0.65, 0.48, 0.36, 0.29, 0.22 for m = 4..8), consistent with the lemma with a small c.
 - The explicit gadget violates the lemma (polynomial flag density), so D_F must be genuinely random; the uniform
   distribution over gadgets is the natural candidate. No proof is known; the obvious constructed distributions
   (symmetry transports) carry only O(n log n) bits and cannot suffice.
@@ -160,7 +170,7 @@ constraints, started from the explicit gadget; MCMC ergodicity not verified, sam
 | size ≥ m!2^m / C(D,m) for degree ≤ D; superpoly for D = O(n) | proved (Thm 2) |
 | size ≥ m!2^{m−1}/(2^{n−μ}(n−μ)!) if terms use ≥ μ magnitudes off served flags | proved (Thm 3) |
 | size ≥ m!2^m/K^m for all degrees | conditional on the Spread Lemma (Thm 4) |
-| Spread Lemma | conjectured; empirical support m ≤ 7 |
+| Spread Lemma | conjectured; empirical support m ≤ 8 (`docs/spread_evidence.md`) |
 
 Upper bound for comparison: the tower certificate has Σ_j j!2^{j−1} ≈ m!2^{m−1} local-lemma instances, each expanding
 to ≤ (2k)^m monomials — N^{Θ(log log N)} as well. So Theorem 1 is tight up to the per-lemma factor for minimal-degree

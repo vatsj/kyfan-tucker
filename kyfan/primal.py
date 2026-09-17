@@ -1,4 +1,4 @@
-"""Explicit certificates via the random-point primal (CLAUDE.md §2, "one-way sound"):
+"""Explicit certificates via the random-point primal (docs/AGENT_BRIEF.md §2, "one-way sound"):
 rows = evaluation of every violating size-d indicator on a random labeling, rhs = target(L).
 An inconsistent sampled system proves no certificate; a consistent one yields a candidate that must be verified —
 on fresh labelings (probabilistic) or exactly (`verify_exact_F2`, canonical one-hot basis; `verify_exhaustive`).

@@ -1,4 +1,4 @@
-"""The explicit degree-n pseudo-solution of the tree gadget (TREE_GADGET_THEOREM.md, statement (i)).
+"""The explicit degree-n pseudo-solution of the tree gadget (docs/tree_gadget.md, statement (i)).
 
 A binary conflict tree `tree` is a nested tuple: a leaf is `'x'`, an internal node is `(magnitude, left, right)`.
 The gadget CSP has n+1 variables — the pole (index 0, domain {+n}) and the n leaves (indices 1..n in DFS order,
@@ -122,3 +122,30 @@ def unique_E(tree, n, method="sparse"):
     assert res.consistent and res.rank == len(col), "gadget pseudo-solution is not unique"
     E = {frozenset(alpha) for alpha, idx in col.items() if res.solution[idx]}
     return doms, E, res
+
+
+def all_tree_shapes(n):
+    """Every binary conflict tree with n leaves, one representative per unordered shape (left/right and the placement
+    of magnitudes do not affect the rule or Lemma (star), which are label-agnostic and mirror-symmetric): internal
+    nodes carry magnitudes 1..n-1 in preorder.  Counts: 1, 1, 2, 3, 6, 11, 23 for n = 2..8 (Wedderburn-Etherington)."""
+    def shapes(k):
+        if k == 1:
+            return ['x']
+        out = []
+        for a in range(1, k // 2 + 1):
+            b = k - a
+            for L in shapes(a):
+                for R in shapes(b):
+                    if a == b and shapes(a).index(L) > shapes(b).index(R):
+                        continue                            # unordered: (L, R) ~ (R, L)
+                    out.append(('*', L, R))
+        return out
+
+    def number(t, counter):
+        if t == 'x':
+            return 'x'
+        m = counter[0]
+        counter[0] += 1
+        return (m, number(t[1], counter), number(t[2], counter))
+
+    return [number(t, [1]) for t in shapes(n)]

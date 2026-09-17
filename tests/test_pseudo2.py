@@ -1,4 +1,4 @@
-"""pseudo2.py / pseudo2b.py / pseudo2c.py: structure of the degree-2 pseudo-solution on S^2 (results.md, structural facts)."""
+"""Structure of the degree-2 pseudo-solution on S^2 (HISTORY.md, structural facts; docs/AGENT_BRIEF.md §2)."""
 from kyfan.dual import unknowns, sa_dual_system, solve
 from kyfan.group import (full_group_generators, hemisphere_stabilizer_generators, label_group_generators,
                          z3z3_generators)

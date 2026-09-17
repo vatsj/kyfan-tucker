@@ -1,4 +1,4 @@
-"""tower.py + kyfan_lower.py: Ky Fan degree exactly n+1 (results.md #5)."""
+"""Ky Fan degree exactly n+1: the tower certificate (docs/tower.md) and the separating functional (docs/kyfan_lower_bound.md)."""
 import pytest
 from kyfan import SignedComplex
 from kyfan.tower import local_lemma_violations, check_identity

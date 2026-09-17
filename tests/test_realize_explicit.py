@@ -1,7 +1,8 @@
-"""Statement (ii), explicit (REALIZATION_THEOREM.md): the closed-form labeling lambda(u) = s*(n-q+1) is a valid
+"""Statement (ii), explicit (docs/realization.md): the closed-form labeling lambda(u) = s*(n-q+1) is a valid
 equatorial labeling whose pole-chain residual is the reverse-caterpillar binary conflict tree. With statement (i)
 (test_rule_vs_solver, test_extension_lemma) and the restriction lemma, Tucker's F_2 degree on S^n is exactly n+1 for
-every n. No search: the labeling is a formula, so this is a theorem, checked here for m = 3..8.
+every n. No search: the labeling is a formula, so this is a theorem, checked here for m = 3..8 (with the residual dual)
+and m = 9, 10 (validity and exact domains only).
 """
 import pytest
 
@@ -17,6 +18,15 @@ def test_explicit_residual_dual(m):
     assert r["equatorial_violations"] == 0
     assert r["domains_match"]
     assert r["unsat"] and r["consistent"] and r["unique"]
+
+
+@pytest.mark.parametrize("m", [pytest.param(9, marks=pytest.mark.slow), pytest.param(10, marks=pytest.mark.veryslow)])
+def test_explicit_valid_and_domains_m9_m10(m):
+    """Validity of the equatorial labeling and the exact reverse-caterpillar residual domains, without the dual solve
+    (m = 9: 21 s, slow tier; m = 10, the [9]-complex with 9,841 free vertices: ~3.5 min, veryslow tier)."""
+    r = check(m, solve=False)
+    assert r["equatorial_violations"] == 0
+    assert r["domains_match"]
 
 
 @pytest.mark.parametrize("m", [4, 5, 6])

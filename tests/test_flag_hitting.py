@@ -1,4 +1,4 @@
-"""Theorem 1' (SIZE_LOWER_BOUND.md): per-flag parity constraints, t(U) = minimum number of full-flag terms.
+"""Theorem 1' (docs/size_lower_bound.md): per-flag parity constraints, t(U) = minimum number of full-flag terms.
 
 S^2: all 16 gadget domain types at the pole chain give t = 8 (>= 24 x 8 = 192 size-3 terms in every degree-3
      certificate); the label orbit of the explicit gadget alone gives 4; label orbit x realizable chain permutations

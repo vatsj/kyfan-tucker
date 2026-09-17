@@ -1,4 +1,12 @@
-# Results log
+# Development log (HISTORY.md)
+
+> Chronological log of the computations, kept unchanged apart from this header. The authoritative statements are `docs/` and
+> `README.md`; where this log and `docs/` differ (e.g. the "~458 monomials" of row 1, superseded by the minimum 304; the earlier
+> spread-lemma run in the appendix), `docs/` is current. File names referenced below have moved: `results.md` = this file,
+> `CLAUDE.md` = `docs/AGENT_BRIEF.md`, `review.md` = `analysis/legacy/review_scripts.md`, `TREE_GADGET_THEOREM.md` /
+> `REALIZATION_THEOREM.md` / `SIZE_LOWER_BOUND.md` = `docs/tree_gadget.md` / `docs/realization.md` / `docs/size_lower_bound.md`;
+> the exploratory scripts and outputs cited below as `analysis/<file>` (everything except `isd.py`, `flag_hitting_bound*.py`,
+> `spread_mcmc.py` and their outputs) now live in `analysis/legacy/<file>`.
 
 All degrees are Sherali–Adams level in the one-hot quotient (see CLAUDE.md §1).
 Every number below is an assertion in `tests/` (the tests *are* this table); `./reproduce.sh` runs the fast subset (~3 min),
@@ -266,3 +274,12 @@ label) falls like ~1/n — the "rigid zone" near σ allowed by the c·m term.
   degree-3 pseudo-solution for general n; explain why constant-magnitude configurations are dispensable at n=3 but not n=2.
 - Independent corroboration recorded but not a test: the deterministic `realize` reached S^8 = 9 (876,809-unknown dual) before
   its exploratory run was stopped.
+
+## Appendix — earlier spread-lemma run (script not retained)
+
+The first version of `SIZE_LOWER_BOUND.md` §4 cited a script `gadget_spread_experiments.py` that predates `analysis/spread_mcmc.py`
+and was not kept. Its numbers, superseded by `analysis/spread_mcmc.out` (same qualitative picture, different run and seeds):
+largest-magnitude class fraction 0.44, 0.36, 0.29, 0.23 for m = 4..7 (explicit gadget ≈ 0.45); flag density of the largest
+magnitude class 0.104, 0.027, 0.005, 0.001 for m = 4..7; match probability of a fresh gadget against a fixed labeling on A, m = 6,
+|A| = 1, 2, 3, 4, 6, 8: random sets 0.39, 0.19, 0.06, 0.013, 0.004, 0.001; chains 0.90, 0.47, 0.14, 0.07; balls 0.37, 0.17, 0.09,
+0.03, 0.009, 0.003; fitted β ≈ 0.5–0.6 per vertex.

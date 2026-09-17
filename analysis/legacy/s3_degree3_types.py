@@ -1,5 +1,5 @@
 """Task 2 (a): full-group orbit types of non-violating size-3 partial labelings on S^3 and the knockout analysis.
-Run: .venv/bin/python analysis/s3_degree3_types.py  (~15 min). Output also saved to analysis/s3_degree3_types.out."""
+Run: .venv/bin/python analysis/legacy/s3_degree3_types.py  (~15 min). Output also saved to analysis/legacy/s3_degree3_types.out."""
 import time, pickle, sys
 from collections import Counter
 from kyfan import SignedComplex, label_set, violating_pairs
@@ -20,4 +20,4 @@ necessary = [t_ for t_, ok, _ in res if not ok]
 print(f"\nknockout done [{time.time()-t:.0f}s]. NECESSARY types ({len(necessary)} of {len(types)}):")
 for t_ in necessary:
     print(f"  type {t_:4d} size {len(types[t_]):7d}  {describe(cx, types[t_][0])}   rep={types[t_][0]}")
-pickle.dump((types, res), open('analysis/s3_degree3_types.pkl', 'wb'))
+pickle.dump((types, res), open('analysis/legacy/s3_degree3_types.pkl', 'wb'))

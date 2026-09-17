@@ -1,4 +1,4 @@
-"""The tower theorem (CLAUDE.md §2): local lemma g_n and the telescoped identity
+"""The tower theorem (docs/tower.md): local lemma g_n and the telescoped identity
     A_+^{(m)} + 1 = sum_{j=1..m} sum_{sigma in H^{(j)}} g_{j-1}(lambda|_sigma)   (mod 2),
 an identity on all labelings whose right side has degree m = n+1 and is supported on complementary tuples.
 """

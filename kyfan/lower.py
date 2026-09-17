@@ -1,4 +1,4 @@
-"""Ky Fan lower bound (CLAUDE.md §2, "Theorem (Ky Fan degree)"): the separating functional
+"""Ky Fan lower bound (docs/kyfan_lower_bound.md): the separating functional
     E(f) = sum_{lambda(x_i) in S_i} f(lambda)   (mod 2)
 over a box on one top simplex sigma_0 = (x_1 < ... < x_{n+1}), S_1 = {+1,+2}, S_i = {+i,-i}, other vertices fixed.
 Even |S_i| kills every function of <= n vertices; only +-sigma_0 contribute to E(A_+), and the box has exactly one

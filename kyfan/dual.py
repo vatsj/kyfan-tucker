@@ -1,9 +1,9 @@
-"""The Sherali-Adams / Nullstellensatz dual at degree d (CLAUDE.md §1, "Pseudo-solution").
+"""The Sherali-Adams / Nullstellensatz dual at degree d (docs/AGENT_BRIEF.md §1, "Pseudo-solution").
 
 Unknowns: E[alpha] for non-violating partial labelings alpha of exactly d vertices (optionally restricted to a
 support and/or quotiented by orbits of a subgroup, i.e. E invariant).  E on smaller partial labelings is defined by
 extension along the smallest unused vertex; the consistency equations are imposed only at level d-1 (they imply the
-lower levels, see review.md), plus E[empty] = 1.
+lower levels, see analysis/legacy/review_scripts.md), plus E[empty] = 1.
 
 A degree-d certificate over F exists  <=>  this system is inconsistent over F.
 """

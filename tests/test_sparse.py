@@ -46,8 +46,9 @@ def test_sparse_random_systems_vs_dense():
             assert _check_solution(rows, rs.solution)
 
 
+@pytest.mark.slow
 def test_s3_degree3_pseudo_solution_via_dual(cx4):
-    """Tucker S^3 lower bound (results.md #3) through the dual: the Z_3 x Z_3-invariant degree-3 SA-dual is consistent
+    """Tucker S^3 lower bound (HISTORY.md table row 3; docs/AGENT_BRIEF.md §2) through the dual: the Z_3 x Z_3-invariant degree-3 SA-dual is consistent
     (valid over F_2 since |G| = 9 is odd: averaging a pseudo-solution gives an invariant one). The solution is then
     checked against every unreduced consistency equation. ~30 s, replaces the 7-min sampled primal (z9)."""
     labels = label_set(3)

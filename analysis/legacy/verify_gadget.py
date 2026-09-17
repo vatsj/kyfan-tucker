@@ -1,5 +1,5 @@
 """Independent verification of a chain gadget (restriction lower bound), from scratch: no Ball/Residual code reused.
-usage: verify_gadget.py m pickle_index   (reads analysis/gadget2_m{m}.pkl, entry index)
+usage: verify_gadget.py m pickle_index   (reads analysis/legacy/gadget2_m{m}.pkl, entry index)
 
 Checks:
  (a) rho (equator labeling + pullback on the fixed cap vertices) is a non-violating partial labeling of the free
@@ -20,7 +20,7 @@ from kyfan.complex import leq
 from kyfan import linalg
 
 m = int(sys.argv[1]); k = int(sys.argv[2]) if len(sys.argv) > 2 else 0
-found = pickle.load(open(f'analysis/gadget2_m{m}.pkl', 'rb'))
+found = pickle.load(open(f'analysis/legacy/gadget2_m{m}.pkl', 'rb'))
 gad = [g for g in found if g[2] is None]
 print(f"{len(gad)} gadgets with residual degree > {m-1} in the pickle; verifying #{k}")
 Leq, U_idx, _, doms_claimed = gad[k]

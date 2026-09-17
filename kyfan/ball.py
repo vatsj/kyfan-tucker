@@ -1,4 +1,4 @@
-"""Task 3 — Tucker's ball form (CLAUDE.md §4).
+"""Tucker's ball form (docs/AGENT_BRIEF.md §4 Task 3; HISTORY.md "Ball").
 
 Fix a valid labeling L_eq of the equator (the [m-1]-complex, labels ±1..±(m-1)). Variables: the cap C = {x_m = +1}
 (3^{m-1} vertices; the opposite cap is determined by antipodality). Constraints: no complementary edge inside C, and for

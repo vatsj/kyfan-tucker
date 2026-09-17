@@ -1,4 +1,4 @@
-"""s3.py / z9a.py / z9b.py: Tucker on S^3 (labels +-1..+-3) at degree 3 (results.md #3 lower bound, and the negative facts)."""
+"""Tucker on S^3 (labels +-1..+-3) at degree 3 (HISTORY.md table row 3 lower bound, and the negative facts)."""
 import random
 import time
 import numpy as np
