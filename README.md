@@ -37,6 +37,22 @@ The five mechanical proof checks (tower identity m ≤ 5, extension lemma all sh
 separating functional m ≤ 5) are in `tests/test_tower.py`, `tests/test_extension_lemma.py`, `tests/test_rule_vs_solver.py`,
 `tests/test_realize_explicit.py`; tiers and runtimes in `docs/README.md`.
 
+## Related work
+
+- Query-PPA is captured by Nullstellensatz degree over F_2: Göös, Kamath, Robere, Sokolov, "Adventures in Monotone Complexity and
+  TFNP" (ITCS 2019, ECCC TR18-163). So a low-degree F_2 refutation of Tucker is expected; the exact degree and the size bounds are
+  what this repository adds.
+- Octahedral Tucker — the complex used here, with the labeling given succinctly — is PPA-complete: Deng, Feng, Kulkarni,
+  "Octahedral Tucker is PPA-Complete" (ECCC TR17-118). 2-D Tucker: Aisenberg, Bonet, Buss.
+- Propositional octahedral Tucker and Kneser–Lovász: Istrate and Crãciun, "Proof Complexity and the Kneser-Lovász Theorem"
+  (arXiv:1402.4338), who obtain the Kneser formulas from the Tucker formulas by a variable substitution and note that the
+  Tucker proof reduces to Tseitin formulas on an exponential-size graph; Aisenberg, Bonet, Buss, Crãciun, Istrate, "Short Proofs
+  of the Kneser-Lovász Coloring Principle" (ICALP 2015), with polynomial-size extended Frege and quasi-polynomial Frege proofs for
+  fixed k and the truncated Tucker lemma.
+
+A literature search (November 2026) found no prior statement of the exact F_2 Nullstellensatz degree of Tucker or Ky Fan, of the
+tree-gadget pseudo-solution, or of the size lower bounds.
+
 ## Install
 
 Python 3.13 (3.10+ should work; the stored outputs were produced with 3.13.7) and Rust (cargo; the outputs used rustc 1.91.1).
@@ -47,7 +63,8 @@ Python 3.13 (3.10+ should work; the stored outputs were produced with 3.13.7) an
 
 `ortools` (CP-SAT) is needed only by `analysis/isd.py`, `analysis/flag_hitting_bound.py` and the tests that re-verify their numbers
 (`test_min_size.py`, `test_paper_numbers.py`, `test_flag_hitting.py`); everything else is numpy + the Rust solver. The Rust solver
-is built automatically on first use if `cargo` is on the path.
+is built automatically on first use if `cargo` is on the path. Without Rust, `gf2_sparse` falls back to the dense numpy solver for
+small systems, and the few tests that need larger solves are skipped rather than failed (fast tier: 2 skips).
 
 ## Tests
 

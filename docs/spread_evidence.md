@@ -153,3 +153,25 @@ integer draws and should not.
 tolerances: the mean flag density is below the explicit gadget's 1/(2n) by a factor ≥ 1.5, every gadget-compatibility constraint
 holds at every recorded state, and the random-set match probability decreases at least geometrically over t = 1, 2, 3, 4 with a fitted
 β < 0.9. It does not assert any digit of the stored output.
+
+## Addendum: forced vertices and an explicit product family
+
+Two further measurements on G_m (`analysis/spread_marginals.py`, `analysis/spread_product_family.py`; outputs
+`analysis/spread_marginals.out`, `analysis/spread_product_family.out`; m = n+1, equator of S^n).
+
+**Forced vertices.** The Spread Lemma fails for a distribution on G_m if a constant fraction of vertices has a (near-)deterministic
+label. Rigorously, exactly n movable vertices have static domain size 1 (n = 3..7). In the Glauber samples (4 chains x 500 samples,
+same caveats as above) the number of vertices with p_max ≥ 0.95 is 3, 4, 9, 15, 21 for n = 3..7 — 30%, 11%, 7.8%, 4.2%, 1.9% of the
+movable vertices — and every one of them is comparable to the chain σ. The sum of −log2 p_max grows from 0.56 to 1.97 bits per vertex.
+
+**Product family (rigorous for each n).** Around a base labeling L ∈ G_m, a set I of vertices with an alternative label each, such
+that all 2^|I| labelings obtained by switching any subset of I lie in G_m (membership is a conjunction of single-vertex and
+pairwise conditions, so pairwise compatibility of the alternatives suffices; re-checked on 300 random switches). Greedy sizes around
+the explicit gadget: |I| = 5/10, 27/36, 103/116, 336/358, 1056/1086 movable vertices for n = 3..7. The uniform distribution on such a
+family satisfies P[ρ|_A = a] ≤ 2^{−|A ∩ I|} exactly on the equator (cap vertices carry the label of their projection, so on the
+sphere up to three vertices share one bit).
+
+So for n ≤ 7 the product structure the lemma asks for exists, with an exceptional set of 5, 9, 13, 22, 30 movable vertices (greedy,
+hence an upper bound on the smallest exceptional set). What is not established: a closed form for the alternatives for all n, and
+the growth of the exceptional set — these counts do not distinguish O(n) from O(n^2), and the proof of Theorem 4 as written needs
+the slack to be small compared with n^2 (otherwise a refined count of the flags that fit inside the exceptional set is needed).

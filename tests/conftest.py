@@ -1,5 +1,15 @@
 import pytest
 from kyfan import SignedComplex, label_set, violating_pairs
+from kyfan.linalg import GF2SolveUnavailable
+
+
+@pytest.hookimpl(hookwrapper=True)
+def pytest_runtest_call(item):
+    """A test that needs the Rust solver for a system too large for the dense fallback is skipped, not failed,
+    when `cargo` is not installed."""
+    outcome = yield
+    if outcome.excinfo is not None and issubclass(outcome.excinfo[0], GF2SolveUnavailable):
+        outcome.force_exception(pytest.skip.Exception(f"needs the Rust solver (gf2solve): {outcome.excinfo[1]}"))
 
 
 @pytest.fixture(scope="session")

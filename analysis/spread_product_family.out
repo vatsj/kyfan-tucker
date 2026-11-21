@@ -1,0 +1,5 @@
+m=4: movable 10;  product family around the explicit gadget: |I| = 5 (50%);  around a sampled gadget: |I| = 4 (40%)   [verified on 300 random switches each; 0s]
+m=5: movable 36;  product family around the explicit gadget: |I| = 27 (75%);  around a sampled gadget: |I| = 25 (69%)   [verified on 300 random switches each; 0s]
+m=6: movable 116;  product family around the explicit gadget: |I| = 103 (89%);  around a sampled gadget: |I| = 102 (88%)   [verified on 300 random switches each; 1s]
+m=7: movable 358;  product family around the explicit gadget: |I| = 336 (94%);  around a sampled gadget: |I| = 335 (94%)   [verified on 300 random switches each; 4s]
+m=8: movable 1086;  product family around the explicit gadget: |I| = 1056 (97%);  around a sampled gadget: |I| = 1048 (97%)   [verified on 300 random switches each; 15s]

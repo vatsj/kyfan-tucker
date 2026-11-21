@@ -87,19 +87,20 @@ t(U) may be larger still (the exhaustive family is out of reach: 6^36 restrictio
 
 Note on Theorem 1's count: a full labeling of U is the same term as a full labeling of −U (same free vertices), so the
 "distinct flags have distinct terms" argument gives #flags/2 = m!·2^{m−1} classes, and #flags = m!·2^m needs t(U) ≥ 2,
-which Theorem 1′ supplies with room to spare (t ≥ 8 on S^2, ≥ 12 on S^3). The same antipodal identification affects
-Theorem 2 as stated below: counting flag classes instead of flags, its unconditional form is size ≥ m!·2^{m−1} / C(D, m)
-(the asymptotic statement N^{Θ(log log N)} is unaffected).
+which Theorem 1′ supplies with room to spare (t ≥ 8 on S^2, ≥ 12 on S^3). Theorem 2 below is stated with the
+same count of flag classes.
 
 ## 2. Theorem 2 (proved): certificates of degree O(n)
 
-Every certificate of degree ≤ D has size ≥ m!·2^m / C(D, m). In particular, for D = cm (c ≥ 1 constant),
+Every certificate of degree ≤ D has size ≥ m!·2^{m−1} / C(D, m). In particular, for D = cm (c ≥ 1 constant),
 
-    size ≥ m! · (2/(e·c))^m = N^{Θ(log log N)}.
+    size ≥ (1/2) · m! · (2/(e·c))^m = N^{Θ(log log N)},
 
-*Proof.* Assign to each flag U a term α_U from Lemma A. A term α is assigned to at most the number of flags whose
-vertex set lies inside supp(α), which is ≤ C(|supp α|, m) ≤ C(D, m) since a flag is determined by its m vertices.
-So #terms ≥ #flags / C(D, m); and C(cm, m) ≤ (ec)^m. ∎
+and more generally the bound is N^{Ω(log log N)} whenever D ≤ m^{2−ε}, since C(D, m) ≤ (eD/m)^m.
+
+*Proof.* A flag class {U, −U} is determined by its m free vertices. Assign to each class a term α_U from Lemma A. A term α
+is assigned to at most the number of classes whose free-vertex set lies inside supp(α), which is ≤ C(|supp α|, m) ≤ C(D, m).
+So #terms ≥ m!·2^{m−1} / C(D, m); and C(cm, m) ≤ (ec)^m. ∎
 
 Remark: this uses only *existence* of a gadget at every flag. It is unconditional now that (ii) is proved.
 
