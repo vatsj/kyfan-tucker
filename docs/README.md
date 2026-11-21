@@ -16,6 +16,7 @@ noted. Setup and the paper-cited commands: top-level `README.md`.
 | Statement (ii): the explicit labeling λ(u) = s·(n−q+1) is valid and realizes the reverse caterpillar; hence Tucker's F_2 degree on S^n = n+1 for all n | `realization.md` | equatorial validity + exact residual domains + consistent, unique degree-n residual dual, m = 3..8 (m = 8: 95,901 unknowns, sparse); validity + exact domains alone for m = 9, 10; full-sphere `verify` m = 4, 5, 6 | `tests/test_realize_explicit.py` | fast (m ≤ 8); slow (m = 9); veryslow (m = 10) | 4 s total for m ≤ 8; 21 s; 3.5 min |
 | Theorem 1 (size ≥ #flags for degree-(n+1) certificates), Lemma A, Lemma B, Theorem 1′ (per-flag parities), Theorem 2, Theorem 3 | `size_lower_bound.md` §1–§3 | see "Paper-cited computations" below for the numbers | | | |
 | Theorem 4 (size ≥ m!2^m/K^m for all degrees) — conditional on the Spread Lemma (conjecture) | `size_lower_bound.md` §4 | empirical support only: `spread_evidence.md` | `tests/test_spread_mcmc.py` | fast | 4 s |
+| Theorem C (size ≥ m!/2 for **all degrees**, unconditional): coordinate-choice gadget family, weighted spread lemma P[ρ\|_A = a] ≤ Π 1/d_F(y), weighted flag count T(S) ≤ 2^m. The Spread Lemma in its conjectured form fails for this family (m(m−1) deterministic vertices) and is not needed | `spread_lemma.md` | gadget criterion exhaustively m ≤ 6, sampled gadgets on the sphere edge list + residual duals m ≤ 5; T(S) ≤ 2^m exhaustively on S^2, sampled m = 4, 5; Lemma A and the proof's inequalities on the stored S^2 certificates and on expanded high-degree certificates | `tests/test_spread_lemma.py` | fast | 5 s |
 
 ## Paper-cited computations
 
@@ -30,6 +31,7 @@ noted. Setup and the paper-cited commands: top-level `README.md`.
 ## Other documents
 
 - `spread_evidence.md` — what `spread_mcmc.py` samples, every diagnostic, every caveat, and the stored numbers.
+- `spread_lemma.md` — the weighted spread lemma and the unconditional all-degrees size bound (Theorem C), with its own status table.
 - `AGENT_BRIEF.md` — the original working brief (definitions §1, settled table §2, file map §3), kept as a historical document.
 - `../HISTORY.md` — the development log: every settled number with the command that produced it, the negative results and
   the exploratory drivers (`../analysis/legacy/`).

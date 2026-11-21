@@ -162,6 +162,11 @@ in `docs/spread_evidence.md`):
   distribution over gadgets is the natural candidate. No proof is known; the obvious constructed distributions
   (symmetry transports) carry only O(n log n) bits and cannot suffice.
 
+**Update.** `docs/spread_lemma.md` proves an unconditional replacement for Theorem 4: every certificate, of any degree, has at
+least m!/2 terms (Theorem C there). It uses a product family of gadgets with a *weighted* spread bound
+P[ρ|_A = a] ≤ Π_{y∈A} 1/d_F(y) and a weighted count of the flags inside supp(α); the Spread Lemma in the form stated above is false
+for that family (it has m(m−1) deterministic vertices per flag) and remains open in general, but is no longer needed.
+
 ## 5. Summary
 
 | statement | status |
@@ -172,6 +177,7 @@ in `docs/spread_evidence.md`):
 | size ≥ m!2^{m−1}/(2^{n−μ}(n−μ)!) if terms use ≥ μ magnitudes off served flags | proved (Thm 3) |
 | size ≥ m!2^m/K^m for all degrees | conditional on the Spread Lemma (Thm 4) |
 | Spread Lemma | conjectured; empirical support m ≤ 8 (`docs/spread_evidence.md`) |
+| size ≥ m!/2 for all degrees | proved (Thm C, `docs/spread_lemma.md`) |
 
 Upper bound for comparison: the tower certificate has Σ_j j!2^{j−1} ≈ m!2^{m−1} local-lemma instances, each expanding
 to ≤ (2k)^m monomials — N^{Θ(log log N)} as well. So Theorem 1 is tight up to the per-lemma factor for minimal-degree

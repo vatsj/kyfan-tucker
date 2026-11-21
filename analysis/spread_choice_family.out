@@ -1,0 +1,29 @@
+== exceptional set and entropy of D_F (pole flag; classes of vertices off the flag)
+m=3: sphere: 10 classes off the flag, 6 with d=1 (m(m-1)=6), entropy 4.0 bits;  equator (inside G_m: True): 2 movable, 2 with one choice (n(n-1)=2), entropy 0.0 bits
+m=4: sphere: 36 classes off the flag, 12 with d=1 (m(m-1)=12), entropy 28.7 bits;  equator (inside G_m: True): 10 movable, 6 with one choice (n(n-1)=6), entropy 4.0 bits
+m=5: sphere: 116 classes off the flag, 20 with d=1 (m(m-1)=20), entropy 135.4 bits;  equator (inside G_m: True): 36 movable, 12 with one choice (n(n-1)=12), entropy 28.7 bits
+m=6: sphere: 358 classes off the flag, 30 with d=1 (m(m-1)=30), entropy 536.5 bits;  equator (inside G_m: True): 116 movable, 20 with one choice (n(n-1)=20), entropy 135.4 bits
+m=7: sphere: 1086 classes off the flag, 42 with d=1 (m(m-1)=42), entropy 1941.3 bits;  equator (inside G_m: True): 358 movable, 30 with one choice (n(n-1)=30), entropy 536.5 bits
+m=8: sphere: 3272 classes off the flag, 56 with d=1 (m(m-1)=56), entropy 6666.9 bits;  equator (inside G_m: True): 1086 movable, 42 with one choice (n(n-1)=42), entropy 1941.3 bits
+== max_S T(S)   (proved: T(S) <= 2^m for every S)
+m=3: exhaustive over 2^13 sets: max T = 4  (bound 8), attained at [(0, 0, 1), (0, 1, 0), (1, 0, -1), (1, 0, 0), (1, 0, 1), (1, 1, -1), (1, 1, 0), (1, 1, 1)]
+m=4: hill-climbing (12 restarts x 3000 moves): best T found = 6.0000 with |S| = 10 (bound 16); runs: [6.0, 6.0, 6.0, 6.0, 6.0, 6.0, 6.0, 6.0, 6.0, 6.0, 6.0, 6.0]   [5s]
+m=5: hill-climbing (6 restarts x 4000 moves): best T found = 9.0000 with |S| = 12 (bound 32); runs: [9.0, 9.0, 9.0, 8.0, 8.0, 8.0]   [10s]
+== S^2 certificates: Lemma A for every gadget of every D_F, and (1/#classes) sum_alpha sum_F P_F[alpha]  (must be >= 1)
+isd_s2_d3_cert.txt: 304 terms, max degree 3: Lemma A on 384 gadgets: True; normalized survival sum = 12
+   expanded x50: 454 terms, max degree 7: Lemma A: True; normalized survival sum = 103/8 = 12.875
+   expanded x400: 1502 terms, max degree 10: Lemma A: True; normalized survival sum = 371/24 = 15.458
+isd_s2_d4_z3_cert.txt: 312 terms, max degree 3: Lemma A on 384 gadgets: True; normalized survival sum = 12
+   expanded x50: 462 terms, max degree 6: Lemma A: True; normalized survival sum = 77/6 = 12.833
+   expanded x400: 1508 terms, max degree 9: Lemma A: True; normalized survival sum = 44/3 = 14.667
+== proved size bound m!/2 (all degrees) versus the number of flag classes
+m=3: N = 26, size >= 3   (#flag classes m!2^(m-1) = 24)
+m=4: N = 80, size >= 12   (#flag classes m!2^(m-1) = 192)
+m=5: N = 242, size >= 60   (#flag classes m!2^(m-1) = 1920)
+m=6: N = 728, size >= 360   (#flag classes m!2^(m-1) = 23040)
+m=7: N = 2186, size >= 2520   (#flag classes m!2^(m-1) = 322560)
+m=8: N = 6560, size >= 20160   (#flag classes m!2^(m-1) = 5160960)
+m=9: N = 19682, size >= 181440   (#flag classes m!2^(m-1) = 92897280)
+m=10: N = 59048, size >= 1814400   (#flag classes m!2^(m-1) = 1857945600)
+m=11: N = 177146, size >= 19958400   (#flag classes m!2^(m-1) = 40874803200)
+m=12: N = 531440, size >= 239500800   (#flag classes m!2^(m-1) = 980995276800)
