@@ -283,3 +283,14 @@ largest-magnitude class fraction 0.44, 0.36, 0.29, 0.23 for m = 4..7 (explicit g
 magnitude class 0.104, 0.027, 0.005, 0.001 for m = 4..7; match probability of a fresh gadget against a fixed labeling on A, m = 6,
 |A| = 1, 2, 3, 4, 6, 8: random sets 0.39, 0.19, 0.06, 0.013, 0.004, 0.001; chains 0.90, 0.47, 0.14, 0.07; balls 0.37, 0.17, 0.09,
 0.03, 0.009, 0.003; fitted β ≈ 0.5–0.6 per vertex.
+
+## All-degrees size bound (2026-11-21) — `docs/spread_lemma.md`, `kyfan/spread.py`, `analysis/spread_choice_family.py`
+
+- Every "coordinate-choice" labeling ρ(y) = y_c·(n−c+1), c ∈ supp(y) ∩ [n], is free of complementary edges, with no relation
+  needed between different vertices; it is a gadget for the pole flag iff c avoids the initial run of y below the flag. This gives,
+  at every flag F, a product family with d_F(y) = rank(y) − rank(largest ±F vertex below y) labels at y.
+- The conjectured Spread Lemma (β^{|A|−cm}) fails for it: m(m−1) classes have d = 1. The count is instead done with the weights
+  1/d_F: T(S) = Σ_{F⊆S} Π_{y∈S∖F} 1/d_F(y) ≤ 2^m for every vertex set S (siblings in a top-down descent have distinct d's, so a
+  node with k+1 children costs 1/k!), hence size ≥ m!2^{m−1}/2^m = m!/2 at every degree.
+- Checked: `tests/test_spread_lemma.py` (fast, 5 s); numbers in `analysis/spread_choice_family.out` (max T = 4 on S^2 exhaustively;
+  hill-climbing 6, 9 for m = 4, 5; block example T ≥ 2^{⌊m/2⌋}).

@@ -15,6 +15,7 @@ On the sphere S^n (m = n+1 coordinates):
 - **Ky Fan over F_2 has degree exactly n+1** for k ≥ n+1 labels: the tower and a separating functional (`docs/kyfan_lower_bound.md`).
 - **Certificate size** (`docs/size_lower_bound.md`): Theorems 1, 1′, 2, 3 (unconditional), Theorem 4 conditional on the
   Spread Lemma, which is a conjecture with empirical support (`docs/spread_evidence.md`).
+  Unconditionally, every certificate of any degree has at least m!/2 terms (Theorem C, `docs/spread_lemma.md`).
 
 ## The three paper-cited computations
 
