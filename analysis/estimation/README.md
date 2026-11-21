@@ -16,7 +16,8 @@ Both are expectations of products of local factors of independent uniform variab
   variables; each step multiplies in the next local factor and projects back (orthogonally in L^2) onto degree ≤ d; the estimate
   is the constant term. It is exact at d = number of variables (checked on S^1 by brute force). This is my instantiation of the
   deduction–projection scheme, with "low degree" as the sketch; it is not ARC's code, and it uses no advice.
-- `run_s2.py`, `run_s3.py`: the runs below.
+- `run_s2.py`, `run_s3.py`: the runs below. `tests/test_estimation.py` reproduces the S^2 numbers for d ≤ 4 and the enumeration
+  (d = 5, 6 and S^3 are too slow for the test tiers: 96 s, 12 min, and 8 s plus setup).
 
 ## Results
 
