@@ -29,11 +29,12 @@ S^2, k = 3 (truth: N/Z = −1):
 | 3 | 1.03 | +0.035 | +0.035 | +0.034 |
 | 4 | 1.00 | −0.072 | −0.077 | −0.019 |
 | 5 | 1.00 | −0.184 | −0.184 | −0.092 |
+| 6 | 1.00 | −0.314 | −0.313 | −0.216 |
 
 S^3, k = 4 (40 variables; truth −1): ratio +0.0105 at d = 0, 1 and +0.051 at d = 2 (`s3.out`).
 
 Reading: the probability of validity is right to 0.3% by d = 4, while the conditional parity is essentially 0 and has the wrong
-sign through d = 3; it moves toward −1 only slowly as d approaches the number of variables. Full independence gives
+sign through d = 3; it moves toward −1 only slowly as d approaches the number of variables (−0.31 at d = 6 of 13; that run takes 12 minutes). Full independence gives
 Π_σ E[s_σ] = (1 − 12/216)^24 = +0.059. Cumulants of A do not help either: with the exact mean and variance of A among valid
 labelings a Gaussian treatment gives magnitude e^{−π²·2.30/2} ≈ 1e-5, and higher truncations diverge.
 
