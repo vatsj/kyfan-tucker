@@ -193,13 +193,27 @@ import tempfile
 _GF2SOLVE = os.path.join(os.path.dirname(os.path.dirname(os.path.abspath(__file__))), "gf2solve")
 
 
+class GF2SolveUnavailable(RuntimeError):
+    """The Rust solver is not built and cannot be built (no `cargo`), and the system is too large for the dense
+    fallback. Tests convert this into a skip (tests/conftest.py)."""
+
+
+# Without the Rust binary, gf2_sparse falls back to the dense numpy solver for systems up to this many matrix bits
+# (rows x (ncols+1)); 2^32 bits = 512 MB packed. Every fast-tier system through m = 6 / n = 6 is far below it.
+DENSE_FALLBACK_BITS = 1 << 32
+_warned_fallback = False
+
+
 def gf2solve_binary(build=True):
     exe = os.path.join(_GF2SOLVE, "target", "release", "gf2solve")
     if not os.path.exists(exe) and build:
-        subprocess.run(["cargo", "build", "--release", "--manifest-path", os.path.join(_GF2SOLVE, "Cargo.toml")],
-                       check=True, capture_output=True)
+        try:
+            subprocess.run(["cargo", "build", "--release", "--manifest-path", os.path.join(_GF2SOLVE, "Cargo.toml")],
+                           check=True, capture_output=True)
+        except (FileNotFoundError, subprocess.CalledProcessError):
+            pass
     if not os.path.exists(exe):
-        raise RuntimeError("gf2solve binary not found; run `cargo build --release` in gf2solve/")
+        raise GF2SolveUnavailable("gf2solve binary not found; install Rust and run `cargo build --release` in gf2solve/")
     return exe
 
 
@@ -223,7 +237,19 @@ def write_gf2_system(path, rows, ncols):
 def gf2_sparse(rows, ncols, want_solution=False, want_null=False, stop_early=False, verbose=False):
     """Solve over F_2 with the sparse Rust solver. Returns GF2Result (solution as np.uint8 array if requested);
     with want_null the result also carries `.null_basis`: list of (free column, support list)."""
-    exe = gf2solve_binary()
+    try:
+        exe = gf2solve_binary()
+    except GF2SolveUnavailable:
+        global _warned_fallback
+        if want_null or len(rows) * (ncols + 1) > DENSE_FALLBACK_BITS:
+            raise
+        if not _warned_fallback:
+            import warnings
+            warnings.warn("gf2solve (Rust) is not available; using the dense numpy GF(2) solver for small systems")
+            _warned_fallback = True
+        res = gf2_dense(rows, ncols, want_solution)
+        res.null_basis = None
+        return res
     with tempfile.TemporaryDirectory() as td:
         inp, outp = os.path.join(td, "sys.bin"), os.path.join(td, "out.txt")
         write_gf2_system(inp, rows, ncols)
