@@ -17,6 +17,9 @@ On the sphere S^n (m = n+1 coordinates):
   Spread Lemma, which is a conjecture with empirical support (`docs/spread_evidence.md`).
   Unconditionally, every certificate of any degree has at least m!/2 terms (Theorem C, `docs/spread_lemma.md`).
 
+An experiment, not a theorem: `analysis/estimation/README.md` poses Ky Fan as an estimation problem (the parity of the
+alternating count among valid labelings, exactly −1) and records what a low-degree estimator with no advice outputs on S^2 and S^3.
+
 ## The three paper-cited computations
 
 Run from the repository root after the install below (`PYTHONPATH=.` is set by `make`; set it yourself for direct calls).

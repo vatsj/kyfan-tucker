@@ -32,6 +32,8 @@ noted. Setup and the paper-cited commands: top-level `README.md`.
 
 - `spread_evidence.md` — what `spread_mcmc.py` samples, every diagnostic, every caveat, and the stored numbers.
 - `spread_lemma.md` — the weighted spread lemma and the unconditional all-degrees size bound (Theorem C), with its own status table.
+- `../analysis/estimation/README.md` — the estimation experiment (not a proof): exact enumeration on S^2 and a low-degree
+  deduction–projection estimator; numbers reproduced by `tests/test_estimation.py` (fast for d ≤ 3; slow for d = 4 and the enumeration).
 - `AGENT_BRIEF.md` — the original working brief (definitions §1, settled table §2, file map §3), kept as a historical document.
 - `../HISTORY.md` — the development log: every settled number with the command that produced it, the negative results and
   the exploratory drivers (`../analysis/legacy/`).
